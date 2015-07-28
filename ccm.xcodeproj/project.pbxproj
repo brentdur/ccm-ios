@@ -15,6 +15,12 @@
 		DB27BD2A1B6705110068F0BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB27BD291B6705110068F0BE /* Images.xcassets */; };
 		DB27BD2D1B6705110068F0BE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB27BD2B1B6705110068F0BE /* LaunchScreen.xib */; };
 		DB27BD391B6705110068F0BE /* ccmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD381B6705110068F0BE /* ccmTests.m */; };
+		DB27BD471B67059E0068F0BE /* ccmModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD451B67059E0068F0BE /* ccmModel.xcdatamodeld */; };
+		DB27BD4A1B67061D0068F0BE /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB27BD491B67061D0068F0BE /* Admin.storyboard */; };
+		DB27BD4D1B6706B80068F0BE /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD4C1B6706B80068F0BE /* SignInViewController.m */; };
+		DB27BD501B67078A0068F0BE /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD4F1B67078A0068F0BE /* SignUpViewController.m */; };
+		DB27BD531B670B4F0068F0BE /* AdminRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD521B670B4F0068F0BE /* AdminRequest.m */; };
+		DB2BFE921B67E68400B12A0B /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2BFE911B67E68400B12A0B /* NavViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +49,16 @@
 		DB27BD321B6705110068F0BE /* ccmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ccmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB27BD371B6705110068F0BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB27BD381B6705110068F0BE /* ccmTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ccmTests.m; sourceTree = "<group>"; };
+		DB27BD461B67059E0068F0BE /* ccmModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ccmModel.xcdatamodel; sourceTree = "<group>"; };
+		DB27BD491B67061D0068F0BE /* Admin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
+		DB27BD4B1B6706B80068F0BE /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		DB27BD4C1B6706B80068F0BE /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		DB27BD4E1B67078A0068F0BE /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		DB27BD4F1B67078A0068F0BE /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		DB27BD511B670B4F0068F0BE /* AdminRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminRequest.h; sourceTree = "<group>"; };
+		DB27BD521B670B4F0068F0BE /* AdminRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminRequest.m; sourceTree = "<group>"; };
+		DB2BFE901B67E68400B12A0B /* NavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavViewController.h; sourceTree = "<group>"; };
+		DB2BFE911B67E68400B12A0B /* NavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,13 +100,17 @@
 		DB27BD181B6705100068F0BE /* ccm */ = {
 			isa = PBXGroup;
 			children = (
+				DB27BD451B67059E0068F0BE /* ccmModel.xcdatamodeld */,
 				DB27BD1D1B6705100068F0BE /* AppDelegate.h */,
 				DB27BD1E1B6705100068F0BE /* AppDelegate.m */,
 				DB27BD201B6705100068F0BE /* FirstViewController.h */,
 				DB27BD211B6705100068F0BE /* FirstViewController.m */,
 				DB27BD231B6705100068F0BE /* SecondViewController.h */,
 				DB27BD241B6705100068F0BE /* SecondViewController.m */,
+				DB27BD481B6705F90068F0BE /* admin */,
 				DB27BD261B6705110068F0BE /* Main.storyboard */,
+				DB2BFE901B67E68400B12A0B /* NavViewController.h */,
+				DB2BFE911B67E68400B12A0B /* NavViewController.m */,
 				DB27BD291B6705110068F0BE /* Images.xcassets */,
 				DB27BD2B1B6705110068F0BE /* LaunchScreen.xib */,
 				DB27BD191B6705100068F0BE /* Supporting Files */,
@@ -122,6 +142,20 @@
 				DB27BD371B6705110068F0BE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB27BD481B6705F90068F0BE /* admin */ = {
+			isa = PBXGroup;
+			children = (
+				DB27BD491B67061D0068F0BE /* Admin.storyboard */,
+				DB27BD4E1B67078A0068F0BE /* SignUpViewController.h */,
+				DB27BD4F1B67078A0068F0BE /* SignUpViewController.m */,
+				DB27BD4B1B6706B80068F0BE /* SignInViewController.h */,
+				DB27BD4C1B6706B80068F0BE /* SignInViewController.m */,
+				DB27BD511B670B4F0068F0BE /* AdminRequest.h */,
+				DB27BD521B670B4F0068F0BE /* AdminRequest.m */,
+			);
+			name = admin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB27BD4A1B67061D0068F0BE /* Admin.storyboard in Resources */,
 				DB27BD281B6705110068F0BE /* Main.storyboard in Resources */,
 				DB27BD2D1B6705110068F0BE /* LaunchScreen.xib in Resources */,
 				DB27BD2A1B6705110068F0BE /* Images.xcassets in Resources */,
@@ -225,9 +260,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB27BD251B6705100068F0BE /* SecondViewController.m in Sources */,
+				DB2BFE921B67E68400B12A0B /* NavViewController.m in Sources */,
 				DB27BD1F1B6705100068F0BE /* AppDelegate.m in Sources */,
 				DB27BD221B6705100068F0BE /* FirstViewController.m in Sources */,
 				DB27BD1C1B6705100068F0BE /* main.m in Sources */,
+				DB27BD4D1B6706B80068F0BE /* SignInViewController.m in Sources */,
+				DB27BD501B67078A0068F0BE /* SignUpViewController.m in Sources */,
+				DB27BD471B67059E0068F0BE /* ccmModel.xcdatamodeld in Sources */,
+				DB27BD531B670B4F0068F0BE /* AdminRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +464,7 @@
 				DB27BD3E1B6705110068F0BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB27BD3F1B6705110068F0BE /* Build configuration list for PBXNativeTarget "ccmTests" */ = {
 			isa = XCConfigurationList;
@@ -432,8 +473,22 @@
 				DB27BD411B6705110068F0BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DB27BD451B67059E0068F0BE /* ccmModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DB27BD461B67059E0068F0BE /* ccmModel.xcdatamodel */,
+			);
+			currentVersion = DB27BD461B67059E0068F0BE /* ccmModel.xcdatamodel */;
+			path = ccmModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DB27BD0E1B6705100068F0BE /* Project object */;
 }
