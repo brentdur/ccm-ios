@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AdminRequest.h"
+#import "Constaints.h"
+#import "KeychainItemWrapper.h"
+#import "SignInViewController.h"
 
 @interface SignUpViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 - (IBAction)signup:(id)sender;
+- (IBAction)done:(id)sender;
 
 @end

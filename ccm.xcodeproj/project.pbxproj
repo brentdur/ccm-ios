@@ -16,11 +16,15 @@
 		DB27BD2D1B6705110068F0BE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB27BD2B1B6705110068F0BE /* LaunchScreen.xib */; };
 		DB27BD391B6705110068F0BE /* ccmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD381B6705110068F0BE /* ccmTests.m */; };
 		DB27BD471B67059E0068F0BE /* ccmModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD451B67059E0068F0BE /* ccmModel.xcdatamodeld */; };
-		DB27BD4A1B67061D0068F0BE /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB27BD491B67061D0068F0BE /* Admin.storyboard */; };
 		DB27BD4D1B6706B80068F0BE /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD4C1B6706B80068F0BE /* SignInViewController.m */; };
 		DB27BD501B67078A0068F0BE /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD4F1B67078A0068F0BE /* SignUpViewController.m */; };
 		DB27BD531B670B4F0068F0BE /* AdminRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD521B670B4F0068F0BE /* AdminRequest.m */; };
 		DB2BFE921B67E68400B12A0B /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2BFE911B67E68400B12A0B /* NavViewController.m */; };
+		DB2BFEA11B68615900B12A0B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2BFE9E1B6860FF00B12A0B /* Security.framework */; };
+		DB2BFEA21B68615900B12A0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2BFE9C1B6860F500B12A0B /* Foundation.framework */; };
+		DB2BFEA31B68615900B12A0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2BFE9A1B6860EC00B12A0B /* UIKit.framework */; };
+		DB2BFEA61B6869C700B12A0B /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2BFEA51B6869C700B12A0B /* KeychainItemWrapper.m */; };
+		DB2BFEA91B687EA800B12A0B /* StarterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2BFEA81B687EA800B12A0B /* StarterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +54,6 @@
 		DB27BD371B6705110068F0BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB27BD381B6705110068F0BE /* ccmTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ccmTests.m; sourceTree = "<group>"; };
 		DB27BD461B67059E0068F0BE /* ccmModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ccmModel.xcdatamodel; sourceTree = "<group>"; };
-		DB27BD491B67061D0068F0BE /* Admin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
 		DB27BD4B1B6706B80068F0BE /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		DB27BD4C1B6706B80068F0BE /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		DB27BD4E1B67078A0068F0BE /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
@@ -59,6 +62,14 @@
 		DB27BD521B670B4F0068F0BE /* AdminRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminRequest.m; sourceTree = "<group>"; };
 		DB2BFE901B67E68400B12A0B /* NavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavViewController.h; sourceTree = "<group>"; };
 		DB2BFE911B67E68400B12A0B /* NavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavViewController.m; sourceTree = "<group>"; };
+		DB2BFE941B68588600B12A0B /* Constaints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constaints.h; sourceTree = "<group>"; };
+		DB2BFE9A1B6860EC00B12A0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DB2BFE9C1B6860F500B12A0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DB2BFE9E1B6860FF00B12A0B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DB2BFEA41B6869C700B12A0B /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		DB2BFEA51B6869C700B12A0B /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		DB2BFEA71B687EA800B12A0B /* StarterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarterViewController.h; sourceTree = "<group>"; };
+		DB2BFEA81B687EA800B12A0B /* StarterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +77,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB2BFEA21B68615900B12A0B /* Foundation.framework in Frameworks */,
+				DB2BFEA31B68615900B12A0B /* UIKit.framework in Frameworks */,
+				DB2BFEA11B68615900B12A0B /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +98,7 @@
 			children = (
 				DB27BD181B6705100068F0BE /* ccm */,
 				DB27BD351B6705110068F0BE /* ccmTests */,
+				DB2BFEA01B68610400B12A0B /* Frameworks */,
 				DB27BD171B6705100068F0BE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -100,9 +115,12 @@
 		DB27BD181B6705100068F0BE /* ccm */ = {
 			isa = PBXGroup;
 			children = (
+				DB2BFE931B68580A00B12A0B /* utils */,
 				DB27BD451B67059E0068F0BE /* ccmModel.xcdatamodeld */,
 				DB27BD1D1B6705100068F0BE /* AppDelegate.h */,
 				DB27BD1E1B6705100068F0BE /* AppDelegate.m */,
+				DB2BFEA71B687EA800B12A0B /* StarterViewController.h */,
+				DB2BFEA81B687EA800B12A0B /* StarterViewController.m */,
 				DB27BD201B6705100068F0BE /* FirstViewController.h */,
 				DB27BD211B6705100068F0BE /* FirstViewController.m */,
 				DB27BD231B6705100068F0BE /* SecondViewController.h */,
@@ -147,7 +165,6 @@
 		DB27BD481B6705F90068F0BE /* admin */ = {
 			isa = PBXGroup;
 			children = (
-				DB27BD491B67061D0068F0BE /* Admin.storyboard */,
 				DB27BD4E1B67078A0068F0BE /* SignUpViewController.h */,
 				DB27BD4F1B67078A0068F0BE /* SignUpViewController.m */,
 				DB27BD4B1B6706B80068F0BE /* SignInViewController.h */,
@@ -156,6 +173,26 @@
 				DB27BD521B670B4F0068F0BE /* AdminRequest.m */,
 			);
 			name = admin;
+			sourceTree = "<group>";
+		};
+		DB2BFE931B68580A00B12A0B /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				DB2BFEA41B6869C700B12A0B /* KeychainItemWrapper.h */,
+				DB2BFEA51B6869C700B12A0B /* KeychainItemWrapper.m */,
+				DB2BFE941B68588600B12A0B /* Constaints.h */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		DB2BFEA01B68610400B12A0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB2BFE9E1B6860FF00B12A0B /* Security.framework */,
+				DB2BFE9C1B6860F500B12A0B /* Foundation.framework */,
+				DB2BFE9A1B6860EC00B12A0B /* UIKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,7 +275,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB27BD4A1B67061D0068F0BE /* Admin.storyboard in Resources */,
 				DB27BD281B6705110068F0BE /* Main.storyboard in Resources */,
 				DB27BD2D1B6705110068F0BE /* LaunchScreen.xib in Resources */,
 				DB27BD2A1B6705110068F0BE /* Images.xcassets in Resources */,
@@ -263,10 +299,12 @@
 				DB2BFE921B67E68400B12A0B /* NavViewController.m in Sources */,
 				DB27BD1F1B6705100068F0BE /* AppDelegate.m in Sources */,
 				DB27BD221B6705100068F0BE /* FirstViewController.m in Sources */,
+				DB2BFEA91B687EA800B12A0B /* StarterViewController.m in Sources */,
 				DB27BD1C1B6705100068F0BE /* main.m in Sources */,
 				DB27BD4D1B6706B80068F0BE /* SignInViewController.m in Sources */,
 				DB27BD501B67078A0068F0BE /* SignUpViewController.m in Sources */,
 				DB27BD471B67059E0068F0BE /* ccmModel.xcdatamodeld in Sources */,
+				DB2BFEA61B6869C700B12A0B /* KeychainItemWrapper.m in Sources */,
 				DB27BD531B670B4F0068F0BE /* AdminRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

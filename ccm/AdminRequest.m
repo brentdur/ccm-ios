@@ -14,6 +14,7 @@ static AdminRequest *sharedInstance = nil;
 
 + (AdminRequest *)sharedInstance
 {
+    //allows only one instance of this to be running at a time
     static dispatch_once_t pred;
     
     dispatch_once(&pred, ^
@@ -25,53 +26,31 @@ static AdminRequest *sharedInstance = nil;
 }
 
 const NSString *signInUrl = @"http://ccm.brentondurkee.com/auth/local";
+const NSString *signUpUrl = @"http://ccm.brentondurkee.com/api/users";
 
 -(void) signInEmail:(NSString *)email andPassword:(NSString *)password andDelegate:(id)delegate{
-    //__block NSString *ret = @"FAILED";
+    //asigns delegate, creates body, runs request
     self.delegate = delegate;
-    
-    NSURL *url = [[NSURL alloc] initWithString:signInUrl];
-//    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-    
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:[NSOperationQueue mainQueue]];
-    
-    
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    
-    
-    
     NSString *body = [NSString stringWithFormat:@"email=%@&password=%@", email, password];
-    request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
-    request.HTTPMethod = @"POST";
-
-    [[session dataTaskWithRequest:request] resume];
-//    NSURLSessionTask *postData = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-//        if (error){
-//            NSLog(@"%@", error);
-//            
-//        }
-//        else {
-//            NSMutableDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-//            if(error){
-//                NSLog(@"%@", error);
-//            }
-//            NSLog(@"mid");
-//            ret = [result valueForKey:@"token"];
-//            dispatch_sync(dispatch_get_main_queue(), ^{
-//                NSLog(@"Done");
-//            });
-//        }
-//    }];
-//    [postData resume];
-    NSLog(@"end");
-//    return ret;
-    
+    [self requestWithURL:signInUrl andBody:body];
 }
 
--(NSString *) signUpName:(NSString *)name forEmail:(NSString *) email andPassword:(NSString *)password{
-    return @"true";
+-(void) signUpName:(NSString *)name forEmail:(NSString *) email andPassword:(NSString *)password andDelegate:(id)delegate{
+    self.delegate = delegate;
+    NSString *body = [NSString stringWithFormat:@"name=%@&password=%@&email=%@", name, password, email];
+    [self requestWithURL:signUpUrl andBody:body];
+}
+
+-(void) requestWithURL:(NSString *) urlString andBody:(NSString *) body{
+    //turns string to url, uses default configuration, opens session with delegate, creates request, sets parameters
+    // and runs
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+    request.HTTPMethod = @"POST";
+    [[session dataTaskWithRequest:request] resume];
 }
 
 #pragma mark - NSURLSessionTaskDelegate Methods
@@ -86,6 +65,7 @@ const NSString *signInUrl = @"http://ccm.brentondurkee.com/auth/local";
 
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler
 {
+    //first method to fire on response
     NSLog(@"did receive response");
     self.response = [[NSMutableData alloc] init];
     completionHandler(NSURLSessionResponseAllow);
@@ -113,6 +93,7 @@ const NSString *signInUrl = @"http://ccm.brentondurkee.com/auth/local";
 //
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data
 {
+    //second method to fire as data is recieved
     NSLog(@"did recieve data");
     [self.response appendData:data];
     //[self.responseData appendData:data];
@@ -120,6 +101,7 @@ const NSString *signInUrl = @"http://ccm.brentondurkee.com/auth/local";
 //
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
 {
+    //last method to fire when end of response is reached
     NSLog(@"did complete with error: %@", error);
     if(error){
         NSLog(@"ERROR");

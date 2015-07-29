@@ -7,6 +7,7 @@
 //
 
 #import "SignUpViewController.h"
+@class SignInViewController;
 
 @interface SignUpViewController ()
 
@@ -38,7 +39,17 @@
     NSString *name = [_name text];
     NSString *email = [_email text];
     NSString *password = [_password text];
+    
+    if (email && password && name){
+        SignInViewController *signin = [[SignInViewController alloc] init];
+        [signin setEmail:_email];
+        [[AdminRequest sharedInstance] signUpName:name forEmail:email andPassword:password andDelegate:signin];
+        [signin setRunningView:self];
+    }
 }
 
+-(IBAction)done:(id)sender {
+    [self signup:sender];
+}
 
 @end

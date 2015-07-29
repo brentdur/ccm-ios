@@ -17,7 +17,7 @@
 @property id <AdminRequestDelegate> delegate;
 
 -(void) signInEmail:(NSString *)email andPassword:(NSString *)password andDelegate:(id)delegate;
--(NSString *) signUpName:(NSString *)name forEmail:(NSString *) email andPassword:(NSString *)password;
+-(void) signUpName:(NSString *)name forEmail:(NSString *) email andPassword:(NSString *)password andDelegate:(id)delegate;
 @end
 
 @protocol AdminRequestDelegate
