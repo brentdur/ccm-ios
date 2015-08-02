@@ -11,11 +11,14 @@
 
 @implementation DataController
 
+static id <DataControllerDelegate> delegate;
+
 +(void) sync {
     NSManagedObjectContext *moc =  [(AppDelegate *) [[UIApplication sharedApplication] delegate] managedObjectContext];
     DataRequest *si = [DataRequest sharedInstance];
     [si updateEventsUsingBlock:^(NSMutableArray *data, NSError *error) {
         [self checkItemsFrom:data for:moc entity:ENTITY_EVENT];
+        
     }];
     [si updateMessagesUsingBlock:^(NSMutableArray *data, NSError *error) {
         [self checkItemsFrom:data for:moc entity:ENTITY_MESSAGES];
@@ -59,6 +62,10 @@
 
 +(NSArray *) getLocations{
     return [self getsForEntity:ENTITY_LOCATIONS];
+}
+
++(void) setDelegate:(id) del{
+    delegate = del;
 }
 
 +(void) checkItemsFrom:(NSMutableArray *) array for:(NSManagedObjectContext *) context entity:(NSString *)type{
@@ -110,6 +117,10 @@
         creates++;
     }
     NSLog(@"Creates: %d, Deletes: %d, Updates: %d", creates, deletes, updates);
+    if(delegate){
+        [delegate didUpdateData];
+        delegate = nil;
+    }
     [context save:nil];
 }
 

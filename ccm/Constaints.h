@@ -30,6 +30,7 @@
 #define KEY_HAS_TOKEN @"has_token"
 #define KEY_EMAIL @"email"
 #define KEY_GROUPS @"groups"
+#define KEY_INITIAL_SYNC @"initital_sync"
 
 #define KEYCHAIN_ID_TOKEN @"token"
 #define KEYCHAIN_KEY_TOKEN @"auth_token"

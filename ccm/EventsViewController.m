@@ -18,7 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     // Do any additional setup after loading the view.
     content = [DataController getEvents];
 }
@@ -28,6 +27,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) didUpdateData{
+    content = [DataController getEvents];
+    [[self table] reloadData];
+}
 
 /*
 #pragma mark - Navigation
@@ -40,6 +43,9 @@
 */
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if ([content count] == 0){
+        [DataController setDelegate:self];
+    }
     return [content count];
 }
 
@@ -64,11 +70,12 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([[segue identifier] isEqualToString:@"MsgDetail"]) {
-        EventDetailViewController *detailViewController = [segue destinationViewController];
+    if ([[segue identifier] isEqualToString:@"EventDetail"]) {
+        EventTableViewController *detailViewController = [segue destinationViewController];
         NSIndexPath *indexPath = [self selectedRow];
         [detailViewController setData:(Events *) content[indexPath.row]];
     }
 }
+
 
 @end

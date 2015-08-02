@@ -63,7 +63,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([[segue identifier] isEqualToString:@"TalkDetail"]) {
-        TalkDetailViewController *detailViewController = [segue destinationViewController];
+        TalkTableViewController *detailViewController = [segue destinationViewController];
         NSIndexPath *indexPath = [self selectedRow];
         [detailViewController setData:(Talks *) content[indexPath.row]];
     }

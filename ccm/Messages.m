@@ -32,7 +32,7 @@
     self.to = [item valueForKey:@"simpleTo"];
     self.subject = [item valueForKey:@"subject"];
     self.date = [item valueForKey:@"date"];
-    self.message = [item valueForKey:@"location"];
+    self.message = [item valueForKey:@"message"];
     self.version = [item valueForKey:@"version"];
 }
 

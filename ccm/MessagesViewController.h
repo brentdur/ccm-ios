@@ -11,7 +11,7 @@
 #import "DataController.h"
 #import "Messages.h"
 #import "MessagesTableViewCell.h"
-#import "MessageDetailViewController.h"
+#import "MsgTableViewController.h"
 
 @interface MessagesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 

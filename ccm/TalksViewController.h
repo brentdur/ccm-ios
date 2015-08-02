@@ -11,7 +11,7 @@
 #import "DataController.h"
 #import "Talks.h"
 #import "TalksTableViewCell.h"
-#import "TalkDetailViewController.h"
+#import "TalkTableViewController.h"
 
 @interface TalksViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 

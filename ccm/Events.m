@@ -20,6 +20,7 @@
 @dynamic version;
 @dynamic id;
 
+static BOOL update = false;
 
 -(NSString *)getIdd{
     return self.id;
@@ -37,6 +38,14 @@
     self.lat = [item valueForKey:@"lat"];
     self.lng = [item valueForKey:@"lng"];
     self.version = [item valueForKey:@"version"];
+}
+
++(BOOL) updated{
+    return update;
+}
+
++(void) setUp:(BOOL)value{
+    update = value;
 }
 
 @end

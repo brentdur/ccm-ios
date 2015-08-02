@@ -11,11 +11,12 @@
 #import "DataController.h"
 #import "Events.h"
 #import "EventsTableViewCell.h"
-#import "EventDetailViewController.h"
+#import "EventTableViewController.h"
 
-@interface EventsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface EventsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, DataControllerDelegate>
 
 @property NSArray *content;
+@property (weak, nonatomic) IBOutlet UITableView *table;
 
 @property NSIndexPath *selectedRow;
 

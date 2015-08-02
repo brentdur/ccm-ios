@@ -21,10 +21,14 @@
 @property (nonatomic, retain) NSNumber * version;
 @property (nonatomic, retain) NSString * id;
 
+
 -(NSString *)getIdd;
 -(NSNumber *)getVersion;
 
 -(void)setDescriptionUsing:(NSDictionary *) item;
+
++(BOOL)updated;
++(void)setUp:(BOOL)value;
 
 
 @end

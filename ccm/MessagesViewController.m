@@ -67,7 +67,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([[segue identifier] isEqualToString:@"MsgDetail"]) {
-        MessageDetailViewController *detailViewController = [segue destinationViewController];
+        MsgTableViewController *detailViewController = [segue destinationViewController];
         NSIndexPath *indexPath = [self selectedRow];
         [detailViewController setData:(Messages *) content[indexPath.row]];
     }

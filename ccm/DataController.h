@@ -22,7 +22,6 @@
 
 +(void) sync;
 
-
 # pragma mark - Get methods
 +(NSArray *) getEvents;
 +(NSArray *) getTalks;
@@ -32,5 +31,12 @@
 
 +(void) deleteEvents;
 
++(void) setDelegate:(id) del;
+
+@end
+
+@protocol DataControllerDelegate
+@optional
+-(void) didUpdateData;
 
 @end
