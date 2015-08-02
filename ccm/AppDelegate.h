@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "AFNetworking.h"
+#import "DataController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

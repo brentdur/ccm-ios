@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Constaints.h"
 #import "DataController.h"
+#import "Events.h"
 #import "EventsTableViewCell.h"
+#import "EventDetailViewController.h"
 
 @interface EventsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property NSArray *content;
+
+@property NSIndexPath *selectedRow;
 
 @end

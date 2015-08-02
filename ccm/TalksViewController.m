@@ -1,26 +1,25 @@
 //
-//  MessagesViewController.m
+//  TalksViewController.m
 //  ccm
 //
-//  Created by Brenton Durkee on 7/30/15.
+//  Created by Brenton Durkee on 8/1/15.
 //  Copyright (c) 2015 Brenton Durkee. All rights reserved.
 //
 
-#import "MessagesViewController.h"
+#import "TalksViewController.h"
 
-@interface MessagesViewController ()
+@interface TalksViewController ()
 
 @end
 
-@implementation MessagesViewController
+@implementation TalksViewController
 
 @synthesize content;
-@synthesize selectedRow;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    content = [DataController getMessages];
+    content = [DataController getTalks];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,33 +42,30 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellId = @"CellMsg";
+    static NSString *cellId = @"CellTalk";
     
-    MessagesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    TalksTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     
     if(cell == nil){
-        cell = [[MessagesTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        cell = [[TalksTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     
-    cell.label1.text = [(Messages *)content[indexPath.row] subject];
-    cell.label2.text = [(Messages *)content[indexPath.row] from];
+    cell.label1.text = [(Talks *)content[indexPath.row] subject];
+    cell.label2.text = [(Talks *)content[indexPath.row] author];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self setSelectedRow:indexPath];
-//    MessageDetailViewController *dv = [[self storyboard] instantiateViewControllerWithIdentifier:@"MsgDetail"];
-//    [[self navigationController] pushViewController:dv animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self performSegueWithIdentifier:@"MsgDetail" sender:self];
-
+    [self performSegueWithIdentifier:@"TalkDetail" sender:self];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([[segue identifier] isEqualToString:@"MsgDetail"]) {
-        MessageDetailViewController *detailViewController = [segue destinationViewController];
+    if ([[segue identifier] isEqualToString:@"TalkDetail"]) {
+        TalkDetailViewController *detailViewController = [segue destinationViewController];
         NSIndexPath *indexPath = [self selectedRow];
-        [detailViewController setData:(Messages *) content[indexPath.row]];
+        [detailViewController setData:(Talks *) content[indexPath.row]];
     }
 }
 

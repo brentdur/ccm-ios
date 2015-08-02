@@ -58,7 +58,17 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self setSelectedRow:indexPath];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self performSegueWithIdentifier:@"EventDetail" sender:self];
+}
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"MsgDetail"]) {
+        EventDetailViewController *detailViewController = [segue destinationViewController];
+        NSIndexPath *indexPath = [self selectedRow];
+        [detailViewController setData:(Events *) content[indexPath.row]];
+    }
 }
 
 @end

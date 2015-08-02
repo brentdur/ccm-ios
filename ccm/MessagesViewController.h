@@ -11,9 +11,12 @@
 #import "DataController.h"
 #import "Messages.h"
 #import "MessagesTableViewCell.h"
+#import "MessageDetailViewController.h"
 
 @interface MessagesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property NSArray *content;
+
+@property NSIndexPath *selectedRow;
 
 @end

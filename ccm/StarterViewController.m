@@ -16,6 +16,7 @@
     UIViewController *cont;
     if (hasToken) {
         cont = [self.storyboard instantiateViewControllerWithIdentifier:@"TabView"];
+        [DataController sync];
     }
     else {
         cont = [self.storyboard instantiateViewControllerWithIdentifier:@"AuthNav"];

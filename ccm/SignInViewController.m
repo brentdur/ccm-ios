@@ -63,6 +63,7 @@
     //if success
     [[NSUserDefaults standardUserDefaults] setBool:true forKey:KEY_HAS_TOKEN];
     [[NSUserDefaults standardUserDefaults] setObject:[_email text] forKey:KEY_EMAIL];
+    [DataController sync];
     [self goToTabView];
     
 }
