@@ -33,9 +33,9 @@
     self.subject = [item valueForKey:@"subject"];
     self.date = [item valueForKey:@"date"];
     self.reference = [item valueForKey:@"reference"];
-//    self.outline = [item valueForKey:@"outline"];
+    self.outline = @"";
     for (id name in [item valueForKey:@"outline"]){
-        NSLog(@"%@", name);
+        self.outline = [NSString stringWithFormat:@"%@%@\r", self.outline, name];
     }
     self.fullVerse = [item valueForKey:@"fullVerse"];
     self.version = [item valueForKey:@"version"];

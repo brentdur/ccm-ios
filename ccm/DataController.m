@@ -18,7 +18,6 @@ static id <DataControllerDelegate> delegate;
     DataRequest *si = [DataRequest sharedInstance];
     [si updateEventsUsingBlock:^(NSMutableArray *data, NSError *error) {
         [self checkItemsFrom:data for:moc entity:ENTITY_EVENT];
-        
     }];
     [si updateMessagesUsingBlock:^(NSMutableArray *data, NSError *error) {
         [self checkItemsFrom:data for:moc entity:ENTITY_MESSAGES];

@@ -14,6 +14,8 @@
 
 @implementation TalkTableViewController
 
+@synthesize data;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -22,13 +24,14 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-//    
-//    [self setTitle:[data from]];
-//    [[self subject] setText:[data subject]];
-//    [[self to] setText:[data to]];
-//    [[self date] setText:[[data date]description] ];
-//    NSLog(@"%@",[data message]);
-//    [[self text] setText:[data message]];
+    
+    
+    [[self author] setText:[data author]];
+    [[self date] setText:[[data date] description]];
+    [[self ref] setText:[data reference]];
+    [[self fillRef] setText:[data fullVerse]];
+    
+    [[self outline] setText:[data outline]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,20 +39,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) viewDidAppear:(BOOL)animated{
+    [[self fillRef] setContentOffset:CGPointZero];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    if (!_cellHidden) {
-        return 5;
-    }
     return 4;
 }
 
@@ -99,15 +101,16 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 3) {
-        return _cellHidden ? 543.0f : 142.0f;
+    if (indexPath.row == 2){
+        if([self cellHidden]){
+            return 250;
+        }
+        else {
+            return 0;
+        }
+        
     }
-    else if (indexPath.row < 3){
-        return 44.0f;
-    }
-    else
-        return _cellHidden ? 343.0f + 142.00f : 343.0f;
-    
+    return [super tableView:tableView heightForRowAtIndexPath:indexPath];
 
 }
 
@@ -123,13 +126,14 @@
 
 - (IBAction)refTap:(id)sender {
     _cellHidden = !_cellHidden;
-    if(_cellHidden){
-        [[self tableView] deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:3 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
-    }
-
-    if(!_cellHidden){
-        [[self tableView] insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:3 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
-    }
+    [[self tableView] reloadData];
+//    if(_cellHidden){
+//        [[self tableView] deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+//    }
+//
+//    if(!_cellHidden){
+//        [[self tableView] insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+//    }
     
 }
 @end

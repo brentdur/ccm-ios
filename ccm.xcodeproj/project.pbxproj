@@ -57,6 +57,7 @@
 		DBE9E8711B6E8A1700D646E0 /* MsgTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE9E8701B6E8A1700D646E0 /* MsgTableViewController.m */; };
 		DBE9E8741B6E9DDD00D646E0 /* EventTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE9E8731B6E9DDD00D646E0 /* EventTableViewController.m */; };
 		DBE9E8771B6E9DEB00D646E0 /* TalkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE9E8761B6E9DEB00D646E0 /* TalkTableViewController.m */; };
+		DBEEDD2C1B6FEDBA00CAE8D9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBEEDD2B1B6FEDBA00CAE8D9 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +170,7 @@
 		DBE9E8731B6E9DDD00D646E0 /* EventTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewController.m; sourceTree = "<group>"; };
 		DBE9E8751B6E9DEB00D646E0 /* TalkTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkTableViewController.h; sourceTree = "<group>"; };
 		DBE9E8761B6E9DEB00D646E0 /* TalkTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkTableViewController.m; sourceTree = "<group>"; };
+		DBEEDD2B1B6FEDBA00CAE8D9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 			files = (
 				DB2BFEA21B68615900B12A0B /* Foundation.framework in Frameworks */,
 				DB2BFEA31B68615900B12A0B /* UIKit.framework in Frameworks */,
+				DBEEDD2C1B6FEDBA00CAE8D9 /* MapKit.framework in Frameworks */,
 				DB2BFEA11B68615900B12A0B /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +376,7 @@
 		DB2BFEA01B68610400B12A0B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DBEEDD2B1B6FEDBA00CAE8D9 /* MapKit.framework */,
 				DB2BFE9E1B6860FF00B12A0B /* Security.framework */,
 				DB2BFE9C1B6860F500B12A0B /* Foundation.framework */,
 				DB2BFE9A1B6860EC00B12A0B /* UIKit.framework */,
@@ -477,6 +481,9 @@
 						CreatedOnToolsVersion = 6.3;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
 						};

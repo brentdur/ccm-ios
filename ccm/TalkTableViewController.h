@@ -12,7 +12,6 @@
 @interface TalkTableViewController : UITableViewController
 - (IBAction)refTap:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UILabel *subject;
 @property (weak, nonatomic) IBOutlet UILabel *author;
 @property (weak, nonatomic) IBOutlet UILabel *date;
 @property (weak, nonatomic) IBOutlet UILabel *ref;

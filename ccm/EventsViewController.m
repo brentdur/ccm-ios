@@ -20,6 +20,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     content = [DataController getEvents];
+    if ([content count] == 0){
+        [DataController setDelegate:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,9 +46,9 @@
 */
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if ([content count] == 0){
-        [DataController setDelegate:self];
-    }
+//    if ([content count] == 0){
+//        [DataController setDelegate:self];
+//    }
     return [content count];
 }
 
