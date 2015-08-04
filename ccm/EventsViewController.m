@@ -81,4 +81,13 @@
 }
 
 
+- (IBAction)swipe:(id)sender {
+    
+    
+    [[self tabBarController] setSelectedViewController:[[[self tabBarController] viewControllers]objectAtIndex:0]];  
+}
+
+- (IBAction)swipeLeft:(id)sender {
+    [[self tabBarController] setSelectedViewController:[[[self tabBarController] viewControllers]objectAtIndex:2]];
+}
 @end

@@ -16,6 +16,7 @@
 @interface MessagesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property NSArray *content;
+- (IBAction)swipeLeft:(id)sender;
 
 @property NSIndexPath *selectedRow;
 

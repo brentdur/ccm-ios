@@ -16,6 +16,7 @@
 @interface TalksViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property NSArray *content;
+- (IBAction)swipeRight:(id)sender;
 
 @property NSIndexPath *selectedRow;
 

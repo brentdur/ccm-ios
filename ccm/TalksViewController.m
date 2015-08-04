@@ -70,4 +70,7 @@
 }
 
 
+- (IBAction)swipeRight:(id)sender {
+    [[self tabBarController] setSelectedViewController:[[[self tabBarController] viewControllers]objectAtIndex:1]];
+}
 @end

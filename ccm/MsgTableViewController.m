@@ -24,11 +24,32 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    NSDateFormatter *df = [[NSDateFormatter alloc]init];
+
+    [df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+    NSDate *date = [df dateFromString:[[data date]description]];
+
+    NSTimeInterval distance = [date timeIntervalSinceNow];
+    NSLog(@"%f", distance);
+    distance = distance / 86400;
+    NSLog(@"%f", distance);
+    NSString *sDate = [[NSString alloc] init];
+    if (distance < -30 || distance >= 1){
+        [df setDateFormat:@"MM/dd"];
+        sDate = [df stringFromDate:date];
+    }
+    else {
+        distance *= -1;
+        sDate = [NSString stringWithFormat:@"%.0f days ago", distance];
+    }
+    
     [self setTitle:[data from]];
     [[self subject] setText:[data subject]];
     [[self to] setText:[data to]];
-    [[self date] setText:[[data date]description] ];
-    NSLog(@"%@",[data message]);
+    [[self date] setText:sDate];
+    NSLog(@"%@",date);
+    NSLog(@"%@",sDate);
     [[self text] setText:[data message]];
     
 }

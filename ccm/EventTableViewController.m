@@ -14,6 +14,8 @@
 
 @implementation EventTableViewController
 
+@synthesize data;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -22,13 +24,59 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
     
-//    [self setTitle:[data from]];
-//    [[self subject] setText:[data subject]];
-//    [[self to] setText:[data to]];
-//    [[self date] setText:[[data date]description] ];
-//    NSLog(@"%@",[data message]);
-//    [[self text] setText:[data message]];
+    [[self time] setText:[data date]];
+    
+    [[self desc] setText:[data desc]];
+    
+}
+
+-(void) viewWillAppear:(BOOL)animated  {
+//    [[self map] setCenterCoordinate:[CLLocationCoordinate2DMake([[data lat] doubleValue], [[data lng] doubleValue])]];
+    CLLocationDegrees lat = [[data lat] doubleValue];
+    CLLocationDegrees lng = [[data lng] doubleValue];
+    CLLocationCoordinate2D cord = {lat, lng};
+    MKCoordinateSpan span = {.005, 0};
+    MKCoordinateRegion region = {cord, span};
+    [[self map] setRegion:region];
+    
+    MKPointAnnotation *ann = [[MKPointAnnotation alloc] init];
+    [ann setCoordinate:cord];
+    [ann setTitle:[data location]];
+    [[self map] addAnnotation:ann];
+    _annonation = ann;
+    
+//    NSLog(@"%@", [data lat]);
+}
+
+-(MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+    MKPinAnnotationView *customPin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"LocPin"];
+    customPin.pinColor = MKPinAnnotationColorRed;
+    customPin.canShowCallout = YES;
+    
+    UIButton *right = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    [right addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
+    customPin.rightCalloutAccessoryView = right;
+    
+    return customPin;
+    
+}
+
+- (void)mapView:(MKMapView *)mapView
+  annotationView:(MKAnnotationView *)view
+calloutAccessoryControlTapped:(UIControl *)control {
+    id <MKAnnotation> annon = [view annotation];
+    MKPlacemark *place = [[MKPlacemark alloc] initWithCoordinate:[annon coordinate]  addressDictionary: nil ];
+    MKMapItem *item = [[MKMapItem alloc] initWithPlacemark:place];
+    [item setName:[annon title]];
+//    [item openInMapsWithLaunchOptions:nil];
+    [item openInMapsWithLaunchOptions:[NSDictionary dictionaryWithObjectsAndKeys:MKLaunchOptionsDirectionsModeWalking, MKLaunchOptionsDirectionsModeKey, nil]];
+    
+}
+
+-(void) mapViewDidFinishLoadingMap:(MKMapView *)mapView {
+    [mapView selectAnnotation:_annonation animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,15 +87,15 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
+
     // Return the number of rows in the section.
-    return 4;
+    return 3;
 }
 
 /*

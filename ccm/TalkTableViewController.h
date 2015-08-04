@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Talks.h"
 
-@interface TalkTableViewController : UITableViewController
+@interface TalkTableViewController : UITableViewController 
 - (IBAction)refTap:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *author;

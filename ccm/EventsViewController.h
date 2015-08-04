@@ -17,6 +17,8 @@
 
 @property NSArray *content;
 @property (weak, nonatomic) IBOutlet UITableView *table;
+- (IBAction)swipe:(id)sender;
+- (IBAction)swipeLeft:(id)sender;
 
 @property NSIndexPath *selectedRow;
 
