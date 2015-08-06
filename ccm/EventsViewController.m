@@ -20,10 +20,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     content = [DataController getEvents];
-    if ([content count] == 0){
+    if([content count] == 0){
         [DataController setDelegate:self];
     }
 }
+
+-(void) viewWillAppear:(BOOL)animated{
+    if ([content count] != [DataController getNumEvents]){
+        [self didUpdateData];
+    }
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

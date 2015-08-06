@@ -21,6 +21,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     content = [DataController getMessages];
+    if([content count] == 0){
+        [DataController setDelegate:self];
+    }
+    
+    SWRevealViewController *rvc = [self revealViewController];
+    if (rvc){
+        [[self moreButton] setTarget:[self revealViewController]];
+        [[self moreButton] setAction:@selector(revealToggle:)];
+        [[self view] addGestureRecognizer:[[self revealViewController] panGestureRecognizer]];
+        
+    }
+}
+
+-(void) viewWillAppear:(BOOL)animated{
+    if ([content count] != [DataController getNumMsgs]){
+        [self didUpdateData];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,7 +45,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+-(void) didUpdateData{
+    content = [DataController getMessages];
+    [[self table] reloadData];
+}/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -77,4 +97,5 @@
 - (IBAction)swipeLeft:(id)sender {
     [[self tabBarController] setSelectedViewController:[[[self tabBarController] viewControllers]objectAtIndex:1]];
 }
+
 @end

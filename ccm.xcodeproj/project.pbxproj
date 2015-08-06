@@ -39,12 +39,17 @@
 		DB27BD4D1B6706B80068F0BE /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD4C1B6706B80068F0BE /* SignInViewController.m */; };
 		DB27BD501B67078A0068F0BE /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD4F1B67078A0068F0BE /* SignUpViewController.m */; };
 		DB27BD531B670B4F0068F0BE /* AdminRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD521B670B4F0068F0BE /* AdminRequest.m */; };
+		DB2B7DD71B72E67A00CC2EB5 /* AddMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2B7DD61B72E67A00CC2EB5 /* AddMessageViewController.m */; };
+		DB2B7DDA1B72F2A000CC2EB5 /* AddTalkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2B7DD91B72F2A000CC2EB5 /* AddTalkViewController.m */; };
+		DB2B7DE21B72FA6C00CC2EB5 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2B7DE11B72FA6C00CC2EB5 /* SWRevealViewController.m */; };
+		DB2B7DE51B72FD3600CC2EB5 /* NavTrayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2B7DE41B72FD3600CC2EB5 /* NavTrayViewController.m */; };
 		DB2BFEA11B68615900B12A0B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2BFE9E1B6860FF00B12A0B /* Security.framework */; };
 		DB2BFEA21B68615900B12A0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2BFE9C1B6860F500B12A0B /* Foundation.framework */; };
 		DB2BFEA31B68615900B12A0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2BFE9A1B6860EC00B12A0B /* UIKit.framework */; };
 		DB2BFEA61B6869C700B12A0B /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2BFEA51B6869C700B12A0B /* KeychainItemWrapper.m */; };
 		DB2BFEA91B687EA800B12A0B /* StarterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2BFEA81B687EA800B12A0B /* StarterViewController.m */; };
 		DB5AA7DD1B6DD10F00308E57 /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5AA7DC1B6DD10F00308E57 /* MainTabViewController.m */; };
+		DB78CE811B711EF200132EDB /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DB78CE801B711EF200132EDB /* DateUtil.m */; };
 		DB8F1C301B6D8B27007B3DAB /* TalksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8F1C2F1B6D8B27007B3DAB /* TalksViewController.m */; };
 		DB8F1C331B6D8B3C007B3DAB /* TalksTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8F1C321B6D8B3C007B3DAB /* TalksTableViewCell.m */; };
 		DBA4AE5E1B699E99000613F8 /* Groups.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE5D1B699E99000613F8 /* Groups.m */; };
@@ -54,6 +59,8 @@
 		DBA4AE6A1B699E9A000613F8 /* Locations.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE691B699E9A000613F8 /* Locations.m */; };
 		DBA4AE6D1B699EE4000613F8 /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE6C1B699EE4000613F8 /* DataController.m */; };
 		DBA4AE701B69A227000613F8 /* DataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE6F1B69A227000613F8 /* DataRequest.m */; };
+		DBBB54CA1B72808800E6E1B0 /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBB54C91B72808800E6E1B0 /* AddEventViewController.m */; };
+		DBCC1EA91B719C24009B8B7B /* StaticDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCC1EA81B719C24009B8B7B /* StaticDataTableViewController.m */; };
 		DBE9E8711B6E8A1700D646E0 /* MsgTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE9E8701B6E8A1700D646E0 /* MsgTableViewController.m */; };
 		DBE9E8741B6E9DDD00D646E0 /* EventTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE9E8731B6E9DDD00D646E0 /* EventTableViewController.m */; };
 		DBE9E8771B6E9DEB00D646E0 /* TalkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE9E8761B6E9DEB00D646E0 /* TalkTableViewController.m */; };
@@ -136,6 +143,14 @@
 		DB27BD4F1B67078A0068F0BE /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		DB27BD511B670B4F0068F0BE /* AdminRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminRequest.h; sourceTree = "<group>"; };
 		DB27BD521B670B4F0068F0BE /* AdminRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminRequest.m; sourceTree = "<group>"; };
+		DB2B7DD51B72E67A00CC2EB5 /* AddMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMessageViewController.h; sourceTree = "<group>"; };
+		DB2B7DD61B72E67A00CC2EB5 /* AddMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMessageViewController.m; sourceTree = "<group>"; };
+		DB2B7DD81B72F2A000CC2EB5 /* AddTalkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTalkViewController.h; sourceTree = "<group>"; };
+		DB2B7DD91B72F2A000CC2EB5 /* AddTalkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTalkViewController.m; sourceTree = "<group>"; };
+		DB2B7DE01B72FA6C00CC2EB5 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		DB2B7DE11B72FA6C00CC2EB5 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		DB2B7DE31B72FD3600CC2EB5 /* NavTrayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavTrayViewController.h; sourceTree = "<group>"; };
+		DB2B7DE41B72FD3600CC2EB5 /* NavTrayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavTrayViewController.m; sourceTree = "<group>"; };
 		DB2BFE941B68588600B12A0B /* Constaints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constaints.h; sourceTree = "<group>"; };
 		DB2BFE9A1B6860EC00B12A0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DB2BFE9C1B6860F500B12A0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -146,6 +161,8 @@
 		DB2BFEA81B687EA800B12A0B /* StarterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarterViewController.m; sourceTree = "<group>"; };
 		DB5AA7DB1B6DD10F00308E57 /* MainTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabViewController.h; sourceTree = "<group>"; };
 		DB5AA7DC1B6DD10F00308E57 /* MainTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabViewController.m; sourceTree = "<group>"; };
+		DB78CE7F1B711EF200132EDB /* DateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtil.h; sourceTree = "<group>"; };
+		DB78CE801B711EF200132EDB /* DateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtil.m; sourceTree = "<group>"; };
 		DB8F1C2E1B6D8B27007B3DAB /* TalksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalksViewController.h; sourceTree = "<group>"; };
 		DB8F1C2F1B6D8B27007B3DAB /* TalksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalksViewController.m; sourceTree = "<group>"; };
 		DB8F1C311B6D8B3C007B3DAB /* TalksTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalksTableViewCell.h; sourceTree = "<group>"; };
@@ -164,6 +181,10 @@
 		DBA4AE6C1B699EE4000613F8 /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
 		DBA4AE6E1B69A227000613F8 /* DataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataRequest.h; sourceTree = "<group>"; };
 		DBA4AE6F1B69A227000613F8 /* DataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataRequest.m; sourceTree = "<group>"; };
+		DBBB54C81B72808800E6E1B0 /* AddEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventViewController.h; sourceTree = "<group>"; };
+		DBBB54C91B72808800E6E1B0 /* AddEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventViewController.m; sourceTree = "<group>"; };
+		DBCC1EA71B719C24009B8B7B /* StaticDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticDataTableViewController.h; sourceTree = "<group>"; };
+		DBCC1EA81B719C24009B8B7B /* StaticDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticDataTableViewController.m; sourceTree = "<group>"; };
 		DBE9E86F1B6E8A1700D646E0 /* MsgTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgTableViewController.h; sourceTree = "<group>"; };
 		DBE9E8701B6E8A1700D646E0 /* MsgTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgTableViewController.m; sourceTree = "<group>"; };
 		DBE9E8721B6E9DDD00D646E0 /* EventTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewController.h; sourceTree = "<group>"; };
@@ -259,12 +280,14 @@
 		DB1380301B6B1B96004965C7 /* events view */ = {
 			isa = PBXGroup;
 			children = (
-				DBE9E8721B6E9DDD00D646E0 /* EventTableViewController.h */,
-				DBE9E8731B6E9DDD00D646E0 /* EventTableViewController.m */,
 				DB13802A1B6B10F0004965C7 /* EventsViewController.h */,
 				DB13802B1B6B10F0004965C7 /* EventsViewController.m */,
 				DB13802D1B6B1B92004965C7 /* EventsTableViewCell.h */,
 				DB13802E1B6B1B92004965C7 /* EventsTableViewCell.m */,
+				DBE9E8721B6E9DDD00D646E0 /* EventTableViewController.h */,
+				DBE9E8731B6E9DDD00D646E0 /* EventTableViewController.m */,
+				DBBB54C81B72808800E6E1B0 /* AddEventViewController.h */,
+				DBBB54C91B72808800E6E1B0 /* AddEventViewController.m */,
 			);
 			name = "events view";
 			sourceTree = "<group>";
@@ -272,12 +295,14 @@
 		DB1380371B6B27FC004965C7 /* msgs view */ = {
 			isa = PBXGroup;
 			children = (
-				DBE9E86F1B6E8A1700D646E0 /* MsgTableViewController.h */,
-				DBE9E8701B6E8A1700D646E0 /* MsgTableViewController.m */,
-				DB1380311B6B24FD004965C7 /* MessagesTableViewCell.h */,
-				DB1380321B6B24FD004965C7 /* MessagesTableViewCell.m */,
 				DB1380341B6B250C004965C7 /* MessagesViewController.h */,
 				DB1380351B6B250C004965C7 /* MessagesViewController.m */,
+				DB1380311B6B24FD004965C7 /* MessagesTableViewCell.h */,
+				DB1380321B6B24FD004965C7 /* MessagesTableViewCell.m */,
+				DBE9E86F1B6E8A1700D646E0 /* MsgTableViewController.h */,
+				DBE9E8701B6E8A1700D646E0 /* MsgTableViewController.m */,
+				DB2B7DD51B72E67A00CC2EB5 /* AddMessageViewController.h */,
+				DB2B7DD61B72E67A00CC2EB5 /* AddMessageViewController.m */,
 			);
 			name = "msgs view";
 			sourceTree = "<group>";
@@ -363,12 +388,26 @@
 			name = admin;
 			sourceTree = "<group>";
 		};
+		DB2B7DDF1B72FA6C00CC2EB5 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DB2B7DE01B72FA6C00CC2EB5 /* SWRevealViewController.h */,
+				DB2B7DE11B72FA6C00CC2EB5 /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
 		DB2BFE931B68580A00B12A0B /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				DB2B7DDF1B72FA6C00CC2EB5 /* SWRevealViewController */,
+				DBCC1EA71B719C24009B8B7B /* StaticDataTableViewController.h */,
+				DBCC1EA81B719C24009B8B7B /* StaticDataTableViewController.m */,
 				DB2BFEA41B6869C700B12A0B /* KeychainItemWrapper.h */,
 				DB2BFEA51B6869C700B12A0B /* KeychainItemWrapper.m */,
 				DB2BFE941B68588600B12A0B /* Constaints.h */,
+				DB78CE7F1B711EF200132EDB /* DateUtil.h */,
+				DB78CE801B711EF200132EDB /* DateUtil.m */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -391,6 +430,8 @@
 				DB5AA7DC1B6DD10F00308E57 /* MainTabViewController.m */,
 				DB2BFEA71B687EA800B12A0B /* StarterViewController.h */,
 				DB2BFEA81B687EA800B12A0B /* StarterViewController.m */,
+				DB2B7DE31B72FD3600CC2EB5 /* NavTrayViewController.h */,
+				DB2B7DE41B72FD3600CC2EB5 /* NavTrayViewController.m */,
 			);
 			name = "principal views";
 			sourceTree = "<group>";
@@ -404,6 +445,8 @@
 				DB8F1C321B6D8B3C007B3DAB /* TalksTableViewCell.m */,
 				DBE9E8751B6E9DEB00D646E0 /* TalkTableViewController.h */,
 				DBE9E8761B6E9DEB00D646E0 /* TalkTableViewController.m */,
+				DB2B7DD81B72F2A000CC2EB5 /* AddTalkViewController.h */,
+				DB2B7DD91B72F2A000CC2EB5 /* AddTalkViewController.m */,
 			);
 			name = "talks view";
 			sourceTree = "<group>";
@@ -479,6 +522,7 @@
 				TargetAttributes = {
 					DB27BD151B6705100068F0BE = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = KWBQL246F3;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -538,6 +582,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBCC1EA91B719C24009B8B7B /* StaticDataTableViewController.m in Sources */,
 				DB8F1C331B6D8B3C007B3DAB /* TalksTableViewCell.m in Sources */,
 				DB13801D1B6A86C2004965C7 /* AFSecurityPolicy.m in Sources */,
 				DB13801A1B6A86C2004965C7 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -547,18 +592,22 @@
 				DB27BD1F1B6705100068F0BE /* AppDelegate.m in Sources */,
 				DB27BD221B6705100068F0BE /* FirstViewController.m in Sources */,
 				DBA4AE671B699E9A000613F8 /* Messages.m in Sources */,
+				DB2B7DD71B72E67A00CC2EB5 /* AddMessageViewController.m in Sources */,
 				DB1380251B6A86C2004965C7 /* UIButton+AFNetworking.m in Sources */,
 				DB2BFEA91B687EA800B12A0B /* StarterViewController.m in Sources */,
 				DB13802F1B6B1B93004965C7 /* EventsTableViewCell.m in Sources */,
 				DB1380261B6A86C2004965C7 /* UIImageView+AFNetworking.m in Sources */,
+				DB78CE811B711EF200132EDB /* DateUtil.m in Sources */,
 				DBA4AE6D1B699EE4000613F8 /* DataController.m in Sources */,
 				DB1380361B6B250C004965C7 /* MessagesViewController.m in Sources */,
 				DB1380271B6A86C2004965C7 /* UIProgressView+AFNetworking.m in Sources */,
 				DB27BD1C1B6705100068F0BE /* main.m in Sources */,
 				DB1380221B6A86C2004965C7 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				DB2B7DE21B72FA6C00CC2EB5 /* SWRevealViewController.m in Sources */,
 				DB27BD4D1B6706B80068F0BE /* SignInViewController.m in Sources */,
 				DB1380291B6A86C2004965C7 /* UIWebView+AFNetworking.m in Sources */,
 				DB13801B1B6A86C2004965C7 /* AFHTTPSessionManager.m in Sources */,
+				DBBB54CA1B72808800E6E1B0 /* AddEventViewController.m in Sources */,
 				DB27BD501B67078A0068F0BE /* SignUpViewController.m in Sources */,
 				DBA4AE611B699E9A000613F8 /* Events.m in Sources */,
 				DB13801E1B6A86C2004965C7 /* AFURLConnectionOperation.m in Sources */,
@@ -572,12 +621,14 @@
 				DB1380231B6A86C2004965C7 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				DB2BFEA61B6869C700B12A0B /* KeychainItemWrapper.m in Sources */,
 				DB5AA7DD1B6DD10F00308E57 /* MainTabViewController.m in Sources */,
+				DB2B7DDA1B72F2A000CC2EB5 /* AddTalkViewController.m in Sources */,
 				DB1380241B6A86C2004965C7 /* UIAlertView+AFNetworking.m in Sources */,
 				DB8F1C301B6D8B27007B3DAB /* TalksViewController.m in Sources */,
 				DB27BD531B670B4F0068F0BE /* AdminRequest.m in Sources */,
 				DBA4AE5E1B699E99000613F8 /* Groups.m in Sources */,
 				DBA4AE641B699E9A000613F8 /* Talks.m in Sources */,
 				DBE9E8711B6E8A1700D646E0 /* MsgTableViewController.m in Sources */,
+				DB2B7DE51B72FD3600CC2EB5 /* NavTrayViewController.m in Sources */,
 				DB13801C1B6A86C2004965C7 /* AFNetworkReachabilityManager.m in Sources */,
 				DBE9E8741B6E9DDD00D646E0 /* EventTableViewController.m in Sources */,
 				DBA4AE701B69A227000613F8 /* DataRequest.m in Sources */,
@@ -708,6 +759,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ccm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -718,6 +770,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ccm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

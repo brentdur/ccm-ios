@@ -25,31 +25,14 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    NSDateFormatter *df = [[NSDateFormatter alloc]init];
-
-    [df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
-    NSDate *date = [df dateFromString:[[data date]description]];
-
-    NSTimeInterval distance = [date timeIntervalSinceNow];
-    NSLog(@"%f", distance);
-    distance = distance / 86400;
-    NSLog(@"%f", distance);
-    NSString *sDate = [[NSString alloc] init];
-    if (distance < -30 || distance >= 1){
-        [df setDateFormat:@"MM/dd"];
-        sDate = [df stringFromDate:date];
-    }
-    else {
-        distance *= -1;
-        sDate = [NSString stringWithFormat:@"%.0f days ago", distance];
-    }
+    
+    NSString *sDate = [DateUtil stringFromDate:[data date]];
     
     [self setTitle:[data from]];
     [[self subject] setText:[data subject]];
-    [[self to] setText:[data to]];
+    
+    [[self to] setText:[NSString stringWithFormat:@"%@ %@", @"for", [data to]]];
     [[self date] setText:sDate];
-    NSLog(@"%@",date);
-    NSLog(@"%@",sDate);
     [[self text] setText:[data message]];
     
 }
@@ -62,15 +45,17 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
+-(CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.1f;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 4;
+    return 3;
 }
 
 /*

@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Talks.h"
+#import "DateUtil.h"
+#import "StaticDataTableViewController.h"
 
-@interface TalkTableViewController : UITableViewController 
+@interface TalkTableViewController : StaticDataTableViewController
 - (IBAction)refTap:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *author;
@@ -17,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *ref;
 @property (weak, nonatomic) IBOutlet UITextView *fillRef;
 @property (weak, nonatomic) IBOutlet UITextView *outline;
+@property (weak, nonatomic) IBOutlet UITableViewCell *fullRefCell;
 
 @property BOOL cellHidden;
 

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Messages.h"
+#import "DateUtil.h"
 
 
 @interface MsgTableViewController : UITableViewController

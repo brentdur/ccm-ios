@@ -20,13 +20,27 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     content = [DataController getTalks];
+    if([content count] == 0){
+        [DataController setDelegate:self];
+    }
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    if ([content count] != [DataController getNumTalks]){
+        [self didUpdateData];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+-(void) didUpdateData{
+    content = [DataController getTalks];
+    [[self table] reloadData];
+}
 /*
 #pragma mark - Navigation
 

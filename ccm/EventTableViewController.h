@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "Events.h"
+#import "DateUtil.h"
 
 @interface EventTableViewController : UITableViewController <MKMapViewDelegate>
 
@@ -18,5 +19,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *time;
 @property (weak, nonatomic) IBOutlet UITextView *desc;
+
+@property NSTimer *timer;
 
 @end

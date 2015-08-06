@@ -15,6 +15,7 @@
 @implementation EventTableViewController
 
 @synthesize data;
+@synthesize timer;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,8 +26,8 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-    
-    [[self time] setText:[data date]];
+    [self setTitle:[data name]];
+    [[self time] setText:[DateUtil stringFromDateTil:[data date]]];
     
     [[self desc] setText:[data desc]];
     
@@ -47,7 +48,22 @@
     [[self map] addAnnotation:ann];
     _annonation = ann;
     
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateCounter:) userInfo:nil repeats:YES];
+    
 //    NSLog(@"%@", [data lat]);
+}
+
+-(void) viewDidDisappear:(BOOL)animated{
+    [timer invalidate];
+}
+
+-(void)updateCounter:(NSTimer *)timer{
+    [[self time] setText:[DateUtil stringFromDateTil:[data date]]];
+
+}
+
+-(CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.1f;
 }
 
 -(MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{

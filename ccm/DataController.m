@@ -12,6 +12,9 @@
 @implementation DataController
 
 static id <DataControllerDelegate> delegate;
+static NSUInteger numEvents;
+static NSUInteger numMsgs;
+static NSUInteger numTalks;
 
 +(void) sync {
     NSManagedObjectContext *moc =  [(AppDelegate *) [[UIApplication sharedApplication] delegate] managedObjectContext];
@@ -34,6 +37,27 @@ static id <DataControllerDelegate> delegate;
     
 }
 
++(void) addEventWithData:(NSDictionary *) data{
+    DataRequest *si = [DataRequest sharedInstance];
+    [si AFpostWithUrl:URL_POST_EVENTS andData:data returnTo:^(NSMutableArray *data, NSError *error) {
+        NSLog(@"returned");
+    }];
+}
+
++(void) addMsgWithData:(NSDictionary *) data{
+    DataRequest *si = [DataRequest sharedInstance];
+    [si AFpostWithUrl:URL_POST_MESSAGES andData:data returnTo:^(NSMutableArray *data, NSError *error) {
+        NSLog(@"returned");
+    }];
+}
+
++(void) addTalkWithData:(NSDictionary *)data{
+    DataRequest *si = [DataRequest sharedInstance];
+    [si AFpostWithUrl:URL_POST_TALKS andData:data returnTo:^(NSMutableArray *data, NSError *error) {
+        NSLog(@"returned");
+    }];
+}
+
 +(NSArray *) getsForEntity: (NSString *) name{
     NSManagedObjectContext *moc =  [(AppDelegate *) [[UIApplication sharedApplication] delegate] managedObjectContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -44,15 +68,20 @@ static id <DataControllerDelegate> delegate;
 }
 
 +(NSArray *) getEvents{
-    return [self getsForEntity:ENTITY_EVENT];
+    NSArray *ret = [self getsForEntity:ENTITY_EVENT];
+    return ret;
 }
 
 +(NSArray *) getTalks{
-    return [self getsForEntity:ENTITY_TALKS];
+    NSArray *ret = [self getsForEntity:ENTITY_TALKS];
+    
+    return ret;
 }
 
 +(NSArray *) getMessages{
-    return [self getsForEntity:ENTITY_MESSAGES];
+    NSArray *ret = [self getsForEntity:ENTITY_MESSAGES];
+    
+    return ret;
 }
 
 +(NSArray *) getGroups{
@@ -73,12 +102,15 @@ static id <DataControllerDelegate> delegate;
     int creates = 0;
     NSArray *database;
     if ([type isEqualToString:ENTITY_EVENT]) {
+        numEvents = [array count];
         database = [self getEvents];
     }
     else if ([type isEqualToString:ENTITY_TALKS]) {
+        numTalks = [array count];
         database = [self getTalks];
     }
     else if ([type isEqualToString:ENTITY_MESSAGES]) {
+        numMsgs = [array count];
         database = [self getMessages];
     }
     else if ([type isEqualToString:ENTITY_GROUPS]) {
@@ -87,7 +119,7 @@ static id <DataControllerDelegate> delegate;
     else if ([type isEqualToString:ENTITY_LOCATIONS]) {
         database = [self getLocations];
     }
-    NSLog(@"%@", array);
+    NSLog(@"Array Count: %lu", [array count]);
     
     for (id saved in database){
         BOOL found = false;
@@ -95,17 +127,14 @@ static id <DataControllerDelegate> delegate;
             if([[saved getIdd] isEqualToString:[item valueForKey:@"_id"]]){
                 found = true;
                 if([(NSNumber *)[item valueForKey:@"version"] compare:[saved getVersion]] > 0){
-                    NSLog(@"update");
                     [saved setDescriptionUsing:item];
                     updates++;
                 }
-                NSLog(@"remove from array");
                 [array removeObject:item];
                 break;
             }
         }
         if(!found){
-            NSLog(@"delete");
             [context deleteObject:saved];
             deletes++;
         }
@@ -121,6 +150,18 @@ static id <DataControllerDelegate> delegate;
         delegate = nil;
     }
     [context save:nil];
+}
+
++(NSUInteger) getNumEvents{
+    return numEvents;
+}
+
++(NSUInteger) getNumMsgs{
+    return numMsgs;
+}
+
++(NSUInteger) getNumTalks{
+    return numTalks;
 }
 
 @end

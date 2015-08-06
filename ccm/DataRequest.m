@@ -98,7 +98,6 @@ static DataRequest *sharedInstance = nil;
     [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation * operation, id responseObject) {
         NSError *error = nil;
         
-        NSLog(@"AF: data recieved");
         NSMutableArray *dic = (NSMutableArray *) responseObject;
         handler(dic, error);
         
@@ -109,6 +108,31 @@ static DataRequest *sharedInstance = nil;
     [op start];
     
 }
+
+-(void) AFpostWithUrl:(NSString *)urlString andData:(NSDictionary *) params returnTo:(void (^)(NSMutableArray * data, NSError * error)) handler {
+    
+    
+    NSString *key = (NSString *)[KeychainItemWrapper load:KEYCHAIN_KEY_TOKEN];
+
+    
+    NSError *error = [[NSError alloc] init];
+    AFJSONRequestSerializer *serial = [AFJSONRequestSerializer serializer];
+    NSMutableURLRequest *request = [serial requestWithMethod:@"POST" URLString:urlString parameters:params error:&error ];
+    [request setValue:[NSString stringWithFormat:@"Bearer %@", key] forHTTPHeaderField:@"Authorization"];
+
+    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    NSLog(@"%@",[[op request] HTTPBody]);
+    op.responseSerializer = [AFJSONResponseSerializer serializer];
+    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Response: %lu", (long)[responseObject statusCode]);
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    [op start];
+    
+}
+
 
 
 #pragma mark - NSURLSessionTaskDelegate Methods
@@ -134,11 +158,9 @@ static DataRequest *sharedInstance = nil;
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data
 {
     //second method to fire as data is recieved
-    NSLog(@"did recieve data");
 //    [self.response appendData:data];
 //    [self.data setValue:[[self.data valueForKey:[[[dataTask currentRequest] URL] absoluteString]] appendData:data] forKey:[[dataTask currentRequest] URL] absoluteString]];
     //
-    NSLog(@"%@", [self.data objectForKey:[[[dataTask currentRequest] URL] absoluteString]]);
     
 }
 
@@ -157,7 +179,6 @@ static DataRequest *sharedInstance = nil;
         NSLog(@"%@", error);
     }
     for (NSMutableDictionary *object in ar){
-        NSLog(@"%@", object);
     }
 
     NSString *type = [[[task currentRequest] URL] absoluteString];

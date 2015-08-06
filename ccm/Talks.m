@@ -31,7 +31,7 @@
     self.id = [item valueForKey:@"_id"];
     self.author = [item valueForKey:@"author"];
     self.subject = [item valueForKey:@"subject"];
-    self.date = [item valueForKey:@"date"];
+    self.date = [DateUtil dateFromString:[item valueForKey:@"date"]];
     self.reference = [item valueForKey:@"reference"];
     self.outline = @"";
     for (id name in [item valueForKey:@"outline"]){

@@ -22,6 +22,10 @@
 
 +(void) sync;
 
++(void) addEventWithData:(NSDictionary *) data;
++(void) addMsgWithData:(NSDictionary *) data;
++(void) addTalkWithData:(NSDictionary *) data;
+
 # pragma mark - Get methods
 +(NSArray *) getEvents;
 +(NSArray *) getTalks;
@@ -32,6 +36,13 @@
 +(void) deleteEvents;
 
 +(void) setDelegate:(id) del;
+
+
+
++(NSUInteger) getNumEvents;
++(NSUInteger) getNumMsgs;
++(NSUInteger) getNumTalks;
+
 
 @end
 

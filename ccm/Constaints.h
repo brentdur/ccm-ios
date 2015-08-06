@@ -9,11 +9,17 @@
 #ifndef ccm_Constaints_h
 #define ccm_Constaints_h
 
-#define URL_GET_EVENTS @"http://ccm.brentondurkee.com/api/events"
-#define URL_GET_MESSAGES @"http://ccm.brentondurkee.com/api/messages/mine"
-#define URL_GET_TALKS @"http://ccm.brentondurkee.com/api/talks"
-#define URL_GET_GROUPS @"http://ccm.brentondurkee.com/api/groups"
-#define URL_GET_LOCATIONS @"http://ccm.brentondurkee.com/api/locations"
+#define URL_DOMAIN @"http://ccm.brentondurkee.com"
+
+#define URL_GET_EVENTS (URL_DOMAIN @"/api/events")
+#define URL_GET_MESSAGES (URL_DOMAIN @"/api/messages/mine")
+#define URL_GET_TALKS (URL_DOMAIN @"/api/talks")
+#define URL_GET_GROUPS (URL_DOMAIN @"/api/groups")
+#define URL_GET_LOCATIONS (URL_DOMAIN @"/api/locations")
+
+#define URL_POST_EVENTS (URL_DOMAIN @"/api/events")
+#define URL_POST_MESSAGES (URL_DOMAIN @"/api/messages")
+#define URL_POST_TALKS (URL_DOMAIN @"/api/talks")
 
 #define KEY_EVENT_DATA @"events"
 #define KEY_MESSAGES_DATA @"msgs"
