@@ -11,13 +11,14 @@
 #import "StaticDataTableViewController.h"
 
 
-@interface AddTalkViewController : StaticDataTableViewController
+@interface AddTalkViewController : StaticDataTableViewController <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @property (weak, nonatomic) IBOutlet UITextField *subjectField;
 @property (weak, nonatomic) IBOutlet UITextField *authorField;
 @property (weak, nonatomic) IBOutlet UITextField *dateField;
 
+@property (weak, nonatomic) IBOutlet UILabel *fieldLabel;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *done;
 
 @end

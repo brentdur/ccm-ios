@@ -14,5 +14,6 @@
 +(NSDate *) dateFromString:(NSString *) string;
 +(NSString *) stringFromDate:(NSDate *) date;
 +(NSString *) stringFromDateTil:(NSDate *) date;
++(NSString *) eventLittleString:(NSDate *) date;
 
 @end

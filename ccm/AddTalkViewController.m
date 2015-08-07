@@ -17,10 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.textView.layer.borderWidth = .5f;
-    self.textView.layer.cornerRadius = 10.0f;
-    self.textView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,6 +26,16 @@
 
 -(CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 0.1f;
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    [[self fieldLabel] setHidden:YES];
+}
+
+- (void) textViewDidEndEditing:(UITextView *)textView {
+    if([[textView text] isEqualToString:@""]){
+        [[self fieldLabel] setHidden:NO];
+    }
 }
 
 /*

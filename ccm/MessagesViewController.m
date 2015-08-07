@@ -16,6 +16,7 @@
 
 @synthesize content;
 @synthesize selectedRow;
+@synthesize refresh;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,14 +31,20 @@
         [[self moreButton] setTarget:[self revealViewController]];
         [[self moreButton] setAction:@selector(revealToggle:)];
         [[self view] addGestureRecognizer:[[self revealViewController] panGestureRecognizer]];
-        
     }
+    
+    [refresh addTarget:self action:@selector(refreshStuff) forControlEvents:UIControlEventValueChanged];
 }
 
 -(void) viewWillAppear:(BOOL)animated{
     if ([content count] != [DataController getNumMsgs]){
         [self didUpdateData];
     }
+}
+
+-(void) refreshStuff{
+    NSLog(@"refresh");
+    [refresh endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,7 +54,7 @@
 
 -(void) didUpdateData{
     content = [DataController getMessages];
-    [[self table] reloadData];
+    [[self tableView] reloadData];
 }/*
 #pragma mark - Navigation
 

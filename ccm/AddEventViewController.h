@@ -11,7 +11,7 @@
 #import "StaticDataTableViewController.h"
 #import "DataController.h"
 
-@interface AddEventViewController : StaticDataTableViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface AddEventViewController : StaticDataTableViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableViewCell *cell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *cell2;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
@@ -23,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *dateField;
 @property (weak, nonatomic) IBOutlet UITextField *locNameField;
 @property (weak, nonatomic) IBOutlet UITextField *locAddField;
+@property (weak, nonatomic) IBOutlet UILabel *fieldLabel;
+
 
 - (IBAction)done:(id)sender;
 

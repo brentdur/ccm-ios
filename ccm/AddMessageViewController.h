@@ -10,6 +10,7 @@
 #import "DataController.h"
 #import "StaticDataTableViewController.h"
 #import "DataController.h"
+#import "SWRevealViewController.h"
 
 @interface AddMessageViewController : StaticDataTableViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
@@ -21,6 +22,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *subjectField;
 @property (weak, nonatomic) IBOutlet UITextView *messageField;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *moreButton;
 
 - (IBAction)done:(id)sender;
 

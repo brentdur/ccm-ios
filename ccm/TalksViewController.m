@@ -15,6 +15,7 @@
 @implementation TalksViewController
 
 @synthesize content;
+@synthesize refresh;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,12 +24,26 @@
     if([content count] == 0){
         [DataController setDelegate:self];
     }
+    
+    SWRevealViewController *rvc = [self revealViewController];
+    if (rvc){
+        [[self moreButton] setTarget:[self revealViewController]];
+        [[self moreButton] setAction:@selector(revealToggle:)];
+        [[self view] addGestureRecognizer:[[self revealViewController] panGestureRecognizer]];
+    }
+    
+    [refresh addTarget:self action:@selector(refreshStuff) forControlEvents:UIControlEventValueChanged];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     if ([content count] != [DataController getNumTalks]){
         [self didUpdateData];
     }
+}
+
+-(void) refreshStuff{
+    NSLog(@"refresh");
+    [refresh endRefreshing];
 }
 
 
@@ -39,7 +54,7 @@
 
 -(void) didUpdateData{
     content = [DataController getTalks];
-    [[self table] reloadData];
+    [[self tableView] reloadData];
 }
 /*
 #pragma mark - Navigation
@@ -65,7 +80,7 @@
     }
     
     cell.label1.text = [(Talks *)content[indexPath.row] subject];
-    cell.label2.text = [(Talks *)content[indexPath.row] author];
+    cell.label2.text = [DateUtil eventLittleString:[(Talks *)content[indexPath.row] date]];
     return cell;
 }
 
@@ -83,8 +98,4 @@
     }
 }
 
-
-- (IBAction)swipeRight:(id)sender {
-    [[self tabBarController] setSelectedViewController:[[[self tabBarController] viewControllers]objectAtIndex:1]];
-}
 @end

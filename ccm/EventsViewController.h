@@ -12,13 +12,15 @@
 #import "Events.h"
 #import "EventsTableViewCell.h"
 #import "EventTableViewController.h"
+#import "SWRevealViewController.h"
+#import "DateUtil.h"
 
-@interface EventsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, DataControllerDelegate>
+@interface EventsViewController : UITableViewController <DataControllerDelegate>
 
 @property NSArray *content;
-@property (weak, nonatomic) IBOutlet UITableView *table;
-- (IBAction)swipe:(id)sender;
-- (IBAction)swipeLeft:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIRefreshControl *refresh;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *moreButton;
 
 @property NSIndexPath *selectedRow;
 

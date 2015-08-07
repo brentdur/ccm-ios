@@ -14,13 +14,11 @@
 #import "MsgTableViewController.h"
 #import "SWRevealViewController.h"
 
-@interface MessagesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-
+@interface MessagesViewController : UITableViewController
 @property NSArray *content;
-- (IBAction)swipeLeft:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *moreButton;
-@property (weak, nonatomic) IBOutlet UITableView *table;
+@property (weak, nonatomic) IBOutlet UIRefreshControl *refresh;
 
 @property NSIndexPath *selectedRow;
 

@@ -24,6 +24,13 @@
     self.textView.layer.borderWidth = .5f;
     self.textView.layer.cornerRadius = 10.0f;
     self.textView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    
+    SWRevealViewController *rvc = [self revealViewController];
+    if (rvc){
+        [[self moreButton] setTarget:[self revealViewController]];
+        [[self moreButton] setAction:@selector(revealToggle:)];
+        [[self view] addGestureRecognizer:[[self revealViewController] panGestureRecognizer]];
+    }
 
     
 }

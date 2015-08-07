@@ -12,12 +12,14 @@
 #import "Talks.h"
 #import "TalksTableViewCell.h"
 #import "TalkTableViewController.h"
+#import "SWRevealViewController.h"
 
-@interface TalksViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface TalksViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UITableView *table;
 @property NSArray *content;
-- (IBAction)swipeRight:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIRefreshControl *refresh;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *moreButton;
 
 @property NSIndexPath *selectedRow;
 

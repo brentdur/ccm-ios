@@ -76,4 +76,13 @@
     NSString *sDate = [NSString stringWithFormat:@"starts in %d days %2d:%02d:%02d", daysTil, hoursTil%24, minutesTil % 60, distance % 60];
     return sDate;
 }
+
++(NSString *) eventLittleString:(NSDate *) date{
+    NSDateFormatter *df = [[NSDateFormatter alloc]init];
+    NSString *sDate = [[NSString alloc] init];
+    [df setDateFormat:@"MM/dd"];
+    sDate = [df stringFromDate:date];
+    return sDate;
+}
+
 @end

@@ -15,6 +15,7 @@
 @implementation EventsViewController
 
 @synthesize content;
+@synthesize refresh;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,12 +24,26 @@
     if([content count] == 0){
         [DataController setDelegate:self];
     }
+    
+    SWRevealViewController *rvc = [self revealViewController];
+    if (rvc){
+        [[self moreButton] setTarget:[self revealViewController]];
+        [[self moreButton] setAction:@selector(revealToggle:)];
+        [[self view] addGestureRecognizer:[[self revealViewController] panGestureRecognizer]];
+    }
+    
+    [refresh addTarget:self action:@selector(refreshStuff) forControlEvents:UIControlEventValueChanged];
 }
 
 -(void) viewWillAppear:(BOOL)animated{
     if ([content count] != [DataController getNumEvents]){
         [self didUpdateData];
     }
+}
+
+-(void) refreshStuff{
+    NSLog(@"refresh");
+    [refresh endRefreshing];
 }
 
 
@@ -40,7 +55,7 @@
 
 -(void) didUpdateData{
     content = [DataController getEvents];
-    [[self table] reloadData];
+    [[self tableView] reloadData];
 }
 
 /*
@@ -70,7 +85,7 @@
     }
     
     cell.label1.text = [(Events *)content[indexPath.row] name];
-    cell.label2.text = [(Events *)content[indexPath.row] location];
+    cell.label2.text = [DateUtil eventLittleString:[(Events *)content[indexPath.row] date]];
     return cell;
 }
 
