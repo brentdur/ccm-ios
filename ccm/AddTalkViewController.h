@@ -17,8 +17,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *subjectField;
 @property (weak, nonatomic) IBOutlet UITextField *authorField;
 @property (weak, nonatomic) IBOutlet UITextField *dateField;
+@property (weak, nonatomic) IBOutlet UITextField *refField;
 
 @property (weak, nonatomic) IBOutlet UILabel *fieldLabel;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *done;
+
+- (IBAction)done:(id)sender;
 
 @end

@@ -1321,6 +1321,26 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ctr-0I-Yzh">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ctr-0I-Yzh" id="u76-4E-nhL">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="reference" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eTg-6C-9XH">
+                                                    <rect key="frame" x="8" y="17" width="584" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eTg-6C-9XH" firstAttribute="leading" secondItem="u76-4E-nhL" secondAttribute="leadingMargin" id="EQ7-a4-J7Z"/>
+                                                <constraint firstItem="eTg-6C-9XH" firstAttribute="trailing" secondItem="u76-4E-nhL" secondAttribute="trailingMargin" id="Iz8-yY-n0x"/>
+                                                <constraint firstItem="eTg-6C-9XH" firstAttribute="centerY" secondItem="u76-4E-nhL" secondAttribute="centerY" id="X6m-Fd-LBY"/>
+                                                <constraint firstItem="eTg-6C-9XH" firstAttribute="centerX" secondItem="u76-4E-nhL" secondAttribute="centerX" id="dE5-Pk-kIz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gNZ-iR-ORa">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -1385,13 +1405,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Talk" id="woB-X8-iLc">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="J6A-Oz-ggz"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="J6A-Oz-ggz">
+                            <connections>
+                                <action selector="done:" destination="euP-YW-drw" id="9VR-8L-flq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="authorField" destination="0uE-jC-iOF" id="Rd0-85-WfY"/>
                         <outlet property="dateField" destination="sfz-88-SJg" id="qb5-63-pHx"/>
-                        <outlet property="done" destination="J6A-Oz-ggz" id="J3j-oB-e6Y"/>
                         <outlet property="fieldLabel" destination="982-A9-Kh4" id="Ocb-aV-WhT"/>
+                        <outlet property="refField" destination="eTg-6C-9XH" id="b7H-mH-FdO"/>
                         <outlet property="subjectField" destination="M2D-Ho-ZN2" id="fWJ-C0-jgf"/>
                         <outlet property="textView" destination="sPl-56-zV3" id="AZz-e8-yId"/>
                     </connections>

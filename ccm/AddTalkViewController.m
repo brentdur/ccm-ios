@@ -48,4 +48,14 @@
 }
 */
 
+- (IBAction)done:(id)sender {
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
+    [data setValue:[[self subjectField] text] forKey:@"subject"];
+    [data setValue:[[self dateField] text] forKey:@"date"];
+    [data setValue:[[self authorField] text] forKey:@"author"];
+    [data setValue:[[self refField] text] forKey:@"reference"];
+    NSDictionary *dic = [NSDictionary dictionaryWithDictionary:data];
+    [DataController addTalkWithData:dic];
+
+}
 @end

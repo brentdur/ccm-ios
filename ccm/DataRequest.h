@@ -31,6 +31,8 @@
 -(void) updateTalksUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler;
 -(void) updateGroupsUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler;
 -(void) updateLocationsUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler;
+-(void) updateTopicsUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler;
+-(void) updateSignupsUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler;
 
 -(void) AFrequestWithURl:(NSString *) urlString returnTo:(void (^)(NSMutableArray * data, NSError * error)) handler;
 -(void) AFpostWithUrl:(NSString *) urlString andData:(NSDictionary *) params returnTo:(void (^)(NSMutableArray * data, NSError * error)) handler;

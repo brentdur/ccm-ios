@@ -16,6 +16,8 @@
 #define URL_GET_TALKS (URL_DOMAIN @"/api/talks")
 #define URL_GET_GROUPS (URL_DOMAIN @"/api/groups")
 #define URL_GET_LOCATIONS (URL_DOMAIN @"/api/locations")
+#define URL_GET_TOPICS (URL_DOMAIN @"/api/topics")
+#define URL_GET_SIGNUPS (URL_DOMAIN @"/api/signups")
 
 #define URL_POST_EVENTS (URL_DOMAIN @"/api/events")
 #define URL_POST_MESSAGES (URL_DOMAIN @"/api/messages")
@@ -26,12 +28,16 @@
 #define KEY_TALKS_DATA @"talks"
 #define KEY_GROUPS_DATA @"groups"
 #define KEY_LOCATIONS_DATA @"locations"
+#define KEY_TOPICS_DATA @"topics"
+#define KEY_SIGNUPS_DATA @"signups"
 
 #define ENTITY_EVENT @"Events"
 #define ENTITY_MESSAGES @"Messages"
 #define ENTITY_TALKS @"Talks"
 #define ENTITY_GROUPS @"Groups"
 #define ENTITY_LOCATIONS @"Locations"
+#define ENTITY_TOPICS @"Topics"
+#define ENTITY_SIGNUPS @"Signups"
 
 #define KEY_HAS_TOKEN @"has_token"
 #define KEY_EMAIL @"email"

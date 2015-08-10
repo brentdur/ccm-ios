@@ -30,7 +30,6 @@
 		DB1380361B6B250C004965C7 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1380351B6B250C004965C7 /* MessagesViewController.m */; };
 		DB27BD1C1B6705100068F0BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD1B1B6705100068F0BE /* main.m */; };
 		DB27BD1F1B6705100068F0BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD1E1B6705100068F0BE /* AppDelegate.m */; };
-		DB27BD221B6705100068F0BE /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD211B6705100068F0BE /* FirstViewController.m */; };
 		DB27BD281B6705110068F0BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB27BD261B6705110068F0BE /* Main.storyboard */; };
 		DB27BD2A1B6705110068F0BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB27BD291B6705110068F0BE /* Images.xcassets */; };
 		DB27BD2D1B6705110068F0BE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB27BD2B1B6705110068F0BE /* LaunchScreen.xib */; };
@@ -48,6 +47,8 @@
 		DB2BFEA31B68615900B12A0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2BFE9A1B6860EC00B12A0B /* UIKit.framework */; };
 		DB2BFEA61B6869C700B12A0B /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2BFEA51B6869C700B12A0B /* KeychainItemWrapper.m */; };
 		DB2BFEA91B687EA800B12A0B /* StarterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2BFEA81B687EA800B12A0B /* StarterViewController.m */; };
+		DB4907AC1B7951EA005B5242 /* Signups.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4907AB1B7951EA005B5242 /* Signups.m */; };
+		DB4907AF1B7951EB005B5242 /* Topics.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4907AE1B7951EB005B5242 /* Topics.m */; };
 		DB5AA7DD1B6DD10F00308E57 /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5AA7DC1B6DD10F00308E57 /* MainTabViewController.m */; };
 		DB78CE811B711EF200132EDB /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DB78CE801B711EF200132EDB /* DateUtil.m */; };
 		DB8F1C301B6D8B27007B3DAB /* TalksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8F1C2F1B6D8B27007B3DAB /* TalksViewController.m */; };
@@ -128,8 +129,6 @@
 		DB27BD1B1B6705100068F0BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DB27BD1D1B6705100068F0BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DB27BD1E1B6705100068F0BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DB27BD201B6705100068F0BE /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		DB27BD211B6705100068F0BE /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		DB27BD271B6705110068F0BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB27BD291B6705110068F0BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DB27BD2C1B6705110068F0BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -159,6 +158,10 @@
 		DB2BFEA51B6869C700B12A0B /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		DB2BFEA71B687EA800B12A0B /* StarterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarterViewController.h; sourceTree = "<group>"; };
 		DB2BFEA81B687EA800B12A0B /* StarterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarterViewController.m; sourceTree = "<group>"; };
+		DB4907AA1B7951EA005B5242 /* Signups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Signups.h; sourceTree = "<group>"; };
+		DB4907AB1B7951EA005B5242 /* Signups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Signups.m; sourceTree = "<group>"; };
+		DB4907AD1B7951EB005B5242 /* Topics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topics.h; sourceTree = "<group>"; };
+		DB4907AE1B7951EB005B5242 /* Topics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topics.m; sourceTree = "<group>"; };
 		DB5AA7DB1B6DD10F00308E57 /* MainTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabViewController.h; sourceTree = "<group>"; };
 		DB5AA7DC1B6DD10F00308E57 /* MainTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabViewController.m; sourceTree = "<group>"; };
 		DB78CE7F1B711EF200132EDB /* DateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtil.h; sourceTree = "<group>"; };
@@ -334,11 +337,9 @@
 				DB2BFE931B68580A00B12A0B /* utils */,
 				DB27BD1D1B6705100068F0BE /* AppDelegate.h */,
 				DB27BD1E1B6705100068F0BE /* AppDelegate.m */,
+				DB1380371B6B27FC004965C7 /* msgs view */,
 				DB8F1C2D1B6D8B18007B3DAB /* talks view */,
 				DB5AA7DE1B6DD11900308E57 /* principal views */,
-				DB1380371B6B27FC004965C7 /* msgs view */,
-				DB27BD201B6705100068F0BE /* FirstViewController.h */,
-				DB27BD211B6705100068F0BE /* FirstViewController.m */,
 				DB1380301B6B1B96004965C7 /* events view */,
 				DB27BD481B6705F90068F0BE /* admin */,
 				DB27BD261B6705110068F0BE /* Main.storyboard */,
@@ -455,6 +456,10 @@
 			isa = PBXGroup;
 			children = (
 				DB27BD451B67059E0068F0BE /* ccmModel.xcdatamodeld */,
+				DB4907AD1B7951EB005B5242 /* Topics.h */,
+				DB4907AE1B7951EB005B5242 /* Topics.m */,
+				DB4907AA1B7951EA005B5242 /* Signups.h */,
+				DB4907AB1B7951EA005B5242 /* Signups.m */,
 				DBA4AE6E1B69A227000613F8 /* DataRequest.h */,
 				DBA4AE6F1B69A227000613F8 /* DataRequest.m */,
 				DBA4AE6B1B699EE4000613F8 /* DataController.h */,
@@ -590,7 +595,6 @@
 				DBA4AE6A1B699E9A000613F8 /* Locations.m in Sources */,
 				DBE9E8771B6E9DEB00D646E0 /* TalkTableViewController.m in Sources */,
 				DB27BD1F1B6705100068F0BE /* AppDelegate.m in Sources */,
-				DB27BD221B6705100068F0BE /* FirstViewController.m in Sources */,
 				DBA4AE671B699E9A000613F8 /* Messages.m in Sources */,
 				DB2B7DD71B72E67A00CC2EB5 /* AddMessageViewController.m in Sources */,
 				DB1380251B6A86C2004965C7 /* UIButton+AFNetworking.m in Sources */,
@@ -604,12 +608,14 @@
 				DB27BD1C1B6705100068F0BE /* main.m in Sources */,
 				DB1380221B6A86C2004965C7 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				DB2B7DE21B72FA6C00CC2EB5 /* SWRevealViewController.m in Sources */,
+				DB4907AC1B7951EA005B5242 /* Signups.m in Sources */,
 				DB27BD4D1B6706B80068F0BE /* SignInViewController.m in Sources */,
 				DB1380291B6A86C2004965C7 /* UIWebView+AFNetworking.m in Sources */,
 				DB13801B1B6A86C2004965C7 /* AFHTTPSessionManager.m in Sources */,
 				DBBB54CA1B72808800E6E1B0 /* AddEventViewController.m in Sources */,
 				DB27BD501B67078A0068F0BE /* SignUpViewController.m in Sources */,
 				DBA4AE611B699E9A000613F8 /* Events.m in Sources */,
+				DB4907AF1B7951EB005B5242 /* Topics.m in Sources */,
 				DB13801E1B6A86C2004965C7 /* AFURLConnectionOperation.m in Sources */,
 				DB13801F1B6A86C2004965C7 /* AFURLRequestSerialization.m in Sources */,
 				DB1380211B6A86C2004965C7 /* AFURLSessionManager.m in Sources */,
