@@ -15,8 +15,10 @@ static id <DataControllerDelegate> delegate;
 static NSUInteger numEvents;
 static NSUInteger numMsgs;
 static NSUInteger numTalks;
+static NSUInteger numSignups;
 
 +(void) sync {
+    [self rollback];
     NSManagedObjectContext *moc =  [(AppDelegate *) [[UIApplication sharedApplication] delegate] managedObjectContext];
     DataRequest *si = [DataRequest sharedInstance];
     [si updateEventsUsingBlock:^(NSMutableArray *data, NSError *error) {
@@ -34,7 +36,20 @@ static NSUInteger numTalks;
     [si updateLocationsUsingBlock:^(NSMutableArray *data, NSError *error) {
         [self checkItemsFrom:data for:moc entity:ENTITY_LOCATIONS];
     }];
+    [si updateTopicsUsingBlock:^(NSMutableArray *data, NSError *error) {
+        NSLog(@"%@", data);
+        [self checkItemsFrom:data for:moc entity:ENTITY_TOPICS];
+    }];
+    [si updateSignupsUsingBlock:^(NSMutableArray *data, NSError *error) {
+        NSLog(@"%@", data);
+        [self checkItemsFrom:data for:moc entity:ENTITY_SIGNUPS];
+    }];
     
+}
+
++(void) rollback{
+    NSManagedObjectContext *moc = [(AppDelegate *) [[UIApplication sharedApplication] delegate] managedObjectContext];
+    [moc rollback];
 }
 
 +(void) addEventWithData:(NSDictionary *) data{
@@ -56,6 +71,21 @@ static NSUInteger numTalks;
     [si AFpostWithUrl:URL_POST_TALKS andData:data returnTo:^(NSMutableArray *data, NSError *error) {
         NSLog(@"returned");
     }];
+}
+
++(void) addSignupWithData:(NSDictionary *)data{
+    DataRequest *si = [DataRequest sharedInstance];
+    [si AFpostWithUrl:URL_POST_SIGNUPS andData:data returnTo:^(NSMutableArray *data, NSError *error) {
+        NSLog(@"returned");
+    }];
+}
+
++(void) putUserToSignup:(NSDictionary *) data{
+    DataRequest *si = [DataRequest sharedInstance];
+    [si AFputWithUrl:URL_PUT_SIGNUPS andData:data returnTo:^(NSMutableArray *data, NSError *error) {
+        NSLog(@"put!");
+    }];
+    
 }
 
 +(NSArray *) getsForEntity: (NSString *) name{
@@ -92,6 +122,14 @@ static NSUInteger numTalks;
     return [self getsForEntity:ENTITY_LOCATIONS];
 }
 
++(NSArray *) getTopics{
+    return [self getsForEntity:ENTITY_TOPICS];
+}
+
++(NSArray *) getSignups{
+    return [self getsForEntity:ENTITY_SIGNUPS];
+}
+
 +(void) setDelegate:(id) del{
     delegate = del;
 }
@@ -118,6 +156,13 @@ static NSUInteger numTalks;
     }
     else if ([type isEqualToString:ENTITY_LOCATIONS]) {
         database = [self getLocations];
+    }
+    else if ([type isEqualToString:ENTITY_TOPICS]) {
+        database = [self getTopics];
+    }
+    else if ([type isEqualToString:ENTITY_SIGNUPS]){
+        numSignups = [array count];
+        database = [self getSignups];
     }
     NSLog(@"Array Count: %lu", [array count]);
     
@@ -162,6 +207,10 @@ static NSUInteger numTalks;
 
 +(NSUInteger) getNumTalks{
     return numTalks;
+}
+
++(NSUInteger) getNumSignups{
+    return numSignups;
 }
 
 @end

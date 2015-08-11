@@ -22,6 +22,9 @@
 #define URL_POST_EVENTS (URL_DOMAIN @"/api/events")
 #define URL_POST_MESSAGES (URL_DOMAIN @"/api/messages")
 #define URL_POST_TALKS (URL_DOMAIN @"/api/talks")
+#define URL_POST_SIGNUPS (URL_DOMAIN @"/api/signups")
+
+#define URL_PUT_SIGNUPS (URL_DOMAIN @"/api/signups/addme")
 
 #define KEY_EVENT_DATA @"events"
 #define KEY_MESSAGES_DATA @"msgs"

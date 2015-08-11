@@ -36,6 +36,7 @@
 
 -(void) AFrequestWithURl:(NSString *) urlString returnTo:(void (^)(NSMutableArray * data, NSError * error)) handler;
 -(void) AFpostWithUrl:(NSString *) urlString andData:(NSDictionary *) params returnTo:(void (^)(NSMutableArray * data, NSError * error)) handler;
+-(void) AFputWithUrl:(NSString *)urlString andData:(NSDictionary *) params returnTo:(void (^)(NSMutableArray * data, NSError * error)) handler;
 
 
 @end

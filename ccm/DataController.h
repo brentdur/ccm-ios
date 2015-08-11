@@ -21,10 +21,14 @@
 @interface DataController : NSObject <DataRequestDelegate>
 
 +(void) sync;
++(void) rollback;
 
 +(void) addEventWithData:(NSDictionary *) data;
 +(void) addMsgWithData:(NSDictionary *) data;
 +(void) addTalkWithData:(NSDictionary *) data;
++(void) addSignupWithData:(NSDictionary *) data;
+
++(void) putUserToSignup:(NSDictionary *) data;
 
 # pragma mark - Get methods
 +(NSArray *) getEvents;
@@ -32,6 +36,8 @@
 +(NSArray *) getMessages;
 +(NSArray *) getGroups;
 +(NSArray *) getLocations;
++(NSArray *) getTopics;
++(NSArray *) getSignups;
 
 +(void) deleteEvents;
 
@@ -42,6 +48,7 @@
 +(NSUInteger) getNumEvents;
 +(NSUInteger) getNumMsgs;
 +(NSUInteger) getNumTalks;
++(NSUInteger) getNumSignups;
 
 
 @end

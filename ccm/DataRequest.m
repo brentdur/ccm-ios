@@ -142,6 +142,30 @@ static DataRequest *sharedInstance = nil;
     
 }
 
+-(void) AFputWithUrl:(NSString *)urlString andData:(NSDictionary *) params returnTo:(void (^)(NSMutableArray * data, NSError * error)) handler {
+    
+    
+    NSString *key = (NSString *)[KeychainItemWrapper load:KEYCHAIN_KEY_TOKEN];
+    
+    
+    NSError *error = [[NSError alloc] init];
+    AFJSONRequestSerializer *serial = [AFJSONRequestSerializer serializer];
+    NSMutableURLRequest *request = [serial requestWithMethod:@"PUT" URLString:urlString parameters:params error:&error ];
+    [request setValue:[NSString stringWithFormat:@"Bearer %@", key] forHTTPHeaderField:@"Authorization"];
+    
+    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    NSLog(@"%@",[[op request] HTTPBody]);
+    op.responseSerializer = [AFJSONResponseSerializer serializer];
+    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Response: %lu", (long)[responseObject statusCode]);
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    [op start];
+    
+}
+
 
 
 #pragma mark - NSURLSessionTaskDelegate Methods
