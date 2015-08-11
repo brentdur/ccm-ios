@@ -37,11 +37,9 @@ static NSUInteger numSignups;
         [self checkItemsFrom:data for:moc entity:ENTITY_LOCATIONS];
     }];
     [si updateTopicsUsingBlock:^(NSMutableArray *data, NSError *error) {
-        NSLog(@"%@", data);
         [self checkItemsFrom:data for:moc entity:ENTITY_TOPICS];
     }];
     [si updateSignupsUsingBlock:^(NSMutableArray *data, NSError *error) {
-        NSLog(@"%@", data);
         [self checkItemsFrom:data for:moc entity:ENTITY_SIGNUPS];
     }];
     

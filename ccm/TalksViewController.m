@@ -43,7 +43,8 @@
 
 -(void) refreshStuff{
     NSLog(@"refresh");
-    [refresh endRefreshing];
+    [DataController setDelegate:self];
+    [DataController sync];
 }
 
 
@@ -53,8 +54,10 @@
 }
 
 -(void) didUpdateData{
+    NSLog(@"did update talks");
     content = [DataController getTalks];
     [[self tableView] reloadData];
+    [refresh endRefreshing];
 }
 /*
 #pragma mark - Navigation

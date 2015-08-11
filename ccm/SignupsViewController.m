@@ -44,7 +44,8 @@
 
 -(void) refreshStuff{
     NSLog(@"refresh");
-    [refresh endRefreshing];
+    [DataController setDelegate:self];
+    [DataController sync];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,8 +54,10 @@
 }
 
 -(void)didUpdateData{
+    NSLog(@"did update signups");
     content = [DataController getSignups];
     [[self tableView] reloadData];
+    [refresh endRefreshing];
 }
 
 #pragma mark - Table view data source

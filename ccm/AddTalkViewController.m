@@ -54,6 +54,14 @@
     [data setValue:[[self dateField] text] forKey:@"date"];
     [data setValue:[[self authorField] text] forKey:@"author"];
     [data setValue:[[self refField] text] forKey:@"reference"];
+    
+    NSCharacterSet *seperator = [NSCharacterSet newlineCharacterSet];
+    NSArray *lines = [[[self textView] text] componentsSeparatedByCharactersInSet:seperator];
+    [data setValue:lines forKey:@"outline"];
+//    for (NSString *line in lines){
+//        [data setValue:line forKey:@"outline"];
+//    }
+
     NSDictionary *dic = [NSDictionary dictionaryWithDictionary:data];
     [DataController addTalkWithData:dic];
 

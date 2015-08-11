@@ -18,8 +18,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self setGroupData:[DataController getGroups]];
-    [self setGroupName:[[[self groupData] objectAtIndex:0]name]];
+//    [self setGroupData:[DataController getGroups]];
+//    [self setGroupName:[[[self groupData] objectAtIndex:0]name]];
+    
+    [self setTopicData:[DataController getTopics]];
+    [self setTopicId:[[[self topicData] objectAtIndex:0] getIdd]];
     
     self.textView.layer.borderWidth = .5f;
     self.textView.layer.cornerRadius = 10.0f;
@@ -55,7 +58,7 @@
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [[[self groupData] objectAtIndex:row] name];
+    return [[[self topicData] objectAtIndex:row] name];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -63,11 +66,11 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    return [[self groupData] count];
+    return [[self topicData] count];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    [self setGroupName:[[[self groupData] objectAtIndex:row]name]];
+    [self setTopicId:[[[self topicData] objectAtIndex:row]getIdd]];
 }
 
 
@@ -75,8 +78,7 @@
     NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
     [data setValue:[[self subjectField] text] forKey:@"subject"];
     [data setValue:[[self messageField] text] forKey:@"message"];
-    [data setValue:[self groupName] forKey:@"to"];
-    [data setValue:@"test" forKey:@"from"];
+    [data setValue:[self topicId] forKey:@"topic"];
     NSDictionary *dic = [NSDictionary dictionaryWithDictionary:data];
     NSLog(@"%@", dic);
     [DataController addMsgWithData:dic];

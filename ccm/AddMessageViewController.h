@@ -20,6 +20,9 @@
 @property NSArray *groupData;
 @property NSString *groupName;
 
+@property NSArray *topicData;
+@property NSString *topicId;
+
 @property (weak, nonatomic) IBOutlet UITextField *subjectField;
 @property (weak, nonatomic) IBOutlet UITextView *messageField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *moreButton;
