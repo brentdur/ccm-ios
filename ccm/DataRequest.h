@@ -34,6 +34,8 @@
 -(void) updateTopicsUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler;
 -(void) updateSignupsUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler;
 
+-(void) getMyInfo:(void (^)(NSMutableArray *data, NSError * )) handler;
+
 -(void) AFrequestWithURl:(NSString *) urlString returnTo:(void (^)(NSMutableArray * data, NSError * error)) handler;
 -(void) AFpostWithUrl:(NSString *) urlString andData:(NSDictionary *) params returnTo:(void (^)(NSMutableArray * data, NSError * error)) handler;
 -(void) AFputWithUrl:(NSString *)urlString andData:(NSDictionary *) params returnTo:(void (^)(NSMutableArray * data, NSError * error)) handler;

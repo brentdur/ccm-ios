@@ -18,6 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:KEY_HAS_TOKEN]){
+        [DataController saveMyGroup];
+    }
 
     return YES;
 }

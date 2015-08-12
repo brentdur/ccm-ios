@@ -65,13 +65,17 @@ static DataRequest *sharedInstance = nil;
     [self AFrequestWithURl:URL_GET_LOCATIONS returnTo:handler];
 }
 
--(void)updateTopicsUsingBlock:(void (^)(NSMutableArray *, NSError *))handler {
+-(void)updateTopicsUsingBlock:(void (^)(NSMutableArray *data, NSError *error))handler {
     [self AFrequestWithURl:URL_GET_TOPICS returnTo:handler];
 }
 
--(void)updateSignupsUsingBlock:(void (^)(NSMutableArray *, NSError *))handler {
+-(void)updateSignupsUsingBlock:(void (^)(NSMutableArray *data, NSError *error))handler {
     [self AFrequestWithURl:URL_GET_SIGNUPS returnTo:handler];
     
+}
+
+-(void) getMyInfo:(void (^)(NSMutableArray *data, NSError *error))handler {
+    [self AFrequestWithURl:URL_GET_MY_INFO returnTo:handler];
 }
 
 -(void) requestWithURL:(NSString *) urlString{

@@ -17,7 +17,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    [self setCanWriteEvents:false];
+    [self setCanWriteSignups: false];
+    [self setCanWriteTalks: false];
+    NSArray *dics = [[NSUserDefaults standardUserDefaults] arrayForKey:KEY_GROUPS];
+    for (NSDictionary *group in dics){
+        if ([(NSNumber *)[group valueForKey:@"writeSignups"] isEqualToNumber:@1]){
+            [self setCanWriteSignups:true];
+        }
+        if([(NSNumber *)[group valueForKey:@"writeEvents"] isEqualToNumber:@1]){
+            [self setCanWriteEvents:true];
+        }
+        if([(NSNumber *)[group valueForKey:@"writeTalks"] isEqualToNumber:@1]){
+            [self setCanWriteTalks:true];
+        }
+    }
+    NSLog(@"%d %d %d", _canWriteEvents, _canWriteSignups, _canWriteTalks);
     [self setSelectedViewController:[[self viewControllers] objectAtIndex:1]];
 }
 

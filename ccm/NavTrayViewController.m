@@ -30,9 +30,17 @@
     currentID = [[rvc frontViewController] restorationIdentifier];
     [rvc setDelegate:self];
     
+    NSArray *dics = [[NSUserDefaults standardUserDefaults] arrayForKey:KEY_GROUPS];
     sendEnabled = true;
-    inboxEnabled = true;
-    
+    inboxEnabled = false;
+    for (NSDictionary *group in dics){
+        NSLog(@"%@", [group valueForKey:@"name"]);
+        if ([[group valueForKey:@"name"] isEqualToString:@"ministers"]){
+            inboxEnabled = true;
+            break;
+        }
+    }
+
     [self toggleCellsWithAnimation:false];
 }
 
@@ -68,12 +76,8 @@
 -(void)toggleCellsWithAnimation:(BOOL) anim{
     [self setHideSectionsWithHiddenRows:anim];
     
-    if (inboxEnabled){
-        [self cell:[self inboxCell] setHidden:NO];
-    }
-    if(sendEnabled){
-        [self cell:[self sendCell] setHidden:NO];
-    }
+    [self cell:[self inboxCell] setHidden:!inboxEnabled];
+    [self cell:[self sendCell] setHidden:!sendEnabled];
     
     [self cell:[self homeCell] setHidden:NO];
     

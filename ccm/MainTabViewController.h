@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Constaints.h"
 
 @interface MainTabViewController : UITabBarController
+
+@property BOOL canWriteSignups;
+@property BOOL canWriteTalks;
+@property BOOL canWriteEvents;
 
 @end

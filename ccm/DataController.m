@@ -45,6 +45,23 @@ static NSUInteger numSignups;
     
 }
 
++(void) saveMyGroup{
+    DataRequest *si = [DataRequest sharedInstance];
+    NSMutableArray *ret = [[NSMutableArray alloc] init];
+    [si getMyInfo:^(NSMutableArray *data, NSError *error) {
+        for (NSDictionary *group in [data valueForKey:@"groups"]){
+            NSMutableDictionary *info = [[NSMutableDictionary alloc] init];
+            [info setValue:[group valueForKey:@"name"] forKey:@"name"];
+            [info setValue:[group valueForKey:@"writeSignups"] forKey:@"writeSignups"];
+            [info setValue:[group valueForKey:@"writeEvents"] forKey:@"writeEvents"];
+            [info setValue:[group valueForKey:@"writeTalks"] forKey:@"writeTalks"];
+            [ret addObject:info];
+        }
+        [[NSUserDefaults standardUserDefaults] setValue:ret forKey:KEY_GROUPS];
+    }];
+    
+}
+
 +(void) rollback{
     NSManagedObjectContext *moc = [(AppDelegate *) [[UIApplication sharedApplication] delegate] managedObjectContext];
     [moc rollback];

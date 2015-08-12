@@ -468,6 +468,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
+                        <outlet property="bar" destination="H1h-bH-LjX" id="KSf-wN-TZZ"/>
                         <outlet property="moreButton" destination="cui-sk-hPH" id="Q9C-HY-NvU"/>
                         <outlet property="refresh" destination="U5k-AT-jsD" id="6G8-L8-4ra"/>
                         <segue destination="2uT-mD-Mwz" kind="show" identifier="EventDetail" id="ymu-Pv-Yvs"/>
@@ -1592,6 +1593,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
+                        <outlet property="bar" destination="uxO-ex-70T" id="HQl-HV-Cge"/>
                         <outlet property="moreButton" destination="PrL-zw-MWl" id="mB8-HP-PYv"/>
                         <outlet property="refresh" destination="Zqp-aa-tdA" id="UeU-zr-XU4"/>
                         <segue destination="vE8-OX-lWf" kind="show" identifier="TalkDetail" id="jZK-dW-RvF"/>
@@ -1896,6 +1898,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
+                        <outlet property="bar" destination="f7z-ac-rMe" id="eA9-Mc-F7v"/>
                         <outlet property="morebutton" destination="wfC-cN-cwQ" id="qOv-wu-hWs"/>
                         <outlet property="refresh" destination="rYE-j6-Gim" id="plT-3v-FhU"/>
                         <segue destination="PNN-aE-xRI" kind="show" identifier="SignupDetail" id="R2s-Hh-all"/>

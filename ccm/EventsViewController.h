@@ -13,11 +13,13 @@
 #import "EventsTableViewCell.h"
 #import "EventTableViewController.h"
 #import "SWRevealViewController.h"
+#import "MainTabViewController.h"
 #import "DateUtil.h"
 
 @interface EventsViewController : UITableViewController <DataControllerDelegate>
 
 @property NSArray *content;
+@property (weak, nonatomic) IBOutlet UINavigationItem *bar;
 
 @property (weak, nonatomic) IBOutlet UIRefreshControl *refresh;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *moreButton;

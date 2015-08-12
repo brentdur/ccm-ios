@@ -30,6 +30,8 @@
 
 +(void) putUserToSignup:(NSDictionary *) data;
 
++(void) saveMyGroup;
+
 # pragma mark - Get methods
 +(NSArray *) getEvents;
 +(NSArray *) getTalks;

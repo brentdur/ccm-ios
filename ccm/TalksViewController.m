@@ -31,7 +31,10 @@
         [[self moreButton] setAction:@selector(revealToggle:)];
         [[self view] addGestureRecognizer:[[self revealViewController] panGestureRecognizer]];
     }
-    
+    MainTabViewController *parent = (MainTabViewController *)[self tabBarController];
+    if(![parent canWriteTalks]){
+        [[self bar] setRightBarButtonItem:nil];
+    }
     [refresh addTarget:self action:@selector(refreshStuff) forControlEvents:UIControlEventValueChanged];
 }
 

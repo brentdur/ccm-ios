@@ -18,6 +18,7 @@
 #define URL_GET_LOCATIONS (URL_DOMAIN @"/api/locations")
 #define URL_GET_TOPICS (URL_DOMAIN @"/api/topics")
 #define URL_GET_SIGNUPS (URL_DOMAIN @"/api/signups")
+#define URL_GET_MY_INFO (URL_DOMAIN @"/api/users/me")
 
 #define URL_POST_EVENTS (URL_DOMAIN @"/api/events")
 #define URL_POST_MESSAGES (URL_DOMAIN @"/api/messages")
@@ -46,6 +47,8 @@
 #define KEY_EMAIL @"email"
 #define KEY_GROUPS @"groups"
 #define KEY_INITIAL_SYNC @"initital_sync"
+
+#define GROUP_FOR_RECEIVE @"ministers"
 
 #define KEYCHAIN_ID_TOKEN @"token"
 #define KEYCHAIN_KEY_TOKEN @"auth_token"

@@ -13,11 +13,13 @@
 #import "TalksTableViewCell.h"
 #import "TalkTableViewController.h"
 #import "SWRevealViewController.h"
+#import "MainTabViewController.h"
 
 @interface TalksViewController : UITableViewController
 
 @property NSArray *content;
 
+@property (weak, nonatomic) IBOutlet UINavigationItem *bar;
 @property (weak, nonatomic) IBOutlet UIRefreshControl *refresh;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *moreButton;
 
