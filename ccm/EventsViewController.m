@@ -22,7 +22,7 @@
     // Do any additional setup after loading the view.
     content = [DataController getEvents];
     if([content count] == 0){
-        [DataController setDelegate:self];
+        [DataController setDelegate:self withType:ENTITY_EVENT];
     }
     
     SWRevealViewController *rvc = [self revealViewController];
@@ -46,7 +46,7 @@
 
 -(void) refreshStuff{
     NSLog(@"refresh");
-    [DataController setDelegate:self];
+    [DataController setDelegate:self withType:ENTITY_EVENT];
     [DataController sync];
     
 }
@@ -59,7 +59,6 @@
 }
 
 -(void) didUpdateData{
-    NSLog(@"did update events");
     content = [DataController getEvents];
     [[self tableView] reloadData];
     [refresh endRefreshing];

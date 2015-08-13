@@ -43,7 +43,7 @@
 
 +(void) deleteEvents;
 
-+(void) setDelegate:(id) del;
++(void) setDelegate:(id) del withType:(NSString *) type;
 
 
 

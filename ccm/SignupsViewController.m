@@ -22,7 +22,7 @@
     
     content = [DataController getSignups];
     if ([content count] == 0) {
-        [DataController setDelegate:self];
+        [DataController setDelegate:self withType:ENTITY_SIGNUPS];
     }
     
     SWRevealViewController *rvc = [self revealViewController];
@@ -47,7 +47,7 @@
 
 -(void) refreshStuff{
     NSLog(@"refresh");
-    [DataController setDelegate:self];
+    [DataController setDelegate:self withType:ENTITY_SIGNUPS];
     [DataController sync];
 }
 

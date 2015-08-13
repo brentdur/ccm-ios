@@ -23,7 +23,7 @@
     // Do any additional setup after loading the view.
     content = [DataController getMessages];
     if([content count] == 0){
-        [DataController setDelegate:self];
+        [DataController setDelegate:self withType:ENTITY_MESSAGES];
     }
     
     SWRevealViewController *rvc = [self revealViewController];
@@ -44,7 +44,7 @@
 
 -(void) refreshStuff{
     NSLog(@"refresh");
-    [DataController setDelegate:self];
+    [DataController setDelegate:self withType:ENTITY_MESSAGES];
     [DataController sync];
 }
 

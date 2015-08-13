@@ -12,6 +12,7 @@
 @implementation DataController
 
 static id <DataControllerDelegate> delegate;
+static NSString *delegateType;
 static NSUInteger numEvents;
 static NSUInteger numMsgs;
 static NSUInteger numTalks;
@@ -114,6 +115,7 @@ static NSUInteger numSignups;
 
 +(NSArray *) getEvents{
     NSArray *ret = [self getsForEntity:ENTITY_EVENT];
+    NSLog(@"got events");
     return ret;
 }
 
@@ -145,8 +147,9 @@ static NSUInteger numSignups;
     return [self getsForEntity:ENTITY_SIGNUPS];
 }
 
-+(void) setDelegate:(id) del{
++(void) setDelegate:(id) del withType:(NSString *)type{
     delegate = del;
+    delegateType = type;
 }
 
 +(void) checkItemsFrom:(NSMutableArray *) array for:(NSManagedObjectContext *) context entity:(NSString *)type{
@@ -205,9 +208,10 @@ static NSUInteger numSignups;
         creates++;
     }
     NSLog(@"Creates: %d, Deletes: %d, Updates: %d", creates, deletes, updates);
-    if(delegate){
+    if(delegate && [type isEqualToString:delegateType]){
         [delegate didUpdateData];
         delegate = nil;
+        delegateType = nil;
     }
     [context save:nil];
 }
