@@ -11,6 +11,8 @@
 #import "StaticDataTableViewController.h"
 #import "DataController.h"
 #import "SWRevealViewController.h"
+#import "NavTrayViewController.h"
+#import "UIView+Toast.h"
 
 @interface AddMessageViewController : StaticDataTableViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 

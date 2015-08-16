@@ -16,6 +16,7 @@
 
 @synthesize content;
 @synthesize refresh;
+@synthesize parent;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,16 +32,16 @@
         [[self moreButton] setAction:@selector(revealToggle:)];
         [[self view] addGestureRecognizer:[[self revealViewController] panGestureRecognizer]];
     }
-    MainTabViewController *parent = (MainTabViewController *)[self tabBarController];
-    if(![parent canWriteEvents]){
-        [[self bar] setRightBarButtonItem:nil];
-    }
+    parent = (MainTabViewController *)[self tabBarController];
     [refresh addTarget:self action:@selector(refreshStuff) forControlEvents:UIControlEventValueChanged];
 }
 
 -(void) viewWillAppear:(BOOL)animated{
     if ([content count] != [DataController getNumEvents]){
         [self didUpdateData];
+    }
+    if(![parent canWriteEvents]){
+        [[self bar] setRightBarButtonItem:nil];
     }
 }
 

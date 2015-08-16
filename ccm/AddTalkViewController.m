@@ -63,7 +63,18 @@
 //    }
 
     NSDictionary *dic = [NSDictionary dictionaryWithDictionary:data];
-    [DataController addTalkWithData:dic];
+    
+    [[self view] makeToastActivity];
+    [DataController addTalkWithData:dic andHandler:^(NSMutableArray *data, NSError *error) {
+        [[self view] hideToastActivity];
+        if (error){
+            [[[self parentViewController] view] makeToast:@"Error" duration:3.0 position:CSToastPositionLower];
+        }
+        else {
+            [[[self parentViewController] view] makeToast:@"Success" duration:3.0 position:CSToastPositionLower];
+            [[self navigationController] popViewControllerAnimated:YES];
+        }
+    }];
 
 }
 @end

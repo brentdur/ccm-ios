@@ -34,6 +34,9 @@
         [[self moreButton] setAction:@selector(revealToggle:)];
         [[self view] addGestureRecognizer:[[self revealViewController] panGestureRecognizer]];
     }
+    
+    NSLog(@"%@", [[self parentViewController] title]);
+    NSLog(@"%@",[[[self revealViewController] rearViewController] title]);
 
     
 }
@@ -81,6 +84,15 @@
     [data setValue:[self topicId] forKey:@"topic"];
     NSDictionary *dic = [NSDictionary dictionaryWithDictionary:data];
     NSLog(@"%@", dic);
-    [DataController addMsgWithData:dic];
+    [DataController addMsgWithData:dic andHandler:^(NSMutableArray *data, NSError *error) {
+        NavTrayViewController *nav = (NavTrayViewController *)[[self revealViewController] rearViewController];
+        if (error){
+            [[nav view] makeToast:@"Sent" duration:3.0 position:CSToastPositionLower];
+        }
+        else {
+            [[[nav parentViewController] view] makeToast:@"Sent" duration:3.0 position:CSToastPositionLower];
+            [nav goHome];
+        }
+    }];
 }
 @end

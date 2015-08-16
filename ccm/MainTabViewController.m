@@ -17,10 +17,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSArray *dics = [[NSUserDefaults standardUserDefaults] arrayForKey:KEY_GROUPS];
+    if (!dics){
+        [DataController setGroupDelegate:self];
+        [DataController saveMyGroup];
+    }
+    else {
+        [self didUpdateData];
+    }
+    [self setSelectedViewController:[[self viewControllers] objectAtIndex:1]];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void) didUpdateData {
     [self setCanWriteEvents:false];
     [self setCanWriteSignups: false];
     [self setCanWriteTalks: false];
     NSArray *dics = [[NSUserDefaults standardUserDefaults] arrayForKey:KEY_GROUPS];
+    NSLog(@"%@", dics);
     for (NSDictionary *group in dics){
         if ([(NSNumber *)[group valueForKey:@"writeSignups"] isEqualToNumber:@1]){
             [self setCanWriteSignups:true];
@@ -32,13 +50,9 @@
             [self setCanWriteTalks:true];
         }
     }
+    //TODO: get tab controller to hide nav buttons
     NSLog(@"%d %d %d", _canWriteEvents, _canWriteSignups, _canWriteTalks);
-    [self setSelectedViewController:[[self viewControllers] objectAtIndex:1]];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 /*

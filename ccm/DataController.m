@@ -12,6 +12,7 @@
 @implementation DataController
 
 static id <DataControllerDelegate> delegate;
+static id <DataControllerGroupsDelegate> groupDelegate;
 static NSString *delegateType;
 static NSUInteger numEvents;
 static NSUInteger numMsgs;
@@ -59,6 +60,8 @@ static NSUInteger numSignups;
             [ret addObject:info];
         }
         [[NSUserDefaults standardUserDefaults] setValue:ret forKey:KEY_GROUPS];
+        [groupDelegate didUpdateData];
+        groupDelegate = nil;
     }];
     
 }
@@ -68,39 +71,29 @@ static NSUInteger numSignups;
     [moc rollback];
 }
 
-+(void) addEventWithData:(NSDictionary *) data{
++(void) addEventWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler{
     DataRequest *si = [DataRequest sharedInstance];
-    [si AFpostWithUrl:URL_POST_EVENTS andData:data returnTo:^(NSMutableArray *data, NSError *error) {
-        NSLog(@"returned");
-    }];
+    [si AFpostWithUrl:URL_POST_EVENTS andData:data returnTo:handler];
 }
 
-+(void) addMsgWithData:(NSDictionary *) data{
++(void) addMsgWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler{
     DataRequest *si = [DataRequest sharedInstance];
-    [si AFpostWithUrl:URL_POST_MESSAGES andData:data returnTo:^(NSMutableArray *data, NSError *error) {
-        NSLog(@"returned");
-    }];
+    [si AFpostWithUrl:URL_POST_MESSAGES andData:data returnTo:handler];
 }
 
-+(void) addTalkWithData:(NSDictionary *)data{
++(void) addTalkWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler {
     DataRequest *si = [DataRequest sharedInstance];
-    [si AFpostWithUrl:URL_POST_TALKS andData:data returnTo:^(NSMutableArray *data, NSError *error) {
-        NSLog(@"returned");
-    }];
+    [si AFpostWithUrl:URL_POST_TALKS andData:data returnTo:handler];
 }
 
-+(void) addSignupWithData:(NSDictionary *)data{
++(void) addSignupWithData:(NSDictionary *)data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler{
     DataRequest *si = [DataRequest sharedInstance];
-    [si AFpostWithUrl:URL_POST_SIGNUPS andData:data returnTo:^(NSMutableArray *data, NSError *error) {
-        NSLog(@"returned");
-    }];
+    [si AFpostWithUrl:URL_POST_SIGNUPS andData:data returnTo:handler];
 }
 
-+(void) putUserToSignup:(NSDictionary *) data{
++(void) putUserToSignup:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler{
     DataRequest *si = [DataRequest sharedInstance];
-    [si AFputWithUrl:URL_PUT_SIGNUPS andData:data returnTo:^(NSMutableArray *data, NSError *error) {
-        NSLog(@"put!");
-    }];
+    [si AFputWithUrl:URL_PUT_SIGNUPS andData:data returnTo:handler];
     
 }
 
@@ -150,6 +143,10 @@ static NSUInteger numSignups;
 +(void) setDelegate:(id) del withType:(NSString *)type{
     delegate = del;
     delegateType = type;
+}
+
++(void) setGroupDelegate:(id) del {
+    groupDelegate = del;
 }
 
 +(void) checkItemsFrom:(NSMutableArray *) array for:(NSManagedObjectContext *) context entity:(NSString *)type{
@@ -230,6 +227,16 @@ static NSUInteger numSignups;
 
 +(NSUInteger) getNumSignups{
     return numSignups;
+}
+
++(void) signIn:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler{
+    DataRequest *si = [DataRequest sharedInstance];
+    [si AFauthPostWithUrl:URL_POST_SIGNIN andData:data returnTo:handler];
+}
+
++(void) signUp:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler{
+    DataRequest *si = [DataRequest sharedInstance];
+    [si AFauthPostWithUrl:URL_POST_SIGNUP andData:data returnTo:handler];
 }
 
 @end

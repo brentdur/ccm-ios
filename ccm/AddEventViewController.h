@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "StaticDataTableViewController.h"
 #import "DataController.h"
+#import "UIView+Toast.h"
 
 @interface AddEventViewController : StaticDataTableViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableViewCell *cell;

@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "Signups.h"
 #import "DataController.h"
+#import "UIView+Toast.h"
 
 @interface SignupTableViewController : UITableViewController
 
 @property Signups *data;
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *buttonCell;
+@property (weak, nonatomic) IBOutlet UIButton *addButton;
 
 @property (weak, nonatomic) IBOutlet UILabel *date;
 @property (weak, nonatomic) IBOutlet UILabel *location;

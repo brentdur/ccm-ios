@@ -25,13 +25,11 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    
     NSString *sDate = [DateUtil stringFromDate:[data date]];
     
-    [self setTitle:[data from]];
-    [[self subject] setText:[data subject]];
+    [self setTitle:[data subject]];
     
-    [[self to] setText:[NSString stringWithFormat:@"%@ %@", @"for", [data to]]];
+    [[self from] setText:[NSString stringWithFormat:@"%@ %@", @"from", [data from]]];
     [[self date] setText:sDate];
     [[self text] setText:[data message]];
     
@@ -55,7 +53,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 3;
+    return 2;
 }
 
 /*

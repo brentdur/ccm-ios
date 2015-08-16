@@ -37,6 +37,7 @@
         NSLog(@"%@", [group valueForKey:@"name"]);
         if ([[group valueForKey:@"name"] isEqualToString:@"ministers"]){
             inboxEnabled = true;
+            sendEnabled = false;
             break;
         }
     }
@@ -59,6 +60,11 @@
         currentID = [[rvc frontViewController] restorationIdentifier];
         [self toggleCellsWithAnimation:false];
     }
+}
+
+-(void)goHome{
+    UIViewController *cont = [[self storyboard] instantiateViewControllerWithIdentifier:@"TabView"];
+    [[self revealViewController] pushFrontViewController:cont animated:YES];
 }
 
 

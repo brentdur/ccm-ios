@@ -12,8 +12,7 @@
 
 
 @interface MsgTableViewController : UITableViewController
-@property (weak, nonatomic) IBOutlet UILabel *subject;
-@property (weak, nonatomic) IBOutlet UILabel *to;
+@property (weak, nonatomic) IBOutlet UILabel *from;
 @property (weak, nonatomic) IBOutlet UILabel *date;
 @property (weak, nonatomic) IBOutlet UITextView *text;
 

@@ -33,6 +33,7 @@
         <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="to" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topic" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="version" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="Signups" representedClassName="Signups" syncable="YES">
@@ -42,6 +43,7 @@
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="memberCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="memberOf" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="version" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
@@ -65,9 +67,9 @@
         <element name="Events" positionX="-261" positionY="24" width="128" height="165"/>
         <element name="Groups" positionX="-261" positionY="198" width="128" height="133"/>
         <element name="Locations" positionX="-119" positionY="198" width="128" height="133"/>
-        <element name="Messages" positionX="16" positionY="27" width="128" height="150"/>
+        <element name="Messages" positionX="16" positionY="27" width="128" height="165"/>
+        <element name="Signups" positionX="-117" positionY="162" width="128" height="180"/>
         <element name="Talks" positionX="-117" positionY="27" width="128" height="165"/>
         <element name="Topics" positionX="-126" positionY="153" width="128" height="105"/>
-        <element name="Signups" positionX="-117" positionY="162" width="128" height="165"/>
     </elements>
 </model>

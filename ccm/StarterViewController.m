@@ -14,7 +14,8 @@
 
     BOOL hasToken = [[NSUserDefaults standardUserDefaults] boolForKey:KEY_HAS_TOKEN];
     UIViewController *cont;
-    if (hasToken) {
+//    if (hasToken) {
+    if(false){
         cont = [self.storyboard instantiateViewControllerWithIdentifier:@"RVC"];
         [DataController sync];
     }

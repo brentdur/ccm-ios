@@ -89,7 +89,7 @@
     customPin.pinColor = MKPinAnnotationColorRed;
     customPin.canShowCallout = YES;
     
-    UIButton *right = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    UIButton *right = [UIButton buttonWithType:UIButtonTypeInfoLight];
     [right addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
     customPin.rightCalloutAccessoryView = right;
     

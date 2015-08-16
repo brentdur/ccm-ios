@@ -20,6 +20,7 @@
 @property (nonatomic, retain) NSString * desc;
 @property (nonatomic, retain) NSNumber * memberCount;
 @property (nonatomic, retain) NSString * id;
+@property (nonatomic, retain) NSNumber * memberOf;
 
 -(NSString *) getIdd;
 -(NSNumber *) getVersion;

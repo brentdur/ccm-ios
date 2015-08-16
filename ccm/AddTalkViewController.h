@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DataController.h"
 #import "StaticDataTableViewController.h"
+#import "UIView+Toast.h"
 
 
 @interface AddTalkViewController : StaticDataTableViewController <UITextViewDelegate>

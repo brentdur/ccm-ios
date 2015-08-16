@@ -49,9 +49,18 @@
     NSString *email = [_email text];
     NSString *password = [_password text];
     NSLog(@"%@ %@", email, password);
-    if (email && password){
-        [[AdminRequest sharedInstance] signInEmail:email andPassword:password andDelegate:self];
+    if (email.length != 0 && password.length != 0){
+        NSDictionary *dic = @{
+                              @"email": email,
+                              @"password": password
+                              };
+        NSLog(@"%@", dic);
+        [[self view] makeToastActivity];
         _runningView = self;
+        [DataController signIn:dic andHandler:^(NSMutableArray *data, NSError *error) {
+            [self postReturn:data andError:error];
+        }];
+//        [[AdminRequest sharedInstance] signInEmail:email andPassword:password andDelegate:self];
     }
 }
 
@@ -64,9 +73,23 @@
     [[NSUserDefaults standardUserDefaults] setBool:true forKey:KEY_HAS_TOKEN];
     [[NSUserDefaults standardUserDefaults] setObject:[_email text] forKey:KEY_EMAIL];
     [DataController sync];
-    [DataController saveMyGroup];
     [self goToTabView];
     
+}
+
+-(void) postReturn:(NSMutableArray *) data andError:(NSError *) error{
+    [[_runningView view] hideToastActivity];
+    if (error){
+        [[_runningView view] makeToast:@"Login Failed" duration:3.0 position:CSToastPositionLower];
+    }
+    else {
+        NSLog(@"return: %@", [data valueForKey:@"token"]);
+        [KeychainItemWrapper save:KEYCHAIN_KEY_TOKEN data:[data valueForKey:@"token"]];
+        [[NSUserDefaults standardUserDefaults] setBool:true forKey:KEY_HAS_TOKEN];
+        [[NSUserDefaults standardUserDefaults] setObject:[_email text] forKey:KEY_EMAIL];
+        [DataController sync];
+        [self goToTabView];
+    }
 }
 
 //switch to tab view, close navbar view

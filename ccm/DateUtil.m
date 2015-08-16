@@ -51,6 +51,9 @@
         sDate = [df stringFromDate:date];
         sDate = [NSString stringWithFormat:@"on %@", sDate];
     }
+    else if (distance < 1 && distance > -1){
+        sDate = @"<1 day ago";
+    }
     else {
         distance *= -1;
         NSString *day = @"days";

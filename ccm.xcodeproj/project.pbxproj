@@ -60,6 +60,7 @@
 		DBA4AE6A1B699E9A000613F8 /* Locations.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE691B699E9A000613F8 /* Locations.m */; };
 		DBA4AE6D1B699EE4000613F8 /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE6C1B699EE4000613F8 /* DataController.m */; };
 		DBA4AE701B69A227000613F8 /* DataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE6F1B69A227000613F8 /* DataRequest.m */; };
+		DBAD31D21B805F64003C1671 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAD31D11B805F64003C1671 /* UIView+Toast.m */; };
 		DBBB54CA1B72808800E6E1B0 /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBB54C91B72808800E6E1B0 /* AddEventViewController.m */; };
 		DBCC1EA91B719C24009B8B7B /* StaticDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCC1EA81B719C24009B8B7B /* StaticDataTableViewController.m */; };
 		DBE9E8711B6E8A1700D646E0 /* MsgTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE9E8701B6E8A1700D646E0 /* MsgTableViewController.m */; };
@@ -188,6 +189,8 @@
 		DBA4AE6C1B699EE4000613F8 /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
 		DBA4AE6E1B69A227000613F8 /* DataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataRequest.h; sourceTree = "<group>"; };
 		DBA4AE6F1B69A227000613F8 /* DataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataRequest.m; sourceTree = "<group>"; };
+		DBAD31D01B805F64003C1671 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		DBAD31D11B805F64003C1671 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		DBBB54C81B72808800E6E1B0 /* AddEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventViewController.h; sourceTree = "<group>"; };
 		DBBB54C91B72808800E6E1B0 /* AddEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventViewController.m; sourceTree = "<group>"; };
 		DBCC1EA71B719C24009B8B7B /* StaticDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticDataTableViewController.h; sourceTree = "<group>"; };
@@ -415,6 +418,7 @@
 		DB2BFE931B68580A00B12A0B /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				DBAD31CF1B805F64003C1671 /* Toast */,
 				DB2B7DDF1B72FA6C00CC2EB5 /* SWRevealViewController */,
 				DBCC1EA71B719C24009B8B7B /* StaticDataTableViewController.h */,
 				DBCC1EA81B719C24009B8B7B /* StaticDataTableViewController.m */,
@@ -490,6 +494,16 @@
 				DBA4AE5D1B699E99000613F8 /* Groups.m */,
 			);
 			name = data;
+			sourceTree = "<group>";
+		};
+		DBAD31CF1B805F64003C1671 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				DBAD31D01B805F64003C1671 /* UIView+Toast.h */,
+				DBAD31D11B805F64003C1671 /* UIView+Toast.m */,
+			);
+			name = Toast;
+			path = SWRevealViewController/Toast;
 			sourceTree = "<group>";
 		};
 		DBFB725D1B797DD20018DA40 /* signups view */ = {
@@ -648,6 +662,7 @@
 				DBBB54CA1B72808800E6E1B0 /* AddEventViewController.m in Sources */,
 				DB27BD501B67078A0068F0BE /* SignUpViewController.m in Sources */,
 				DBA4AE611B699E9A000613F8 /* Events.m in Sources */,
+				DBAD31D21B805F64003C1671 /* UIView+Toast.m in Sources */,
 				DB4907AF1B7951EB005B5242 /* Topics.m in Sources */,
 				DB13801E1B6A86C2004965C7 /* AFURLConnectionOperation.m in Sources */,
 				DB13801F1B6A86C2004965C7 /* AFURLRequestSerialization.m in Sources */,

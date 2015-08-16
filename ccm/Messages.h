@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSString * to;
 @property (nonatomic, retain) NSString * subject;
 @property (nonatomic, retain) NSDate * date;
+@property (nonatomic, retain) NSString *topic;
 @property (nonatomic, retain) NSString * message;
 @property (nonatomic, retain) NSNumber * version;
 @property (nonatomic, retain) NSString * id;

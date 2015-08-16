@@ -11,6 +11,7 @@
 #import "Constaints.h"
 #import "KeychainItemWrapper.h"
 #import "SignInViewController.h"
+#import "UIView+Toast.h"
 
 @interface SignUpViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *name;

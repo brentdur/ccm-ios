@@ -39,12 +39,20 @@
     NSString *name = [_name text];
     NSString *email = [_email text];
     NSString *password = [_password text];
-    
-    if (email && password && name){
-        SignInViewController *signin = [[SignInViewController alloc] init];
+    if (email.length != 0 && password.length != 0 && name.length != 0){
+        SignInViewController *signin = [[[self navigationController] viewControllers] objectAtIndex:0];
         [signin setEmail:_email];
-        [[AdminRequest sharedInstance] signUpName:name forEmail:email andPassword:password andDelegate:signin];
+        NSDictionary *dic = @{
+                              @"name": name,
+                              @"email": email,
+                              @"password": password
+                              };
+        NSLog(@"%@", dic);
+        [[self view] makeToastActivity];
         [signin setRunningView:self];
+        [DataController signUp:dic andHandler:^(NSMutableArray *data, NSError *error) {
+            [signin postReturn:data andError:error];
+        }];
     }
 }
 

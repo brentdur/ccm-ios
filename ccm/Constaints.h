@@ -27,6 +27,9 @@
 
 #define URL_PUT_SIGNUPS (URL_DOMAIN @"/api/signups/addme")
 
+#define URL_POST_SIGNIN (URL_DOMAIN @"/auth/local")
+#define URL_POST_SIGNUP (URL_DOMAIN @"/api/users")
+
 #define KEY_EVENT_DATA @"events"
 #define KEY_MESSAGES_DATA @"msgs"
 #define KEY_TALKS_DATA @"talks"

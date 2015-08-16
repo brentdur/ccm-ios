@@ -10,12 +10,16 @@
 #import "Constaints.h"
 #import "DataController.h"
 #import "Messages.h"
+#import "Topics.h"
 #import "MessagesTableViewCell.h"
 #import "MsgTableViewController.h"
 #import "SWRevealViewController.h"
 
 @interface MessagesViewController : UITableViewController
 @property NSArray *content;
+@property NSArray *sections;
+
+@property NSDictionary *splits;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *moreButton;
 @property (weak, nonatomic) IBOutlet UIRefreshControl *refresh;

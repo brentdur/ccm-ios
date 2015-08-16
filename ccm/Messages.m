@@ -34,6 +34,7 @@
     self.date = [DateUtil dateFromString:[item valueForKey:@"date"]];
     self.message = [item valueForKey:@"message"];
     self.version = [item valueForKey:@"version"];
+    self.topic = [item valueForKey:@"topic"];
 }
 
 @end

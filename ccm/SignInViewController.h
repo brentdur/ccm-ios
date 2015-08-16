@@ -11,6 +11,7 @@
 #import "Constaints.h"
 #import "KeychainItemWrapper.h"
 #import "DataController.h"
+#import "UIView+Toast.h"
 
 
 @interface SignInViewController : UIViewController <AdminRequestDelegate>
@@ -18,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property UIViewController *runningView;
+-(void) postReturn:(NSMutableArray *) data andError:(NSError *) error;
 - (IBAction)signin:(id)sender;
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
 - (IBAction)done:(id)sender;

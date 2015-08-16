@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Constaints.h"
+
 #import "DataController.h"
 #import "Events.h"
 #import "EventsTableViewCell.h"
@@ -15,9 +16,11 @@
 #import "SWRevealViewController.h"
 #import "MainTabViewController.h"
 #import "DateUtil.h"
+#import "UIView+Toast.h"
 
 @interface EventsViewController : UITableViewController <DataControllerDelegate>
 
+@property MainTabViewController *parent;
 @property NSArray *content;
 @property (weak, nonatomic) IBOutlet UINavigationItem *bar;
 

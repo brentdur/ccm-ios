@@ -32,6 +32,15 @@
     [[self location] setText:[data location]];
     [[self desc] setText:[data desc]];
     [[self total] setText:[NSString stringWithFormat:@"Total: %@", [data memberCount]]];
+    
+    [self checkMember];
+}
+
+- (void) checkMember{
+    if ([[data memberOf] boolValue]){
+        [[self addButton] setTitle:@"You have signed up" forState:UIControlStateDisabled];
+        [[self addButton] setEnabled:NO];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,10 +81,17 @@
     NSLog(@"add user to: %@", [data getIdd]);
     
     NSDictionary *dic = @{@"signup": [data getIdd]};
-    [DataController putUserToSignup:dic];
+    [[self view] makeToastActivity];
+    [DataController putUserToSignup:dic andHandler:^(NSMutableArray *retData, NSError *error) {
+        [[self view] hideToastActivity];
+        [[[self navigationController] view] makeToast:@"Added to list" duration:3.0 position:CSToastPositionLower];
+        [data setMemberCount:[NSNumber numberWithLong:[[data memberCount] integerValue] + 1]];
+        [[self total] setText:[NSString stringWithFormat:@"Total: %@", [data memberCount]]];
+        [[self data] setMemberOf:@1];
+        [self checkMember];
+    }];
     
-    [data setMemberCount:[NSNumber numberWithLong:[[data memberCount] integerValue] + 1]];
-    [[self navigationController] popViewControllerAnimated:YES];
+    
 }
 
 @end

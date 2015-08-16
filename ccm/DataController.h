@@ -23,14 +23,17 @@
 +(void) sync;
 +(void) rollback;
 
-+(void) addEventWithData:(NSDictionary *) data;
-+(void) addMsgWithData:(NSDictionary *) data;
-+(void) addTalkWithData:(NSDictionary *) data;
-+(void) addSignupWithData:(NSDictionary *) data;
++(void) addEventWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
++(void) addMsgWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
++(void) addTalkWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
++(void) addSignupWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
 
-+(void) putUserToSignup:(NSDictionary *) data;
++(void) putUserToSignup:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
 
 +(void) saveMyGroup;
+
++(void) signIn:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
++(void) signUp:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
 
 # pragma mark - Get methods
 +(NSArray *) getEvents;
@@ -44,6 +47,7 @@
 +(void) deleteEvents;
 
 +(void) setDelegate:(id) del withType:(NSString *) type;
++(void) setGroupDelegate:(id) del;
 
 
 
@@ -56,6 +60,12 @@
 @end
 
 @protocol DataControllerDelegate
+@optional
+-(void) didUpdateData;
+
+@end
+
+@protocol DataControllerGroupsDelegate
 @optional
 -(void) didUpdateData;
 

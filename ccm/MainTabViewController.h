@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Constaints.h"
+#import "DataController.h"
 
-@interface MainTabViewController : UITabBarController
+@interface MainTabViewController : UITabBarController <DataControllerGroupsDelegate>
 
 @property BOOL canWriteSignups;
 @property BOOL canWriteTalks;
 @property BOOL canWriteEvents;
+
+-(void) didUpdateData;
 
 @end

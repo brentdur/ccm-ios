@@ -37,6 +37,7 @@
     self.desc = [item valueForKey:@"description"];
     self.memberCount = [item valueForKey:@"memberCount"];
     self.version = [item valueForKey:@"version"];
+    self.memberOf = @0;
 }
 
 @end

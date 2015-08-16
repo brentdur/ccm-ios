@@ -17,14 +17,18 @@
 @synthesize content;
 @synthesize selectedRow;
 @synthesize refresh;
+@synthesize sections;
+@synthesize splits;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     content = [DataController getMessages];
+    sections = [DataController getTopics];
     if([content count] == 0){
         [DataController setDelegate:self withType:ENTITY_MESSAGES];
     }
+    [self sectionize];
     
     SWRevealViewController *rvc = [self revealViewController];
     if (rvc){
@@ -56,9 +60,32 @@
 -(void) didUpdateData{
     NSLog(@"did update messages");
     content = [DataController getMessages];
+    sections = [DataController getTopics];
+    [self sectionize];
     [[self tableView] reloadData];
     [refresh endRefreshing];
-}/*
+}
+
+-(void) sectionize{
+    NSMutableDictionary *stuff = [[NSMutableDictionary alloc] init];
+    NSMutableArray *messages = [[NSMutableArray alloc] initWithArray:content];
+    for (Topics* topic in sections){
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        NSMutableArray *deletes = [[NSMutableArray alloc] init];
+        for (Messages* message in messages){
+            if ([[topic getIdd]isEqualToString:[message topic]]){
+                [array addObject:message];
+                [deletes addObject:message];
+            }
+        }
+        [messages removeObjectsInArray:deletes];
+        [stuff setValue:array forKey:[topic name]];
+    }
+    splits = stuff;
+}
+
+
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -69,7 +96,7 @@
 */
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [content count];
+    return [[splits valueForKey:[[sections objectAtIndex:section] name]] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -80,10 +107,18 @@
     if(cell == nil){
         cell = [[MessagesTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
-    
-    cell.label1.text = [(Messages *)content[indexPath.row] subject];
-    cell.label2.text = [(Messages *)content[indexPath.row] from];
+    Messages *msg = [[splits valueForKey:[[sections objectAtIndex:indexPath.section] name]] objectAtIndex:indexPath.row];
+    cell.label1.text = [msg subject];
+    cell.label2.text = @"";
     return cell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return [sections count];
+}
+
+- (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [[sections objectAtIndex:section] name];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -99,7 +134,8 @@
     if ([[segue identifier] isEqualToString:@"MsgDetail"]) {
         MsgTableViewController *detailViewController = [segue destinationViewController];
         NSIndexPath *indexPath = [self selectedRow];
-        [detailViewController setData:(Messages *) content[indexPath.row]];
+        Messages *msg = [[splits valueForKey:[[sections objectAtIndex:indexPath.section] name]] objectAtIndex:indexPath.row];
+        [detailViewController setData: msg];
     }
 }
 
