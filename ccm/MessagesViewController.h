@@ -25,5 +25,6 @@
 @property (weak, nonatomic) IBOutlet UIRefreshControl *refresh;
 
 @property NSIndexPath *selectedRow;
+- (IBAction)edit:(id)sender;
 
 @end

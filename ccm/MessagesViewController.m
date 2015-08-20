@@ -73,7 +73,7 @@
         NSMutableArray *array = [[NSMutableArray alloc] init];
         NSMutableArray *deletes = [[NSMutableArray alloc] init];
         for (Messages* message in messages){
-            if ([[topic getIdd]isEqualToString:[message topic]]){
+            if ([[topic getIdd]isEqualToString: [message topic]]){
                 [array addObject:message];
                 [deletes addObject:message];
             }
@@ -130,6 +130,10 @@
 
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%@", [[content objectAtIndex:[indexPath row]] subject]);
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([[segue identifier] isEqualToString:@"MsgDetail"]) {
         MsgTableViewController *detailViewController = [segue destinationViewController];
@@ -144,4 +148,7 @@
     [[self tabBarController] setSelectedViewController:[[[self tabBarController] viewControllers]objectAtIndex:1]];
 }
 
+- (IBAction)edit:(id)sender {
+    [[self tableView] setEditing:YES];
+}
 @end

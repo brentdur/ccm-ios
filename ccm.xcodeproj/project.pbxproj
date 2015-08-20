@@ -49,6 +49,7 @@
 		DB2BFEA91B687EA800B12A0B /* StarterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2BFEA81B687EA800B12A0B /* StarterViewController.m */; };
 		DB4907AC1B7951EA005B5242 /* Signups.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4907AB1B7951EA005B5242 /* Signups.m */; };
 		DB4907AF1B7951EB005B5242 /* Topics.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4907AE1B7951EB005B5242 /* Topics.m */; };
+		DB55D3521B855F41001685C3 /* moreicon-02.png in Resources */ = {isa = PBXBuildFile; fileRef = DB55D3501B855F41001685C3 /* moreicon-02.png */; };
 		DB5AA7DD1B6DD10F00308E57 /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5AA7DC1B6DD10F00308E57 /* MainTabViewController.m */; };
 		DB78CE811B711EF200132EDB /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DB78CE801B711EF200132EDB /* DateUtil.m */; };
 		DB8F1C301B6D8B27007B3DAB /* TalksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8F1C2F1B6D8B27007B3DAB /* TalksViewController.m */; };
@@ -167,6 +168,7 @@
 		DB4907AB1B7951EA005B5242 /* Signups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Signups.m; sourceTree = "<group>"; };
 		DB4907AD1B7951EB005B5242 /* Topics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topics.h; sourceTree = "<group>"; };
 		DB4907AE1B7951EB005B5242 /* Topics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topics.m; sourceTree = "<group>"; };
+		DB55D3501B855F41001685C3 /* moreicon-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moreicon-02.png"; sourceTree = "<group>"; };
 		DB5AA7DB1B6DD10F00308E57 /* MainTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabViewController.h; sourceTree = "<group>"; };
 		DB5AA7DC1B6DD10F00308E57 /* MainTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabViewController.m; sourceTree = "<group>"; };
 		DB78CE7F1B711EF200132EDB /* DateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtil.h; sourceTree = "<group>"; };
@@ -235,6 +237,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB07B1C31B811A790069DA2F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DB07B1C41B811A8A0069DA2F /* images */,
+			);
+			name = Resources;
+			path = ccmTests;
+			sourceTree = "<group>";
+		};
+		DB07B1C41B811A8A0069DA2F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				DB55D3501B855F41001685C3 /* moreicon-02.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		DB137FF11B6A865E004965C7 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +351,7 @@
 				DB27BD181B6705100068F0BE /* ccm */,
 				DB137FF11B6A865E004965C7 /* Vendor */,
 				DB27BD351B6705110068F0BE /* ccmTests */,
+				DB07B1C31B811A790069DA2F /* Resources */,
 				DB2BFEA01B68610400B12A0B /* Frameworks */,
 				DB27BD171B6705100068F0BE /* Products */,
 			);
@@ -610,6 +630,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB55D3521B855F41001685C3 /* moreicon-02.png in Resources */,
 				DB27BD281B6705110068F0BE /* Main.storyboard in Resources */,
 				DB27BD2D1B6705110068F0BE /* LaunchScreen.xib in Resources */,
 				DB27BD2A1B6705110068F0BE /* Images.xcassets in Resources */,

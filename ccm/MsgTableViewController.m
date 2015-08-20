@@ -29,7 +29,7 @@
     
     [self setTitle:[data subject]];
     
-    [[self from] setText:[NSString stringWithFormat:@"%@ %@", @"from", [data from]]];
+    [[self from] setText:[NSString stringWithFormat:@"%@ %@", @"from", [data simpleFrom]]];
     [[self date] setText:sDate];
     [[self text] setText:[data message]];
     

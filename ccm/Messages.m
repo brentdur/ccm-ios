@@ -12,12 +12,14 @@
 @implementation Messages
 
 @dynamic from;
+@dynamic simpleFrom;
 @dynamic to;
 @dynamic subject;
 @dynamic date;
 @dynamic message;
 @dynamic version;
 @dynamic id;
+@dynamic topic;
 
 -(NSString *)getIdd{
     return self.id;
@@ -29,12 +31,14 @@
 -(void)setDescriptionUsing:(NSDictionary *) item{
     self.id = [item valueForKey:@"_id"];
     self.from = [item valueForKey:@"from"];
+    self.simpleFrom = [item valueForKey:@"simpleFrom"];
     self.to = [item valueForKey:@"simpleTo"];
     self.subject = [item valueForKey:@"subject"];
     self.date = [DateUtil dateFromString:[item valueForKey:@"date"]];
     self.message = [item valueForKey:@"message"];
     self.version = [item valueForKey:@"version"];
-    self.topic = [item valueForKey:@"topic"];
+    NSDictionary *top = [item valueForKey:@"topic"];
+    self.topic = [top valueForKey:@"_id"];
 }
 
 @end

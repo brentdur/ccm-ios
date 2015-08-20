@@ -20,6 +20,8 @@
 -(NSString *) getIdd;
 -(NSNumber *) getVersion;
 
+-(void) setIdd:(NSString *) id;
+
 -(void) setDescriptionUsing:(NSDictionary *) item;
 
 @end

@@ -24,6 +24,10 @@
     return self.version;
 }
 
+-(void)setIdd:(NSString *)id{
+    self.id = id;
+}
+
 -(void)setDescriptionUsing:(NSDictionary *)item{
     self.id = [item valueForKey:@"_id"];
     self.name = [item valueForKey:@"name"];
