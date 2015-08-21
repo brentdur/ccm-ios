@@ -1463,7 +1463,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AH4-Tt-Bp0" id="sVp-xp-LCk">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDY-aI-lfm">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDY-aI-lfm">
                                                     <rect key="frame" x="8" y="7" width="173" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="173" id="7N5-8S-pp6"/>
@@ -1859,7 +1859,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Inbox" id="l41-8i-JzJ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="cRh-y9-9vl">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="cRh-y9-9vl">
                             <connections>
                                 <action selector="edit:" destination="gSy-A9-3NG" id="aWD-NA-nZv"/>
                             </connections>
@@ -1869,6 +1869,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
+                        <outlet property="editButton" destination="cRh-y9-9vl" id="7G7-Sa-4Sk"/>
                         <outlet property="refresh" destination="gj4-xT-aJU" id="94Z-fH-16u"/>
                         <segue destination="tBH-ua-MAP" kind="show" identifier="MsgDetail" id="HES-xN-g3G"/>
                     </connections>
@@ -2012,7 +2013,7 @@
         <image name="open book 2.png" width="27" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zFd-a1-ZUO"/>
-        <segue reference="bWu-j7-a5z"/>
+        <segue reference="wOZ-d0-5or"/>
+        <segue reference="lo5-KF-f85"/>
     </inferredMetricsTieBreakers>
 </document>

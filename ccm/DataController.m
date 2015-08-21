@@ -97,6 +97,11 @@ static NSUInteger numSignups;
     
 }
 
++(void) deleteMsg:(NSDictionary *)data andHandler:(void (^)(NSMutableArray *, NSError *))handler {
+    DataRequest *si = [DataRequest sharedInstance];
+    [si AFdeleteWithUrl:URL_DELETE_MSG andData:data returnTo:handler];
+}
+
 +(NSArray *) getsForEntity: (NSString *) name{
     NSManagedObjectContext *moc =  [(AppDelegate *) [[UIApplication sharedApplication] delegate] managedObjectContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];

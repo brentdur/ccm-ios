@@ -27,6 +27,8 @@
 
 #define URL_PUT_SIGNUPS (URL_DOMAIN @"/api/signups/addme")
 
+#define URL_DELETE_MSG (URL_DOMAIN @"/api/messages")
+
 #define URL_POST_SIGNIN (URL_DOMAIN @"/auth/local")
 #define URL_POST_SIGNUP (URL_DOMAIN @"/api/users")
 

@@ -18,6 +18,7 @@
 @dynamic version;
 @dynamic desc;
 @dynamic memberCount;
+@dynamic memberOf;
 @dynamic id;
 
 -(NSString *)getIdd{
@@ -37,7 +38,7 @@
     self.desc = [item valueForKey:@"description"];
     self.memberCount = [item valueForKey:@"memberCount"];
     self.version = [item valueForKey:@"version"];
-    self.memberOf = @0;
+    self.memberOf = [item valueForKey:@"isMemberOf"];
 }
 
 @end

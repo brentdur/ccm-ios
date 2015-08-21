@@ -13,6 +13,7 @@
 #import "Topics.h"
 #import "MessagesTableViewCell.h"
 #import "MsgTableViewController.h"
+#import "UIView+Toast.h"
 
 @interface MessagesViewController : UITableViewController
 @property NSArray *content;
@@ -20,7 +21,8 @@
 
 @property NSDictionary *splits;
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *moreButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
+
 @property (weak, nonatomic) IBOutlet UIRefreshControl *refresh;
 
 @property NSIndexPath *selectedRow;

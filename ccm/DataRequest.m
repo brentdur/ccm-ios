@@ -169,6 +169,53 @@ static DataRequest *sharedInstance = nil;
     
 }
 
+ -(void) AFputWithUrl:(NSString *)urlString andData:(NSDictionary *) params returnTo:(void (^)(NSMutableArray * data, NSError * error)) handler {
+    
+     NSString *key = (NSString *)[KeychainItemWrapper load:KEYCHAIN_KEY_TOKEN];
+     NSError *error = [[NSError alloc] init];
+     AFJSONRequestSerializer *serial = [AFJSONRequestSerializer serializer];
+     NSMutableURLRequest *request = [serial requestWithMethod:@"PUT" URLString:urlString parameters:params error:&error ];
+     [request setValue:[NSString stringWithFormat:@"Bearer %@", key] forHTTPHeaderField:@"Authorization"];
+     
+     AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+     NSLog(@"%@",[[op request] HTTPBody]);
+     op.responseSerializer = [AFJSONResponseSerializer serializer];
+     [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+         NSLog(@"Response: %lu", (long)[[operation response] statusCode]);
+         NSLog(@"JSON: %@", responseObject);
+         handler(responseObject, nil);
+     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         NSLog(@"Error: %@", error);
+         handler(nil, error);
+     }];
+     [op start];
+     
+ }
+
+-(void) AFdeleteWithUrl:(NSString *)urlString andData:(NSDictionary *)params returnTo:(void (^)(NSMutableArray *, NSError *))handler{
+    
+    NSString *key = (NSString *)[KeychainItemWrapper load:KEYCHAIN_KEY_TOKEN];
+    NSError *error = [[NSError alloc] init];
+    AFJSONRequestSerializer *serial = [AFJSONRequestSerializer serializer];
+    NSMutableURLRequest *request = [serial requestWithMethod:@"DELETE" URLString:urlString parameters:params error:&error ];
+    [request setValue:[NSString stringWithFormat:@"Bearer %@", key] forHTTPHeaderField:@"Authorization"];
+    
+    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    op.responseSerializer = [AFJSONResponseSerializer serializer];
+    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Response: %lu", (long)[[operation response] statusCode]);
+        NSLog(@"JSON: %@", responseObject);
+        handler(responseObject, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        handler(nil, error);
+    }];
+    [op start];
+    
+}
+
+
+
 
 
 #pragma mark - NSURLSessionTaskDelegate Methods

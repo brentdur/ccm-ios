@@ -73,6 +73,7 @@
         }
         [messages removeObjectsInArray:deletes];
         [stuff setValue:array forKey:[topic name]];
+//        NSLog(@"%@", stuff);
     }
     splits = stuff;
 }
@@ -89,7 +90,8 @@
 */
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[splits valueForKey:[[sections objectAtIndex:section] name]] count];
+    NSArray *array = (NSArray *)[splits valueForKey:[[sections objectAtIndex:section] name]];
+    return [array count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -124,7 +126,27 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%@", [[content objectAtIndex:[indexPath row]] subject]);
+    NSString *key = [[sections objectAtIndex:[indexPath section]] name];
+    NSLog(@"%@", key);
+    NSArray *array = (NSArray *)[splits objectForKey:key];
+    NSLog(@"%@", array);
+    NSDictionary *data = @{@"message": [[array objectAtIndex:[indexPath row]] getIdd]};;
+    NSLog(@"%@", data);
+    [[self view] makeToastActivity];
+    [DataController deleteMsg:data andHandler:^(NSMutableArray *data, NSError *error) {
+        [[self view] hideToastActivity];
+        if (error){
+            NSLog(@"error");
+        }
+        else {
+            NSMutableDictionary *spli = [[NSMutableDictionary alloc] initWithDictionary:splits];
+            NSMutableArray *cont = [[NSMutableArray alloc] initWithArray:array];
+            [cont removeObjectAtIndex:indexPath.row];
+            [spli setObject:cont forKey:key];
+            splits = spli;
+            [tableView reloadData];
+        }
+    }];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -142,6 +164,14 @@
 }
 
 - (IBAction)edit:(id)sender {
-    [[self tableView] setEditing:YES];
+    if ([[self tableView] isEditing]){
+        [[self tableView] setEditing:NO];
+        [[self editButton] setTitle:@"Edit"];
+    }
+    else {
+        [[self editButton] setTitle:@"Done"];
+        [[self tableView] setEditing:YES];
+    }
+    
 }
 @end

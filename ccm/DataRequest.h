@@ -41,6 +41,8 @@
 -(void) AFauthPostWithUrl:(NSString *)urlString andData:(NSDictionary *) params returnTo:(void (^)(NSMutableArray * data, NSError * error)) handler;
 -(void) AFputWithUrl:(NSString *)urlString andData:(NSDictionary *) params returnTo:(void (^)(NSMutableArray * data, NSError * error)) handler;
 
+-(void) AFdeleteWithUrl:(NSString *)urlString andData:(NSDictionary *) params returnTo:(void (^)(NSMutableArray * data, NSError * error)) handler;
+
 
 @end
 

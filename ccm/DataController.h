@@ -30,6 +30,8 @@
 
 +(void) putUserToSignup:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
 
++(void) deleteMsg:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
+
 +(void) saveMyGroup;
 
 +(void) signIn:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
