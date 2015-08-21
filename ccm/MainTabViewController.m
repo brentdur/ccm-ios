@@ -26,6 +26,7 @@
         [self didUpdateData];
     }
     [self setSelectedViewController:[[self viewControllers] objectAtIndex:1]];
+    [self setLoaded:false];
     
 }
 
@@ -53,6 +54,10 @@
         if([(NSString *)[group valueForKey:@"name"] isEqualToString:@"ministers"]){
             [self setIsMinister:true];
         }
+    }
+    [self setLoaded:true];
+    if ([self delegate]){
+        [[self delegate] permissionsSet];
     }
     //TODO: get tab controller to hide nav buttons
     NSLog(@"%d %d %d", _canWriteEvents, _canWriteSignups, _canWriteTalks);

@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     NSLog(@"events did load");
     // Do any additional setup after loading the view.
     content = [DataController getEvents];
     if([content count] == 0){
@@ -27,6 +28,13 @@
     }
     
     parent = (MainTabViewController *)[self tabBarController];
+    
+    if(![parent loaded]){
+        [parent setDelegate:self];
+    }
+    else {
+        [self permissionsSet];
+    }
     
     UIBarButtonItem *left = [UIBarButtonItem alloc];
     if([parent isMinister]){
@@ -44,9 +52,7 @@
     if ([content count] != [DataController getNumEvents]){
         [self didUpdateData];
     }
-    if(![parent canWriteEvents]){
-        [[self bar] setRightBarButtonItem:nil];
-    }
+    
 }
 
 -(void) refreshStuff{
@@ -67,6 +73,12 @@
     content = [DataController getEvents];
     [[self tableView] reloadData];
     [refresh endRefreshing];
+}
+
+-(void) permissionsSet{
+    if(![parent canWriteEvents]){
+        [[self bar] setRightBarButtonItem:nil];
+    }
 }
 
 /*

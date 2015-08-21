@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSLog(@"talks did load");
     content = [DataController getTalks];
     if([content count] == 0){
         [DataController setDelegate:self withType:ENTITY_TALKS];
@@ -41,6 +42,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    
     [[[self tabBarController] tabBar] setHidden:NO];
     if ([content count] != [DataController getNumTalks]){
         [self didUpdateData];

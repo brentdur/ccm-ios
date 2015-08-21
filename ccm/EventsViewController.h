@@ -17,7 +17,7 @@
 #import "DateUtil.h"
 #import "UIView+Toast.h"
 
-@interface EventsViewController : UITableViewController <DataControllerDelegate>
+@interface EventsViewController : UITableViewController <DataControllerDelegate, PermissionSetDelegate>
 
 @property MainTabViewController *parent;
 @property NSArray *content;

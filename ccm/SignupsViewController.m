@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"signups did load");
     
     content = [DataController getSignups];
     if ([content count] == 0) {
@@ -42,6 +43,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    
     [[[self tabBarController] tabBar] setHidden:NO];
     [[self tableView]reloadData];
     if ([content count] != [DataController getNumSignups]){

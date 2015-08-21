@@ -10,13 +10,24 @@
 #import "Constaints.h"
 #import "DataController.h"
 
+@protocol PermissionSetDelegate;
+
 @interface MainTabViewController : UITabBarController <DataControllerGroupsDelegate>
+
+@property id<PermissionSetDelegate> delegate;
 
 @property BOOL canWriteSignups;
 @property BOOL canWriteTalks;
 @property BOOL canWriteEvents;
 @property BOOL isMinister;
+@property BOOL loaded;
 
 
 -(void) didUpdateData;
+
+@end
+
+@protocol PermissionSetDelegate
+-(void) permissionsSet;
+
 @end
