@@ -26,6 +26,7 @@
         [self didUpdateData];
     }
     [self setSelectedViewController:[[self viewControllers] objectAtIndex:1]];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,6 +49,9 @@
         }
         if([(NSNumber *)[group valueForKey:@"writeTalks"] isEqualToNumber:@1]){
             [self setCanWriteTalks:true];
+        }
+        if([(NSString *)[group valueForKey:@"name"] isEqualToString:@"ministers"]){
+            [self setIsMinister:true];
         }
     }
     //TODO: get tab controller to hide nav buttons

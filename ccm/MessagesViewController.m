@@ -30,13 +30,6 @@
     }
     [self sectionize];
     
-    SWRevealViewController *rvc = [self revealViewController];
-    if (rvc){
-        [[self moreButton] setTarget:[self revealViewController]];
-        [[self moreButton] setAction:@selector(revealToggle:)];
-        [[self view] addGestureRecognizer:[[self revealViewController] panGestureRecognizer]];
-    }
-    
     [refresh addTarget:self action:@selector(refreshStuff) forControlEvents:UIControlEventValueChanged];
 }
 

@@ -13,7 +13,6 @@
 #import "Topics.h"
 #import "MessagesTableViewCell.h"
 #import "MsgTableViewController.h"
-#import "SWRevealViewController.h"
 
 @interface MessagesViewController : UITableViewController
 @property NSArray *content;

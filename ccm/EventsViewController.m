@@ -26,17 +26,21 @@
         [DataController setDelegate:self withType:ENTITY_EVENT];
     }
     
-    SWRevealViewController *rvc = [self revealViewController];
-    if (rvc){
-        [[self moreButton] setTarget:[self revealViewController]];
-        [[self moreButton] setAction:@selector(revealToggle:)];
-        [[self view] addGestureRecognizer:[[self revealViewController] panGestureRecognizer]];
-    }
     parent = (MainTabViewController *)[self tabBarController];
+    
+    UIBarButtonItem *left = [UIBarButtonItem alloc];
+    if([parent isMinister]){
+        left = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(inbox:)];
+    }
+    else {
+        left = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(sendMsg:)];
+    }
+    [[self bar] setLeftBarButtonItem:left];
     [refresh addTarget:self action:@selector(refreshStuff) forControlEvents:UIControlEventValueChanged];
 }
 
 -(void) viewWillAppear:(BOOL)animated{
+    [[[self tabBarController] tabBar] setHidden:NO];
     if ([content count] != [DataController getNumEvents]){
         [self didUpdateData];
     }
@@ -110,11 +114,21 @@
     }
 }
 
+- (IBAction) sendMsg:(id)sender {
+    [[[self tabBarController] tabBar] setHidden:YES];
+    [self performSegueWithIdentifier:@"SendMsg" sender:sender];
+}
+
+- (IBAction) inbox:(id)sender {
+    [[[self tabBarController] tabBar] setHidden:YES];
+    [self performSegueWithIdentifier:@"ShowInbox" sender:sender];
+}
 
 - (IBAction)swipe:(id)sender {
     
     
-    [[self tabBarController] setSelectedViewController:[[[self tabBarController] viewControllers]objectAtIndex:0]];  
+    [[self tabBarController] setSelectedViewController:[[[self tabBarController] viewControllers]objectAtIndex:0]];
+    
 }
 
 - (IBAction)swipeLeft:(id)sender {

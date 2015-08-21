@@ -26,9 +26,6 @@
     [self setDeleteTableViewRowAnimation:UITableViewRowAnimationFade];
     [self setReloadTableViewRowAnimation:UITableViewRowAnimationFade];
     
-    rvc = [self revealViewController];
-    currentID = [[rvc frontViewController] restorationIdentifier];
-    [rvc setDelegate:self];
     
     NSArray *dics = [[NSUserDefaults standardUserDefaults] arrayForKey:KEY_GROUPS];
     sendEnabled = true;
@@ -53,20 +50,6 @@
 -(CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 0.1f;
 }
-
-
-- (void)revealController:(SWRevealViewController *)revealController willMoveToPosition:(FrontViewPosition)position {
-    if (position == FrontViewPositionRight){
-        currentID = [[rvc frontViewController] restorationIdentifier];
-        [self toggleCellsWithAnimation:false];
-    }
-}
-
--(void)goHome{
-    UIViewController *cont = [[self storyboard] instantiateViewControllerWithIdentifier:@"TabView"];
-    [[self revealViewController] pushFrontViewController:cont animated:YES];
-}
-
 
 /*
 #pragma mark - Navigation

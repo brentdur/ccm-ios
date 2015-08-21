@@ -16,7 +16,7 @@
     UIViewController *cont;
     if (hasToken) {
 //    if(false){
-        cont = [self.storyboard instantiateViewControllerWithIdentifier:@"RVC"];
+        cont = [self.storyboard instantiateViewControllerWithIdentifier:@"TabView"];
         [DataController sync];
     }
     else {

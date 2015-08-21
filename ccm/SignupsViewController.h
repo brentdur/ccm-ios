@@ -12,7 +12,6 @@
 #import "Signups.h"
 #import "SignupsTableViewCell.h"
 #import "SignupTableViewController.h"
-#import "SWRevealViewController.h"
 #import "MainTabViewController.h"
 
 

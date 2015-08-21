@@ -25,20 +25,24 @@
         [DataController setDelegate:self withType:ENTITY_SIGNUPS];
     }
     
-    SWRevealViewController *rvc = [self revealViewController];
-    if (rvc){
-        [[self morebutton] setTarget:[self revealViewController]];
-        [[self morebutton] setAction:@selector(revealToggle:)];
-        [[self view] addGestureRecognizer:[[self revealViewController] panGestureRecognizer]];
-    }
     MainTabViewController *parent = (MainTabViewController *)[self tabBarController];
     if(![parent canWriteSignups]){
         [[self bar] setRightBarButtonItem:nil];
     }
+    
+    UIBarButtonItem *left = [UIBarButtonItem alloc];
+    if([parent isMinister]){
+        left = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(inbox:)];
+    }
+    else {
+        left = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(sendMsg:)];
+    }
+    [[self bar] setLeftBarButtonItem:left];
     [refresh addTarget:self action:@selector(refreshStuff) forControlEvents:UIControlEventValueChanged];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [[[self tabBarController] tabBar] setHidden:NO];
     [[self tableView]reloadData];
     if ([content count] != [DataController getNumSignups]){
         [self didUpdateData];
@@ -97,6 +101,16 @@
         NSIndexPath *indexPath = [self selectedRow];
         [detailViewController setData:(Signups *) content[indexPath.row]];
     }
+}
+
+- (IBAction) sendMsg:(id)sender {
+    [[[self tabBarController] tabBar] setHidden:YES];
+    [self performSegueWithIdentifier:@"SendMsg" sender:sender];
+}
+
+- (IBAction) inbox:(id)sender {
+    [[[self tabBarController] tabBar] setHidden:YES];
+    [self performSegueWithIdentifier:@"ShowInbox" sender:sender];
 }
 
 /*

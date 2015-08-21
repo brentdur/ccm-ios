@@ -94,7 +94,7 @@
 
 //switch to tab view, close navbar view
 -(void) goToTabView {
-    UIViewController *cont = [_runningView.storyboard instantiateViewControllerWithIdentifier:@"RVC"];
+    UIViewController *cont = [_runningView.storyboard instantiateViewControllerWithIdentifier:@"TabView"];
     [_runningView presentViewController:cont animated:true completion:nil];
     [_runningView removeFromParentViewController];
 }

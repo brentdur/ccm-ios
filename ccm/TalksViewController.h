@@ -12,7 +12,6 @@
 #import "Talks.h"
 #import "TalksTableViewCell.h"
 #import "TalkTableViewController.h"
-#import "SWRevealViewController.h"
 #import "MainTabViewController.h"
 
 @interface TalksViewController : UITableViewController

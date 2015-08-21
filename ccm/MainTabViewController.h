@@ -15,7 +15,8 @@
 @property BOOL canWriteSignups;
 @property BOOL canWriteTalks;
 @property BOOL canWriteEvents;
+@property BOOL isMinister;
+
 
 -(void) didUpdateData;
-
 @end

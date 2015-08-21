@@ -13,7 +13,6 @@
 #import "Events.h"
 #import "EventsTableViewCell.h"
 #import "EventTableViewController.h"
-#import "SWRevealViewController.h"
 #import "MainTabViewController.h"
 #import "DateUtil.h"
 #import "UIView+Toast.h"
