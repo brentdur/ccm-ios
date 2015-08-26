@@ -26,8 +26,7 @@
 @property NSString *topicId;
 
 @property (weak, nonatomic) IBOutlet UITextField *subjectField;
-@property (weak, nonatomic) IBOutlet UITextView *messageField;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *moreButton;
+@property (weak, nonatomic) IBOutlet UILabel *fieldLabel;
 
 - (IBAction)done:(id)sender;
 

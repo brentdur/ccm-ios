@@ -14,8 +14,6 @@
 
 @interface MainTabViewController : UITabBarController <DataControllerGroupsDelegate>
 
-@property id<PermissionSetDelegate> delegate;
-
 @property BOOL canWriteSignups;
 @property BOOL canWriteTalks;
 @property BOOL canWriteEvents;
@@ -24,6 +22,7 @@
 
 
 -(void) didUpdateData;
+-(void) setTheDelegate:(id<PermissionSetDelegate>)delegate;
 
 @end
 

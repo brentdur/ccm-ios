@@ -24,21 +24,6 @@
     [self setTopicData:[DataController getTopics]];
     [self setTopicId:[[[self topicData] objectAtIndex:0] getIdd]];
     
-    self.textView.layer.borderWidth = .5f;
-    self.textView.layer.cornerRadius = 10.0f;
-    self.textView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-    
-    SWRevealViewController *rvc = [self revealViewController];
-    if (rvc){
-        [[self moreButton] setTarget:[self revealViewController]];
-        [[self moreButton] setAction:@selector(revealToggle:)];
-        [[self view] addGestureRecognizer:[[self revealViewController] panGestureRecognizer]];
-    }
-    
-    NSLog(@"%@", [[self parentViewController] title]);
-    NSLog(@"%@",[[[self revealViewController] rearViewController] title]);
-
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,11 +61,21 @@
     [self setTopicId:[[[self topicData] objectAtIndex:row]getIdd]];
 }
 
+-(void)textViewDidBeginEditing:(UITextView *)textView{
+    [[self fieldLabel] setHidden:YES];
+}
+
+-(void)textViewDidEndEditing:(UITextView *) textView{
+    if([[textView text] isEqualToString:@""]){
+        [[self fieldLabel] setHidden:NO];
+    }
+}
+
 
 - (IBAction)done:(id)sender {
     NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
     [data setValue:[[self subjectField] text] forKey:@"subject"];
-    [data setValue:[[self messageField] text] forKey:@"message"];
+    [data setValue:[[self textView] text] forKey:@"message"];
     [data setValue:[self topicId] forKey:@"topic"];
     NSDictionary *dic = [NSDictionary dictionaryWithDictionary:data];
     NSLog(@"%@", dic);

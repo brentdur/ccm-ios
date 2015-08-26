@@ -14,6 +14,10 @@
 
 @implementation MainTabViewController
 
+id<PermissionSetDelegate> del;
+bool done;
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -26,7 +30,7 @@
         [self didUpdateData];
     }
     [self setSelectedViewController:[[self viewControllers] objectAtIndex:1]];
-    [self setLoaded:false];
+    
     
 }
 
@@ -39,6 +43,8 @@
     [self setCanWriteEvents:false];
     [self setCanWriteSignups: false];
     [self setCanWriteTalks: false];
+    [self setIsMinister:false];
+    [self setLoaded:false];
     NSArray *dics = [[NSUserDefaults standardUserDefaults] arrayForKey:KEY_GROUPS];
     NSLog(@"%@", dics);
     for (NSDictionary *group in dics){
@@ -55,13 +61,23 @@
             [self setIsMinister:true];
         }
     }
-    [self setLoaded:true];
-    if ([self delegate]){
-        [[self delegate] permissionsSet];
+    [self setLoaded:YES];
+    done = true;
+    if (del){
+        [del permissionsSet];
     }
     //TODO: get tab controller to hide nav buttons
     NSLog(@"%d %d %d", _canWriteEvents, _canWriteSignups, _canWriteTalks);
     
+}
+
+-(void) setTheDelegate:(id<PermissionSetDelegate>)delegate {
+    if (done){
+        [delegate permissionsSet];
+    }
+    else {
+        del = delegate;
+    }
 }
 
 /*

@@ -114,18 +114,35 @@ static NSUInteger numSignups;
 +(NSArray *) getEvents{
     NSArray *ret = [self getsForEntity:ENTITY_EVENT];
     NSLog(@"got events");
+    ret = [ret sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        Events *a = (Events *) obj1;
+        Events *b = (Events *) obj2;
+        return [[a date] compare:[b date]];
+        
+    }];
+
     return ret;
 }
 
 +(NSArray *) getTalks{
     NSArray *ret = [self getsForEntity:ENTITY_TALKS];
-    
+    ret = [ret sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        Talks *a = (Talks *) obj1;
+        Talks *b = (Talks *) obj2;
+        return [[b date] compare:[a date]];
+        
+    }];
     return ret;
 }
 
 +(NSArray *) getMessages{
     NSArray *ret = [self getsForEntity:ENTITY_MESSAGES];
-    
+    ret = [ret sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        Messages *a = (Messages *) obj1;
+        Messages *b = (Messages *) obj2;
+        return [[b date] compare:[a date]];
+        
+    }];
     return ret;
 }
 

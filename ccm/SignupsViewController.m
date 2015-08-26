@@ -40,6 +40,10 @@
     }
     [[self bar] setLeftBarButtonItem:left];
     [refresh addTarget:self action:@selector(refreshStuff) forControlEvents:UIControlEventValueChanged];
+    UINavigationBar *navBar = [[self navigationController] navigationBar];
+    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tripleTap)];
+    [recognizer setNumberOfTapsRequired:6];
+    [navBar addGestureRecognizer:recognizer];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -113,6 +117,17 @@
 - (IBAction) inbox:(id)sender {
     [[[self tabBarController] tabBar] setHidden:YES];
     [self performSegueWithIdentifier:@"ShowInbox" sender:sender];
+}
+
+- (void) tripleTap {
+    NSUserDefaults *pref = [NSUserDefaults standardUserDefaults];
+    [pref setObject:NULL forKey:KEY_GROUPS];
+    
+    [pref setBool:false forKey:KEY_HAS_TOKEN];
+    
+    UIViewController *cont = [[self storyboard]instantiateInitialViewController];
+    [self presentViewController:cont animated:true completion:nil];
+    [[self tabBarController] removeFromParentViewController];
 }
 
 /*

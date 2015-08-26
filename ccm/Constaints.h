@@ -9,28 +9,29 @@
 #ifndef ccm_Constaints_h
 #define ccm_Constaints_h
 
-#define URL_DOMAIN @"http://ccm.brentondurkee.com"
+#define URL_BASE @"http://ccm.brentondurkee.com"
+#define URL_DOMAIN URL_BASE @"/api/"
 
-#define URL_GET_EVENTS (URL_DOMAIN @"/api/events")
-#define URL_GET_MESSAGES (URL_DOMAIN @"/api/messages/mine")
-#define URL_GET_TALKS (URL_DOMAIN @"/api/talks")
-#define URL_GET_GROUPS (URL_DOMAIN @"/api/groups")
-#define URL_GET_LOCATIONS (URL_DOMAIN @"/api/locations")
-#define URL_GET_TOPICS (URL_DOMAIN @"/api/topics")
-#define URL_GET_SIGNUPS (URL_DOMAIN @"/api/signups")
-#define URL_GET_MY_INFO (URL_DOMAIN @"/api/users/me")
+#define URL_GET_EVENTS (URL_DOMAIN @"events")
+#define URL_GET_MESSAGES (URL_DOMAIN @"messages/mine")
+#define URL_GET_TALKS (URL_DOMAIN @"talks")
+#define URL_GET_GROUPS (URL_DOMAIN @"groups")
+#define URL_GET_LOCATIONS (URL_DOMAIN @"locations")
+#define URL_GET_TOPICS (URL_DOMAIN @"topics")
+#define URL_GET_SIGNUPS (URL_DOMAIN @"signups")
+#define URL_GET_MY_INFO (URL_DOMAIN @"users/me")
 
-#define URL_POST_EVENTS (URL_DOMAIN @"/api/events")
-#define URL_POST_MESSAGES (URL_DOMAIN @"/api/messages")
-#define URL_POST_TALKS (URL_DOMAIN @"/api/talks")
-#define URL_POST_SIGNUPS (URL_DOMAIN @"/api/signups")
+#define URL_POST_EVENTS (URL_DOMAIN @"events")
+#define URL_POST_MESSAGES (URL_DOMAIN @"messages")
+#define URL_POST_TALKS (URL_DOMAIN @"talks")
+#define URL_POST_SIGNUPS (URL_DOMAIN @"signups")
 
-#define URL_PUT_SIGNUPS (URL_DOMAIN @"/api/signups/addme")
+#define URL_PUT_SIGNUPS (URL_DOMAIN @"signups/addme")
 
-#define URL_DELETE_MSG (URL_DOMAIN @"/api/messages")
+#define URL_DELETE_MSG (URL_DOMAIN @"messages")
 
-#define URL_POST_SIGNIN (URL_DOMAIN @"/auth/local")
-#define URL_POST_SIGNUP (URL_DOMAIN @"/api/users")
+#define URL_POST_SIGNIN (URL_BASE @"/auth/local")
+#define URL_POST_SIGNUP (URL_DOMAIN @"users")
 
 #define KEY_EVENT_DATA @"events"
 #define KEY_MESSAGES_DATA @"msgs"
