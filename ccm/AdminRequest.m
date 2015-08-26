@@ -25,20 +25,18 @@ static AdminRequest *sharedInstance = nil;
     return sharedInstance;
 }
 
-const NSString *signInUrl = @"http://ccm.brentondurkee.com/auth/local";
-const NSString *signUpUrl = @"http://ccm.brentondurkee.com/api/users";
 
 -(void) signInEmail:(NSString *)email andPassword:(NSString *)password andDelegate:(id)delegate{
     //asigns delegate, creates body, runs request
     self.delegate = delegate;
     NSString *body = [NSString stringWithFormat:@"email=%@&password=%@", email, password];
-    [self requestWithURL:signInUrl andBody:body];
+    [self requestWithURL:URL_POST_SIGNIN andBody:body];
 }
 
 -(void) signUpName:(NSString *)name forEmail:(NSString *) email andPassword:(NSString *)password andDelegate:(id)delegate{
     self.delegate = delegate;
     NSString *body = [NSString stringWithFormat:@"name=%@&password=%@&email=%@", name, password, email];
-    [self requestWithURL:signUpUrl andBody:body];
+    [self requestWithURL:URL_POST_SIGNUP andBody:body];
 }
 
 -(void) requestWithURL:(NSString *) urlString andBody:(NSString *) body{

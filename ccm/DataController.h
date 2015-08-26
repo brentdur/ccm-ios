@@ -18,7 +18,7 @@
 
 
 
-@interface DataController : NSObject <DataRequestDelegate>
+@interface DataController : NSObject
 
 +(void) sync;
 +(void) rollback;
@@ -45,8 +45,6 @@
 +(NSArray *) getLocations;
 +(NSArray *) getTopics;
 +(NSArray *) getSignups;
-
-+(void) deleteEvents;
 
 +(void) setDelegate:(id) del withType:(NSString *) type;
 +(void) setGroupDelegate:(id) del;

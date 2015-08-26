@@ -86,7 +86,7 @@
         }
         else {
             [[[nav parentViewController] view] makeToast:@"Sent" duration:3.0 position:CSToastPositionLower];
-            [nav goHome];
+            [[self navigationController] popViewControllerAnimated:YES];
         }
     }];
 }

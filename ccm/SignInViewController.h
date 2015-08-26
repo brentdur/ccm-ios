@@ -21,6 +21,6 @@
 @property UIViewController *runningView;
 -(void) postReturn:(NSMutableArray *) data andError:(NSError *) error;
 - (IBAction)signin:(id)sender;
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
+
 - (IBAction)done:(id)sender;
 @end

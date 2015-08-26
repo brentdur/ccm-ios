@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Constaints.h"
 @protocol AdminRequestDelegate;
 
 

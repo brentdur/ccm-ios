@@ -23,6 +23,4 @@
 @property BOOL inboxEnabled;
 @property BOOL sendEnabled;
 
--(void) goHome;
-
 @end

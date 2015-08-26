@@ -11,7 +11,7 @@
 
 @implementation StarterViewController
 -(void)viewDidAppear:(BOOL)animated {
-
+    [super viewDidAppear:animated];
     BOOL hasToken = [[NSUserDefaults standardUserDefaults] boolForKey:KEY_HAS_TOKEN];
     UIViewController *cont;
     if (hasToken) {

@@ -34,6 +34,7 @@
 }
 
 -(void) viewWillAppear:(BOOL)animated  {
+    [super viewWillAppear:animated];
 //    [[self map] setCenterCoordinate:[CLLocationCoordinate2DMake([[data lat] doubleValue], [[data lng] doubleValue])]];
     CLLocationDegrees lat = [[data lat] doubleValue];
     CLLocationDegrees lng = [[data lng] doubleValue];
@@ -54,6 +55,7 @@
 }
 
 -(void) viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
     [timer invalidate];
 }
 

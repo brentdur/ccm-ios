@@ -20,7 +20,7 @@
     NSLog(@"%f", distance);
     distance = distance / 86400;
     NSLog(@"%f", distance);
-    NSString *sDate = [[NSString alloc] init];
+    NSString *sDate;
     if (distance < -30 || distance >= 1){
         [df setDateFormat:@"MM/dd"];
         sDate = [df stringFromDate:date];
@@ -45,7 +45,7 @@
     NSLog(@"%f", distance);
     distance = distance / 86400;
     NSLog(@"%f", distance);
-    NSString *sDate = [[NSString alloc] init];
+    NSString *sDate;
     if (distance < -30 || distance >= 1){
         [df setDateFormat:@"MM/dd"];
         sDate = [df stringFromDate:date];
@@ -82,7 +82,7 @@
 
 +(NSString *) eventLittleString:(NSDate *) date{
     NSDateFormatter *df = [[NSDateFormatter alloc]init];
-    NSString *sDate = [[NSString alloc] init];
+    NSString *sDate;
     [df setDateFormat:@"MM/dd"];
     sDate = [df stringFromDate:date];
     return sDate;

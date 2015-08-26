@@ -32,17 +32,17 @@
     }
     UIBarButtonItem *left = [UIBarButtonItem alloc];
     if([parent isMinister]){
-        left = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(inbox:)];
+        left = [left initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(inbox:)];
     }
     else {
-        left = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(sendMsg:)];
+        left = [left initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(sendMsg:)];
     }
     [[self bar] setLeftBarButtonItem:left];
     [refresh addTarget:self action:@selector(refreshStuff) forControlEvents:UIControlEventValueChanged];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    
+    [super viewWillAppear:animated];
     [[[self tabBarController] tabBar] setHidden:NO];
     if ([content count] != [DataController getNumTalks]){
         [self didUpdateData];

@@ -34,6 +34,7 @@
 }
 
 -(void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     if ([content count] != [DataController getNumMsgs]){
         [self didUpdateData];
     }
