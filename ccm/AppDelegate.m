@@ -18,9 +18,30 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+    _registrationKey = @"onRegistraionCompleted";
+    _messageKey = @"onMessageRecieved";
+    
+    NSError *configureError;
+    [[GGLContext sharedInstance] configureWithError:&configureError];
+    _gcmSenderID = [[[GGLContext sharedInstance] configuration] gcmSenderID];
+    
+    UIUserNotificationType allNotificationTypes = (UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge);
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:allNotificationTypes categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    
     if ([[NSUserDefaults standardUserDefaults] boolForKey:KEY_HAS_TOKEN]){
         [DataController saveMyGroup];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
     }
+    
+    GCMConfig *gcmConfig = [GCMConfig defaultConfig];
+    gcmConfig.receiverDelegate = self;
+    [[GCMService sharedInstance] startWithConfig:gcmConfig];
+    
+    _registrationHandler = ^(NSString *registrationToken, NSError *error){
+        [GCM tokenHandle:registrationToken andError:error];
+    };
 
     return YES;
 }
@@ -34,18 +55,29 @@
     
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+//    [[GCMService sharedInstance] disconnect];
+//    _connectedToGCM = NO;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     BOOL hasToken = [[NSUserDefaults standardUserDefaults] boolForKey:KEY_HAS_TOKEN];
     if (hasToken) {
-        [DataController sync];
+//        [DataController sync];
     }
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+//    [[GCMService sharedInstance] connectWithHandler:^(NSError *error) {
+//        if(error){
+//            NSLog(@"could not connect to GCM");
+//        }
+//        else {
+//            _connectedToGCM = true;
+//            NSLog(@"Connected to GCM");
+//        }
+//    }];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -54,7 +86,41 @@
     [self saveContext];
 }
 
--(void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)())completionHandler {
+-(void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
+    NSLog(@"reg");
+    
+}
+
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    NSLog(@"reg with token");
+    GGLInstanceIDConfig *instanceIDConfig = [GGLInstanceIDConfig defaultConfig];
+    instanceIDConfig.delegate = self;
+    [[GGLInstanceID sharedInstance] startWithConfig:instanceIDConfig];
+    _registrationOptions = @{kGGLInstanceIDRegisterAPNSOption:deviceToken,
+                             kGGLInstanceIDAPNSServerTypeSandboxOption:@YES};
+    [[GGLInstanceID sharedInstance] tokenWithAuthorizedEntity:_gcmSenderID scope:kGGLInstanceIDScopeGCM options:_registrationOptions handler:_registrationHandler];
+}
+
+-(void) application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    NSLog(@"failed: %@", error);
+}
+
+-(void) onTokenRefresh {
+    NSLog(@"GCM Refresh");
+    [[GGLInstanceID sharedInstance] tokenWithAuthorizedEntity:_gcmSenderID scope:kGGLInstanceIDScopeGCM options:_registrationOptions handler:_registrationHandler];
+}
+
+-(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    NSLog(@"1");
+}
+
+-(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
+    NSLog(@"Recieved Info: %@", userInfo);
+    
+    if(completionHandler){
+        [DataController syncSelective:[userInfo objectForKey:@"sync"]];
+    }
+    completionHandler(UIBackgroundFetchResultNewData);
 }
 
 #pragma mark - Core Data stack

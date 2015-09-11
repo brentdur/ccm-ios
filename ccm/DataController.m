@@ -23,28 +23,83 @@ static NSUInteger numSignups;
     [self rollback];
     NSManagedObjectContext *moc =  [(AppDelegate *) [[UIApplication sharedApplication] delegate] managedObjectContext];
     DataRequest *si = [DataRequest sharedInstance];
+    [self syncEventsFor:moc Using:si];
+    [self syncMessagesFor:moc Using:si];
+    [self syncTalksFor:moc Using:si];
+    [self syncGroupsFor:moc Using:si];
+    [self syncLocationsFor:moc Using:si];
+    [self syncTopicsFor:moc Using:si];
+    [self syncSignupsFor:moc Using:si];
+    
+}
+
++(void) syncSelective:(NSString *) ent {
+    [self rollback];
+    NSManagedObjectContext *moc =  [(AppDelegate *) [[UIApplication sharedApplication] delegate] managedObjectContext];
+    DataRequest *si = [DataRequest sharedInstance];
+    if ([ent isEqualToString:@"events"]){
+        [self syncEventsFor:moc Using:si];
+    }
+    else if ([ent isEqualToString:@"messages"]){
+        [self syncMessagesFor:moc Using:si];
+    }
+    else if ([ent isEqualToString:@"talks"]){
+        [self syncTalksFor:moc Using:si];
+    }
+    else if ([ent isEqualToString:@"groups"]){
+        [self syncGroupsFor:moc Using:si];
+    }
+    else if ([ent isEqualToString:@"locations"]){
+        [self syncLocationsFor:moc Using:si];
+    }
+    else if ([ent isEqualToString:@"topics"]){
+        [self syncTopicsFor:moc Using:si];
+    }
+    else if ([ent isEqualToString:@"signups"]){
+        [self syncSignupsFor:moc Using:si];
+    }
+}
+
++(void) syncEventsFor: (NSManagedObjectContext *)moc Using:(DataRequest *)si {
     [si updateEventsUsingBlock:^(NSMutableArray *data, NSError *error) {
         [self checkItemsFrom:data for:moc entity:ENTITY_EVENT];
     }];
+}
+
++(void) syncMessagesFor: (NSManagedObjectContext *)moc Using:(DataRequest *)si {
     [si updateMessagesUsingBlock:^(NSMutableArray *data, NSError *error) {
         [self checkItemsFrom:data for:moc entity:ENTITY_MESSAGES];
     }];
+}
+
++(void) syncTalksFor: (NSManagedObjectContext *)moc Using:(DataRequest *)si {
     [si updateTalksUsingBlock:^(NSMutableArray *data, NSError *error) {
         [self checkItemsFrom:data for:moc entity:ENTITY_TALKS];
     }];
+}
+
++(void) syncGroupsFor: (NSManagedObjectContext *)moc Using:(DataRequest *)si {
     [si updateGroupsUsingBlock:^(NSMutableArray *data, NSError *error) {
         [self checkItemsFrom:data for:moc entity:ENTITY_GROUPS];
     }];
+}
+
++(void) syncLocationsFor: (NSManagedObjectContext *)moc Using:(DataRequest *)si {
     [si updateLocationsUsingBlock:^(NSMutableArray *data, NSError *error) {
         [self checkItemsFrom:data for:moc entity:ENTITY_LOCATIONS];
     }];
+}
+
++(void) syncTopicsFor: (NSManagedObjectContext *)moc Using:(DataRequest *)si {
     [si updateTopicsUsingBlock:^(NSMutableArray *data, NSError *error) {
         [self checkItemsFrom:data for:moc entity:ENTITY_TOPICS];
     }];
+}
+
++(void) syncSignupsFor: (NSManagedObjectContext *)moc Using:(DataRequest *)si {
     [si updateSignupsUsingBlock:^(NSMutableArray *data, NSError *error) {
         [self checkItemsFrom:data for:moc entity:ENTITY_SIGNUPS];
     }];
-    
 }
 
 +(void) saveMyGroup{
@@ -91,6 +146,12 @@ static NSUInteger numSignups;
     [si AFpostWithUrl:URL_POST_SIGNUPS andData:data returnTo:handler];
 }
 
++(void) postGcmToUser:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler{
+    DataRequest *si = [DataRequest sharedInstance];
+    [si AFpostWithUrl:URL_POST_GCM andData:data returnTo:handler];
+    
+}
+
 +(void) putUserToSignup:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler{
     DataRequest *si = [DataRequest sharedInstance];
     [si AFputWithUrl:URL_PUT_SIGNUPS andData:data returnTo:handler];
@@ -126,6 +187,7 @@ static NSUInteger numSignups;
 
 +(NSArray *) getTalks{
     NSArray *ret = [self getsForEntity:ENTITY_TALKS];
+    NSLog(@"got talks");
     ret = [ret sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         Talks *a = (Talks *) obj1;
         Talks *b = (Talks *) obj2;
@@ -137,6 +199,7 @@ static NSUInteger numSignups;
 
 +(NSArray *) getMessages{
     NSArray *ret = [self getsForEntity:ENTITY_MESSAGES];
+    NSLog(@"got messages");
     ret = [ret sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         Messages *a = (Messages *) obj1;
         Messages *b = (Messages *) obj2;
@@ -147,18 +210,22 @@ static NSUInteger numSignups;
 }
 
 +(NSArray *) getGroups{
+    NSLog(@"got groups");
     return [self getsForEntity:ENTITY_GROUPS];
 }
 
 +(NSArray *) getLocations{
+    NSLog(@"got locs");
     return [self getsForEntity:ENTITY_LOCATIONS];
 }
 
 +(NSArray *) getTopics{
+    NSLog(@"got topics");
     return [self getsForEntity:ENTITY_TOPICS];
 }
 
 +(NSArray *) getSignups{
+    NSLog(@"got signups");
     return [self getsForEntity:ENTITY_SIGNUPS];
 }
 

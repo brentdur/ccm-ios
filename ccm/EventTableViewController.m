@@ -103,19 +103,19 @@
   annotationView:(MKAnnotationView *)view
 calloutAccessoryControlTapped:(UIControl *)control {
     NSString *query;
-    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"comgooglemaps://"]]){
-//        query = [NSString stringWithFormat:@"comgooglemaps://?q=%@&center=%@,%@", [data address],[data lat], [data lng]];
-        query = [query stringByReplacingOccurrencesOfString:@" " withString:@"+"];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:query]];
-    }
-    else {
+//    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"comgooglemaps://"]]){
+////        query = [NSString stringWithFormat:@"comgooglemaps://?q=%@&center=%@,%@", [data address],[data lat], [data lng]];
+//        query = [query stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:query]];
+//    }
+//    else {
         id <MKAnnotation> annon = [view annotation];
         MKPlacemark *place = [[MKPlacemark alloc] initWithCoordinate:[annon coordinate]  addressDictionary: nil ];
         MKMapItem *item = [[MKMapItem alloc] initWithPlacemark:place];
         [item setName:[annon title]];
     //    [item openInMapsWithLaunchOptions:nil];
         [item openInMapsWithLaunchOptions:[NSDictionary dictionaryWithObjectsAndKeys:MKLaunchOptionsDirectionsModeWalking, MKLaunchOptionsDirectionsModeKey, nil]];
-    }
+//    }
 }
 
 -(void) mapViewDidFinishLoadingMap:(MKMapView *)mapView {

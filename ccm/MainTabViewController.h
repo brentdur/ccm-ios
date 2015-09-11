@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Constaints.h"
 #import "DataController.h"
+#import "GCM.h"
 
 @protocol PermissionSetDelegate;
 

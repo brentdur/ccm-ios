@@ -22,11 +22,14 @@
 
 +(void) sync;
 +(void) rollback;
++(void) syncSelective:(NSString *) ent;
 
 +(void) addEventWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
 +(void) addMsgWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
 +(void) addTalkWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
 +(void) addSignupWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
+
++(void) postGcmToUser:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
 
 +(void) putUserToSignup:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
 

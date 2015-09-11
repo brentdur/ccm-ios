@@ -9,7 +9,13 @@
 #ifndef ccm_Constaints_h
 #define ccm_Constaints_h
 
+
+#ifdef DEBUG
+#define URL_BASE @"http://ccmtest.brentondurkee.com"
+#else
 #define URL_BASE @"http://ccm.brentondurkee.com"
+#endif
+
 #define URL_DOMAIN URL_BASE @"/api/"
 
 #define URL_GET_EVENTS (URL_DOMAIN @"events")
@@ -25,6 +31,7 @@
 #define URL_POST_MESSAGES (URL_DOMAIN @"messages")
 #define URL_POST_TALKS (URL_DOMAIN @"talks")
 #define URL_POST_SIGNUPS (URL_DOMAIN @"signups")
+#define URL_POST_GCM (URL_DOMAIN @"users/gcm")
 
 #define URL_PUT_SIGNUPS (URL_DOMAIN @"signups/addme")
 
@@ -53,6 +60,8 @@
 #define KEY_EMAIL @"email"
 #define KEY_GROUPS @"groups"
 #define KEY_INITIAL_SYNC @"initital_sync"
+#define KEY_GCM_SUBMITTED @"gcm_submitted"
+#define KEY_GCM_TOKEN @"gcm_token"
 
 #define GROUP_FOR_RECEIVE @"ministers"
 

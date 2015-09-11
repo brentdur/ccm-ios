@@ -68,7 +68,7 @@
 +(NSString *) stringFromDateTil:(NSDate *) date{
 
     int distance = [date timeIntervalSinceNow];
-    distance += [[NSTimeZone localTimeZone] secondsFromGMTForDate:[NSDate date]];
+    distance += [[NSTimeZone timeZoneForSecondsFromGMT:@0] secondsFromGMTForDate:[NSDate date]];
     
     if(distance < 0){
         return @"started";

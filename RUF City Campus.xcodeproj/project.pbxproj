@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60368B336068FCA94C5F2EF8 /* libPods-RUF City Campus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 172FDEC142BA391BE4286A4E /* libPods-RUF City Campus.a */; };
+		DB0C0B6F1B96AA24007E93C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB0C0B6E1B96AA24007E93C9 /* GoogleService-Info.plist */; };
+		DB0C0B701B96AA24007E93C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB0C0B6E1B96AA24007E93C9 /* GoogleService-Info.plist */; };
 		DB1380191B6A86C2004965C7 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB137FF41B6A86C2004965C7 /* AFHTTPRequestOperation.m */; };
 		DB13801A1B6A86C2004965C7 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB137FF61B6A86C2004965C7 /* AFHTTPRequestOperationManager.m */; };
 		DB13801B1B6A86C2004965C7 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB137FF81B6A86C2004965C7 /* AFHTTPSessionManager.m */; };
@@ -53,6 +56,7 @@
 		DB2BFEA31B68615900B12A0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2BFE9A1B6860EC00B12A0B /* UIKit.framework */; };
 		DB2BFEA61B6869C700B12A0B /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2BFEA51B6869C700B12A0B /* KeychainItemWrapper.m */; };
 		DB2BFEA91B687EA800B12A0B /* StarterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2BFEA81B687EA800B12A0B /* StarterViewController.m */; };
+		DB338DF81B979FC00010B7AC /* GCM.m in Sources */ = {isa = PBXBuildFile; fileRef = DB338DF71B979FC00010B7AC /* GCM.m */; };
 		DB4907AC1B7951EA005B5242 /* Signups.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4907AB1B7951EA005B5242 /* Signups.m */; };
 		DB4907AF1B7951EB005B5242 /* Topics.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4907AE1B7951EB005B5242 /* Topics.m */; };
 		DB55D3521B855F41001685C3 /* moreicon-02.png in Resources */ = {isa = PBXBuildFile; fileRef = DB55D3501B855F41001685C3 /* moreicon-02.png */; };
@@ -91,6 +95,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		172FDEC142BA391BE4286A4E /* libPods-RUF City Campus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RUF City Campus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		443E5345C7DC46254A2B733D /* Pods-RUF City Campus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RUF City Campus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RUF City Campus/Pods-RUF City Campus.debug.xcconfig"; sourceTree = "<group>"; };
+		DB0C0B6E1B96AA24007E93C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB137FF31B6A86C2004965C7 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		DB137FF41B6A86C2004965C7 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		DB137FF51B6A86C2004965C7 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -142,7 +149,7 @@
 		DB26DD0E1B86B424005C55F4 /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
 		DB26DD0F1B86B424005C55F4 /* clipboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clipboard@2x.png"; sourceTree = "<group>"; };
 		DB26DD101B86B424005C55F4 /* open book 2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "open book 2@2x.png"; sourceTree = "<group>"; };
-		DB27BD161B6705100068F0BE /* ccm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ccm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB27BD161B6705100068F0BE /* RUF City Campus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RUF City Campus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB27BD1A1B6705100068F0BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB27BD1B1B6705100068F0BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DB27BD1D1B6705100068F0BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -150,7 +157,7 @@
 		DB27BD271B6705110068F0BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB27BD291B6705110068F0BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DB27BD2C1B6705110068F0BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		DB27BD321B6705110068F0BE /* ccmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ccmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB27BD321B6705110068F0BE /* RUF City CampusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RUF City CampusTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB27BD371B6705110068F0BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB27BD381B6705110068F0BE /* ccmTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ccmTests.m; sourceTree = "<group>"; };
 		DB27BD461B67059E0068F0BE /* ccmModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ccmModel.xcdatamodel; sourceTree = "<group>"; };
@@ -176,6 +183,8 @@
 		DB2BFEA51B6869C700B12A0B /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		DB2BFEA71B687EA800B12A0B /* StarterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarterViewController.h; sourceTree = "<group>"; };
 		DB2BFEA81B687EA800B12A0B /* StarterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarterViewController.m; sourceTree = "<group>"; };
+		DB338DF61B979FC00010B7AC /* GCM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCM.h; sourceTree = "<group>"; };
+		DB338DF71B979FC00010B7AC /* GCM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCM.m; sourceTree = "<group>"; };
 		DB4907AA1B7951EA005B5242 /* Signups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Signups.h; sourceTree = "<group>"; };
 		DB4907AB1B7951EA005B5242 /* Signups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Signups.m; sourceTree = "<group>"; };
 		DB4907AD1B7951EB005B5242 /* Topics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topics.h; sourceTree = "<group>"; };
@@ -225,6 +234,7 @@
 		DBFB72651B797F9E0018DA40 /* SignupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupTableViewController.m; sourceTree = "<group>"; };
 		DBFB72671B7980070018DA40 /* AddSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSignupViewController.h; sourceTree = "<group>"; };
 		DBFB72681B7980070018DA40 /* AddSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSignupViewController.m; sourceTree = "<group>"; };
+		E557A1CBE0584A53F7F376C7 /* Pods-RUF City Campus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RUF City Campus.release.xcconfig"; path = "Pods/Target Support Files/Pods-RUF City Campus/Pods-RUF City Campus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +246,7 @@
 				DB2BFEA31B68615900B12A0B /* UIKit.framework in Frameworks */,
 				DBEEDD2C1B6FEDBA00CAE8D9 /* MapKit.framework in Frameworks */,
 				DB2BFEA11B68615900B12A0B /* Security.framework in Frameworks */,
+				60368B336068FCA94C5F2EF8 /* libPods-RUF City Campus.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +260,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C1FA2B53EF4B3295668B9638 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				443E5345C7DC46254A2B733D /* Pods-RUF City Campus.debug.xcconfig */,
+				E557A1CBE0584A53F7F376C7 /* Pods-RUF City Campus.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DB07B1C31B811A790069DA2F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,20 +386,22 @@
 		DB27BD0D1B6705100068F0BE = {
 			isa = PBXGroup;
 			children = (
+				DB0C0B6E1B96AA24007E93C9 /* GoogleService-Info.plist */,
 				DB27BD181B6705100068F0BE /* ccm */,
 				DB137FF11B6A865E004965C7 /* Vendor */,
 				DB27BD351B6705110068F0BE /* ccmTests */,
 				DB07B1C31B811A790069DA2F /* Resources */,
 				DB2BFEA01B68610400B12A0B /* Frameworks */,
 				DB27BD171B6705100068F0BE /* Products */,
+				C1FA2B53EF4B3295668B9638 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		DB27BD171B6705100068F0BE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DB27BD161B6705100068F0BE /* ccm.app */,
-				DB27BD321B6705110068F0BE /* ccmTests.xctest */,
+				DB27BD161B6705100068F0BE /* RUF City Campus.app */,
+				DB27BD321B6705110068F0BE /* RUF City CampusTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -459,6 +481,8 @@
 				DBAD31CF1B805F64003C1671 /* Toast */,
 				DB2B7DDF1B72FA6C00CC2EB5 /* SWRevealViewController */,
 				DBCC1EA71B719C24009B8B7B /* StaticDataTableViewController.h */,
+				DB338DF61B979FC00010B7AC /* GCM.h */,
+				DB338DF71B979FC00010B7AC /* GCM.m */,
 				DBCC1EA81B719C24009B8B7B /* StaticDataTableViewController.m */,
 				DB2BFEA41B6869C700B12A0B /* KeychainItemWrapper.h */,
 				DB2BFEA51B6869C700B12A0B /* KeychainItemWrapper.m */,
@@ -476,6 +500,7 @@
 				DB2BFE9E1B6860FF00B12A0B /* Security.framework */,
 				DB2BFE9C1B6860F500B12A0B /* Foundation.framework */,
 				DB2BFE9A1B6860EC00B12A0B /* UIKit.framework */,
+				172FDEC142BA391BE4286A4E /* libPods-RUF City Campus.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -562,26 +587,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DB27BD151B6705100068F0BE /* ccm */ = {
+		DB27BD151B6705100068F0BE /* RUF City Campus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DB27BD3C1B6705110068F0BE /* Build configuration list for PBXNativeTarget "ccm" */;
+			buildConfigurationList = DB27BD3C1B6705110068F0BE /* Build configuration list for PBXNativeTarget "RUF City Campus" */;
 			buildPhases = (
+				F6015B1DCFC098B94DC2697A /* Check Pods Manifest.lock */,
 				DB27BD121B6705100068F0BE /* Sources */,
 				DB27BD131B6705100068F0BE /* Frameworks */,
 				DB27BD141B6705100068F0BE /* Resources */,
+				86427B49D913FE8D31C43273 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ccm;
+			name = "RUF City Campus";
 			productName = ccm;
-			productReference = DB27BD161B6705100068F0BE /* ccm.app */;
+			productReference = DB27BD161B6705100068F0BE /* RUF City Campus.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DB27BD311B6705110068F0BE /* ccmTests */ = {
+		DB27BD311B6705110068F0BE /* RUF City CampusTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DB27BD3F1B6705110068F0BE /* Build configuration list for PBXNativeTarget "ccmTests" */;
+			buildConfigurationList = DB27BD3F1B6705110068F0BE /* Build configuration list for PBXNativeTarget "RUF City CampusTests" */;
 			buildPhases = (
 				DB27BD2E1B6705110068F0BE /* Sources */,
 				DB27BD2F1B6705110068F0BE /* Frameworks */,
@@ -592,9 +619,9 @@
 			dependencies = (
 				DB27BD341B6705110068F0BE /* PBXTargetDependency */,
 			);
-			name = ccmTests;
+			name = "RUF City CampusTests";
 			productName = ccmTests;
-			productReference = DB27BD321B6705110068F0BE /* ccmTests.xctest */;
+			productReference = DB27BD321B6705110068F0BE /* RUF City CampusTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -608,7 +635,7 @@
 				TargetAttributes = {
 					DB27BD151B6705100068F0BE = {
 						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = KWBQL246F3;
+						DevelopmentTeam = ZG57PKM84L;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -624,7 +651,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DB27BD111B6705100068F0BE /* Build configuration list for PBXProject "ccm" */;
+			buildConfigurationList = DB27BD111B6705100068F0BE /* Build configuration list for PBXProject "RUF City Campus" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -637,8 +664,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DB27BD151B6705100068F0BE /* ccm */,
-				DB27BD311B6705110068F0BE /* ccmTests */,
+				DB27BD151B6705100068F0BE /* RUF City Campus */,
+				DB27BD311B6705110068F0BE /* RUF City CampusTests */,
 			);
 		};
 /* End PBXProject section */
@@ -656,6 +683,7 @@
 				DB27BD2D1B6705110068F0BE /* LaunchScreen.xib in Resources */,
 				DB27BD2A1B6705110068F0BE /* Images.xcassets in Resources */,
 				DB26DD111B86B424005C55F4 /* calendar@2x.png in Resources */,
+				DB0C0B6F1B96AA24007E93C9 /* GoogleService-Info.plist in Resources */,
 				DB26DD131B86B424005C55F4 /* open book 2@2x.png in Resources */,
 				DB26DD0D1B86B41D005C55F4 /* open book 2.png in Resources */,
 			);
@@ -665,10 +693,44 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB0C0B701B96AA24007E93C9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		86427B49D913FE8D31C43273 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RUF City Campus/Pods-RUF City Campus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6015B1DCFC098B94DC2697A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DB27BD121B6705100068F0BE /* Sources */ = {
@@ -699,6 +761,7 @@
 				DBFB72691B7980070018DA40 /* AddSignupViewController.m in Sources */,
 				DB27BD1C1B6705100068F0BE /* main.m in Sources */,
 				DB1380221B6A86C2004965C7 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				DB338DF81B979FC00010B7AC /* GCM.m in Sources */,
 				DB2B7DE21B72FA6C00CC2EB5 /* SWRevealViewController.m in Sources */,
 				DB4907AC1B7951EA005B5242 /* Signups.m in Sources */,
 				DB27BD4D1B6706B80068F0BE /* SignInViewController.m in Sources */,
@@ -747,7 +810,7 @@
 /* Begin PBXTargetDependency section */
 		DB27BD341B6705110068F0BE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DB27BD151B6705100068F0BE /* ccm */;
+			target = DB27BD151B6705100068F0BE /* RUF City Campus */;
 			targetProxy = DB27BD331B6705110068F0BE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -856,23 +919,29 @@
 		};
 		DB27BD3D1B6705110068F0BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 443E5345C7DC46254A2B733D /* Pods-RUF City Campus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ccm/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "RUF City Campus";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		DB27BD3E1B6705110068F0BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E557A1CBE0584A53F7F376C7 /* Pods-RUF City Campus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ccm/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "RUF City Campus";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -890,7 +959,7 @@
 				);
 				INFOPLIST_FILE = ccmTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "RUF City CampusTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ccm.app/ccm";
 			};
 			name = Debug;
@@ -905,7 +974,7 @@
 				);
 				INFOPLIST_FILE = ccmTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "RUF City CampusTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ccm.app/ccm";
 			};
 			name = Release;
@@ -913,7 +982,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DB27BD111B6705100068F0BE /* Build configuration list for PBXProject "ccm" */ = {
+		DB27BD111B6705100068F0BE /* Build configuration list for PBXProject "RUF City Campus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DB27BD3A1B6705110068F0BE /* Debug */,
@@ -922,7 +991,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DB27BD3C1B6705110068F0BE /* Build configuration list for PBXNativeTarget "ccm" */ = {
+		DB27BD3C1B6705110068F0BE /* Build configuration list for PBXNativeTarget "RUF City Campus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DB27BD3D1B6705110068F0BE /* Debug */,
@@ -931,7 +1000,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DB27BD3F1B6705110068F0BE /* Build configuration list for PBXNativeTarget "ccmTests" */ = {
+		DB27BD3F1B6705110068F0BE /* Build configuration list for PBXNativeTarget "RUF City CampusTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DB27BD401B6705110068F0BE /* Debug */,

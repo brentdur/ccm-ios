@@ -94,6 +94,7 @@
 
 //switch to tab view, close navbar view
 -(void) goToTabView {
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
     UIViewController *cont = [_runningView.storyboard instantiateViewControllerWithIdentifier:@"TabView"];
     [_runningView presentViewController:cont animated:true completion:nil];
     [_runningView removeFromParentViewController];
