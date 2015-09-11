@@ -58,6 +58,9 @@ static NSUInteger numSignups;
     else if ([ent isEqualToString:@"signups"]){
         [self syncSignupsFor:moc Using:si];
     }
+    else if ([ent isEqualToString:@"all"]) {
+        [self sync];
+    }
 }
 
 +(void) syncEventsFor: (NSManagedObjectContext *)moc Using:(DataRequest *)si {
