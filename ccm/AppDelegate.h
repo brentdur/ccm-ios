@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import <Google/CloudMessaging.h>
 #import "AFNetworking.h"
 #import "DataController.h"
-#import <Google/CloudMessaging.h>
 #import "GCM.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, GGLInstanceIDDelegate, GCMReceiverDelegate>

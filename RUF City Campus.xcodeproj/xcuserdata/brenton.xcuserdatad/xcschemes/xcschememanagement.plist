@@ -9,7 +9,7 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>RUF City Campus.xcscheme</key>
+		<key>RUF City Campus.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -23,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>DB27BD311B6705110068F0BE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DBB7C63E1BA665AF00A1744F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DBEC13031BA7C92000D42DB6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

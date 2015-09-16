@@ -1,19 +1,19 @@
 //
-//  ccmTests.m
-//  ccmTests
+//  RUF_CCM_Tests.m
+//  RUF CCM Tests
 //
-//  Created by Brenton Durkee on 7/27/15.
+//  Created by Brenton Durkee on 9/13/15.
 //  Copyright (c) 2015 Brenton Durkee. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface ccmTests : XCTestCase
+@interface RUF_CCM_Tests : XCTestCase
 
 @end
 
-@implementation ccmTests
+@implementation RUF_CCM_Tests
 
 - (void)setUp {
     [super setUp];

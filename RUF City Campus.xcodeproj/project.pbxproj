@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		60368B336068FCA94C5F2EF8 /* libPods-RUF City Campus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 172FDEC142BA391BE4286A4E /* libPods-RUF City Campus.a */; };
+		D42AE4D7D24908352AC8723A /* libPods-UI Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE3091D383730738350373D3 /* libPods-UI Tests.a */; };
 		DB0C0B6F1B96AA24007E93C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB0C0B6E1B96AA24007E93C9 /* GoogleService-Info.plist */; };
 		DB0C0B701B96AA24007E93C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB0C0B6E1B96AA24007E93C9 /* GoogleService-Info.plist */; };
 		DB1380191B6A86C2004965C7 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB137FF41B6A86C2004965C7 /* AFHTTPRequestOperation.m */; };
@@ -42,7 +43,6 @@
 		DB27BD281B6705110068F0BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB27BD261B6705110068F0BE /* Main.storyboard */; };
 		DB27BD2A1B6705110068F0BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB27BD291B6705110068F0BE /* Images.xcassets */; };
 		DB27BD2D1B6705110068F0BE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB27BD2B1B6705110068F0BE /* LaunchScreen.xib */; };
-		DB27BD391B6705110068F0BE /* ccmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD381B6705110068F0BE /* ccmTests.m */; };
 		DB27BD471B67059E0068F0BE /* ccmModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD451B67059E0068F0BE /* ccmModel.xcdatamodeld */; };
 		DB27BD4D1B6706B80068F0BE /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD4C1B6706B80068F0BE /* SignInViewController.m */; };
 		DB27BD501B67078A0068F0BE /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD4F1B67078A0068F0BE /* SignUpViewController.m */; };
@@ -72,11 +72,18 @@
 		DBA4AE6D1B699EE4000613F8 /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE6C1B699EE4000613F8 /* DataController.m */; };
 		DBA4AE701B69A227000613F8 /* DataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE6F1B69A227000613F8 /* DataRequest.m */; };
 		DBAD31D21B805F64003C1671 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAD31D11B805F64003C1671 /* UIView+Toast.m */; };
+		DBB7C6441BA665AF00A1744F /* RUF_CCM_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB7C6431BA665AF00A1744F /* RUF_CCM_Tests.m */; };
 		DBBB54CA1B72808800E6E1B0 /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBB54C91B72808800E6E1B0 /* AddEventViewController.m */; };
+		DBBB71F71BA77642003C980A /* DateUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBB71F61BA77642003C980A /* DateUtilsTest.m */; };
 		DBCC1EA91B719C24009B8B7B /* StaticDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCC1EA81B719C24009B8B7B /* StaticDataTableViewController.m */; };
 		DBE9E8711B6E8A1700D646E0 /* MsgTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE9E8701B6E8A1700D646E0 /* MsgTableViewController.m */; };
 		DBE9E8741B6E9DDD00D646E0 /* EventTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE9E8731B6E9DDD00D646E0 /* EventTableViewController.m */; };
 		DBE9E8771B6E9DEB00D646E0 /* TalkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE9E8761B6E9DEB00D646E0 /* TalkTableViewController.m */; };
+		DBEC13091BA7C92000D42DB6 /* UI_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEC13081BA7C92000D42DB6 /* UI_Tests.m */; };
+		DBEC13101BA7CB7400D42DB6 /* LoginTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEC130F1BA7CB7400D42DB6 /* LoginTests.m */; };
+		DBEC13121BA7DF7700D42DB6 /* SendMessageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEC13111BA7DF7700D42DB6 /* SendMessageTests.m */; };
+		DBEC13151BA7E10D00D42DB6 /* KIFUITestActor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEC13131BA7E10D00D42DB6 /* KIFUITestActor+Additions.m */; };
+		DBEC13171BA7E7A400D42DB6 /* SignupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEC13161BA7E7A400D42DB6 /* SignupTests.m */; };
 		DBEEDD2C1B6FEDBA00CAE8D9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBEEDD2B1B6FEDBA00CAE8D9 /* MapKit.framework */; };
 		DBFB72601B797E090018DA40 /* SignupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBFB725F1B797E090018DA40 /* SignupsViewController.m */; };
 		DBFB72631B797F010018DA40 /* SignupsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DBFB72621B797F010018DA40 /* SignupsTableViewCell.m */; };
@@ -92,11 +99,27 @@
 			remoteGlobalIDString = DB27BD151B6705100068F0BE;
 			remoteInfo = ccm;
 		};
+		DBB7C6451BA665AF00A1744F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB27BD0E1B6705100068F0BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB27BD151B6705100068F0BE;
+			remoteInfo = "RUF City Campus";
+		};
+		DBEC130A1BA7C92000D42DB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB27BD0E1B6705100068F0BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB27BD151B6705100068F0BE;
+			remoteInfo = "RUF City Campus";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		172FDEC142BA391BE4286A4E /* libPods-RUF City Campus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RUF City Campus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4268FBAB008F954ABAB3F47A /* Pods-UI Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UI Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UI Tests/Pods-UI Tests.release.xcconfig"; sourceTree = "<group>"; };
 		443E5345C7DC46254A2B733D /* Pods-RUF City Campus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RUF City Campus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RUF City Campus/Pods-RUF City Campus.debug.xcconfig"; sourceTree = "<group>"; };
+		5BC0DEBC55D80AAC96A819DF /* Pods-UI Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UI Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UI Tests/Pods-UI Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB0C0B6E1B96AA24007E93C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB137FF31B6A86C2004965C7 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		DB137FF41B6A86C2004965C7 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
@@ -158,8 +181,6 @@
 		DB27BD291B6705110068F0BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DB27BD2C1B6705110068F0BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DB27BD321B6705110068F0BE /* RUF City CampusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RUF City CampusTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB27BD371B6705110068F0BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB27BD381B6705110068F0BE /* ccmTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ccmTests.m; sourceTree = "<group>"; };
 		DB27BD461B67059E0068F0BE /* ccmModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ccmModel.xcdatamodel; sourceTree = "<group>"; };
 		DB27BD4B1B6706B80068F0BE /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		DB27BD4C1B6706B80068F0BE /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
@@ -214,8 +235,12 @@
 		DBA4AE6F1B69A227000613F8 /* DataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataRequest.m; sourceTree = "<group>"; };
 		DBAD31D01B805F64003C1671 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		DBAD31D11B805F64003C1671 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		DBB7C63F1BA665AF00A1744F /* RUF CCM Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RUF CCM Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBB7C6421BA665AF00A1744F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBB7C6431BA665AF00A1744F /* RUF_CCM_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RUF_CCM_Tests.m; sourceTree = "<group>"; };
 		DBBB54C81B72808800E6E1B0 /* AddEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventViewController.h; sourceTree = "<group>"; };
 		DBBB54C91B72808800E6E1B0 /* AddEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventViewController.m; sourceTree = "<group>"; };
+		DBBB71F61BA77642003C980A /* DateUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtilsTest.m; sourceTree = "<group>"; };
 		DBCC1EA71B719C24009B8B7B /* StaticDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticDataTableViewController.h; sourceTree = "<group>"; };
 		DBCC1EA81B719C24009B8B7B /* StaticDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticDataTableViewController.m; sourceTree = "<group>"; };
 		DBE9E86F1B6E8A1700D646E0 /* MsgTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgTableViewController.h; sourceTree = "<group>"; };
@@ -224,6 +249,14 @@
 		DBE9E8731B6E9DDD00D646E0 /* EventTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewController.m; sourceTree = "<group>"; };
 		DBE9E8751B6E9DEB00D646E0 /* TalkTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkTableViewController.h; sourceTree = "<group>"; };
 		DBE9E8761B6E9DEB00D646E0 /* TalkTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkTableViewController.m; sourceTree = "<group>"; };
+		DBEC13041BA7C92000D42DB6 /* UI Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UI Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBEC13071BA7C92000D42DB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBEC13081BA7C92000D42DB6 /* UI_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UI_Tests.m; sourceTree = "<group>"; };
+		DBEC130F1BA7CB7400D42DB6 /* LoginTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTests.m; sourceTree = "<group>"; };
+		DBEC13111BA7DF7700D42DB6 /* SendMessageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendMessageTests.m; sourceTree = "<group>"; };
+		DBEC13131BA7E10D00D42DB6 /* KIFUITestActor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFUITestActor+Additions.m"; sourceTree = "<group>"; };
+		DBEC13141BA7E10D00D42DB6 /* KIFUITestActor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFUITestActor+Additions.h"; sourceTree = "<group>"; };
+		DBEC13161BA7E7A400D42DB6 /* SignupTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupTests.m; sourceTree = "<group>"; };
 		DBEEDD2B1B6FEDBA00CAE8D9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DBFB725C1B7978560018DA40 /* ccmModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ccmModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		DBFB725E1B797E090018DA40 /* SignupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupsViewController.h; sourceTree = "<group>"; };
@@ -235,6 +268,7 @@
 		DBFB72671B7980070018DA40 /* AddSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSignupViewController.h; sourceTree = "<group>"; };
 		DBFB72681B7980070018DA40 /* AddSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSignupViewController.m; sourceTree = "<group>"; };
 		E557A1CBE0584A53F7F376C7 /* Pods-RUF City Campus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RUF City Campus.release.xcconfig"; path = "Pods/Target Support Files/Pods-RUF City Campus/Pods-RUF City Campus.release.xcconfig"; sourceTree = "<group>"; };
+		EE3091D383730738350373D3 /* libPods-UI Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UI Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +291,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DBB7C63C1BA665AF00A1744F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBEC13011BA7C92000D42DB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D42AE4D7D24908352AC8723A /* libPods-UI Tests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -265,6 +314,8 @@
 			children = (
 				443E5345C7DC46254A2B733D /* Pods-RUF City Campus.debug.xcconfig */,
 				E557A1CBE0584A53F7F376C7 /* Pods-RUF City Campus.release.xcconfig */,
+				5BC0DEBC55D80AAC96A819DF /* Pods-UI Tests.debug.xcconfig */,
+				4268FBAB008F954ABAB3F47A /* Pods-UI Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -389,8 +440,9 @@
 				DB0C0B6E1B96AA24007E93C9 /* GoogleService-Info.plist */,
 				DB27BD181B6705100068F0BE /* ccm */,
 				DB137FF11B6A865E004965C7 /* Vendor */,
-				DB27BD351B6705110068F0BE /* ccmTests */,
 				DB07B1C31B811A790069DA2F /* Resources */,
+				DBB7C6401BA665AF00A1744F /* RUF CCM Tests */,
+				DBEC13051BA7C92000D42DB6 /* UI Tests */,
 				DB2BFEA01B68610400B12A0B /* Frameworks */,
 				DB27BD171B6705100068F0BE /* Products */,
 				C1FA2B53EF4B3295668B9638 /* Pods */,
@@ -402,6 +454,8 @@
 			children = (
 				DB27BD161B6705100068F0BE /* RUF City Campus.app */,
 				DB27BD321B6705110068F0BE /* RUF City CampusTests.xctest */,
+				DBB7C63F1BA665AF00A1744F /* RUF CCM Tests.xctest */,
+				DBEC13041BA7C92000D42DB6 /* UI Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -432,23 +486,6 @@
 			children = (
 				DB27BD1A1B6705100068F0BE /* Info.plist */,
 				DB27BD1B1B6705100068F0BE /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		DB27BD351B6705110068F0BE /* ccmTests */ = {
-			isa = PBXGroup;
-			children = (
-				DB27BD381B6705110068F0BE /* ccmTests.m */,
-				DB27BD361B6705110068F0BE /* Supporting Files */,
-			);
-			path = ccmTests;
-			sourceTree = "<group>";
-		};
-		DB27BD361B6705110068F0BE /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				DB27BD371B6705110068F0BE /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -501,6 +538,7 @@
 				DB2BFE9C1B6860F500B12A0B /* Foundation.framework */,
 				DB2BFE9A1B6860EC00B12A0B /* UIKit.framework */,
 				172FDEC142BA391BE4286A4E /* libPods-RUF City Campus.a */,
+				EE3091D383730738350373D3 /* libPods-UI Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -569,6 +607,46 @@
 			path = SWRevealViewController/Toast;
 			sourceTree = "<group>";
 		};
+		DBB7C6401BA665AF00A1744F /* RUF CCM Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DBB7C6431BA665AF00A1744F /* RUF_CCM_Tests.m */,
+				DBB7C6411BA665AF00A1744F /* Supporting Files */,
+				DBBB71F61BA77642003C980A /* DateUtilsTest.m */,
+			);
+			path = "RUF CCM Tests";
+			sourceTree = "<group>";
+		};
+		DBB7C6411BA665AF00A1744F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DBB7C6421BA665AF00A1744F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DBEC13051BA7C92000D42DB6 /* UI Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DBEC13081BA7C92000D42DB6 /* UI_Tests.m */,
+				DBEC130F1BA7CB7400D42DB6 /* LoginTests.m */,
+				DBEC13161BA7E7A400D42DB6 /* SignupTests.m */,
+				DBEC13111BA7DF7700D42DB6 /* SendMessageTests.m */,
+				DBEC13061BA7C92000D42DB6 /* Supporting Files */,
+			);
+			path = "UI Tests";
+			sourceTree = "<group>";
+		};
+		DBEC13061BA7C92000D42DB6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DBEC13071BA7C92000D42DB6 /* Info.plist */,
+				DBEC13131BA7E10D00D42DB6 /* KIFUITestActor+Additions.m */,
+				DBEC13141BA7E10D00D42DB6 /* KIFUITestActor+Additions.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		DBFB725D1B797DD20018DA40 /* signups view */ = {
 			isa = PBXGroup;
 			children = (
@@ -624,6 +702,44 @@
 			productReference = DB27BD321B6705110068F0BE /* RUF City CampusTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DBB7C63E1BA665AF00A1744F /* RUF CCM Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBB7C6471BA665AF00A1744F /* Build configuration list for PBXNativeTarget "RUF CCM Tests" */;
+			buildPhases = (
+				DBB7C63B1BA665AF00A1744F /* Sources */,
+				DBB7C63C1BA665AF00A1744F /* Frameworks */,
+				DBB7C63D1BA665AF00A1744F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBB7C6461BA665AF00A1744F /* PBXTargetDependency */,
+			);
+			name = "RUF CCM Tests";
+			productName = "RUF CCM Tests";
+			productReference = DBB7C63F1BA665AF00A1744F /* RUF CCM Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DBEC13031BA7C92000D42DB6 /* UI Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBEC130E1BA7C92000D42DB6 /* Build configuration list for PBXNativeTarget "UI Tests" */;
+			buildPhases = (
+				F4152474ED55F4FFFD513299 /* Check Pods Manifest.lock */,
+				DBEC13001BA7C92000D42DB6 /* Sources */,
+				DBEC13011BA7C92000D42DB6 /* Frameworks */,
+				DBEC13021BA7C92000D42DB6 /* Resources */,
+				74A8CE9107802E24AB2829E2 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBEC130B1BA7C92000D42DB6 /* PBXTargetDependency */,
+			);
+			name = "UI Tests";
+			productName = "UI Tests";
+			productReference = DBEC13041BA7C92000D42DB6 /* UI Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -649,6 +765,14 @@
 						CreatedOnToolsVersion = 6.3;
 						TestTargetID = DB27BD151B6705100068F0BE;
 					};
+					DBB7C63E1BA665AF00A1744F = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = DB27BD151B6705100068F0BE;
+					};
+					DBEC13031BA7C92000D42DB6 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = DB27BD151B6705100068F0BE;
+					};
 				};
 			};
 			buildConfigurationList = DB27BD111B6705100068F0BE /* Build configuration list for PBXProject "RUF City Campus" */;
@@ -666,6 +790,8 @@
 			targets = (
 				DB27BD151B6705100068F0BE /* RUF City Campus */,
 				DB27BD311B6705110068F0BE /* RUF City CampusTests */,
+				DBB7C63E1BA665AF00A1744F /* RUF CCM Tests */,
+				DBEC13031BA7C92000D42DB6 /* UI Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -697,9 +823,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DBB7C63D1BA665AF00A1744F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBEC13021BA7C92000D42DB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		74A8CE9107802E24AB2829E2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UI Tests/Pods-UI Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		86427B49D913FE8D31C43273 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -713,6 +868,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RUF City Campus/Pods-RUF City Campus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4152474ED55F4FFFD513299 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F6015B1DCFC098B94DC2697A /* Check Pods Manifest.lock */ = {
@@ -801,7 +971,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB27BD391B6705110068F0BE /* ccmTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBB7C63B1BA665AF00A1744F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBB7C6441BA665AF00A1744F /* RUF_CCM_Tests.m in Sources */,
+				DBBB71F71BA77642003C980A /* DateUtilsTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBEC13001BA7C92000D42DB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBEC13121BA7DF7700D42DB6 /* SendMessageTests.m in Sources */,
+				DBEC13091BA7C92000D42DB6 /* UI_Tests.m in Sources */,
+				DBEC13151BA7E10D00D42DB6 /* KIFUITestActor+Additions.m in Sources */,
+				DBEC13101BA7CB7400D42DB6 /* LoginTests.m in Sources */,
+				DBEC13171BA7E7A400D42DB6 /* SignupTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,6 +1002,16 @@
 			isa = PBXTargetDependency;
 			target = DB27BD151B6705100068F0BE /* RUF City Campus */;
 			targetProxy = DB27BD331B6705110068F0BE /* PBXContainerItemProxy */;
+		};
+		DBB7C6461BA665AF00A1744F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB27BD151B6705100068F0BE /* RUF City Campus */;
+			targetProxy = DBB7C6451BA665AF00A1744F /* PBXContainerItemProxy */;
+		};
+		DBEC130B1BA7C92000D42DB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB27BD151B6705100068F0BE /* RUF City Campus */;
+			targetProxy = DBEC130A1BA7C92000D42DB6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -837,6 +1037,7 @@
 /* Begin XCBuildConfiguration section */
 		DB27BD3A1B6705110068F0BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 443E5345C7DC46254A2B733D /* Pods-RUF City Campus.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -881,6 +1082,7 @@
 		};
 		DB27BD3B1B6705110068F0BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E557A1CBE0584A53F7F376C7 /* Pods-RUF City Campus.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -947,6 +1149,7 @@
 		};
 		DB27BD401B6705110068F0BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 443E5345C7DC46254A2B733D /* Pods-RUF City Campus.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -958,14 +1161,16 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ccmTests/Info.plist;
+				"INSTALL_PATH[sdk=*]" = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "RUF City CampusTests";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ccm.app/ccm";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RUF City Campus.app/ccm";
 			};
 			name = Debug;
 		};
 		DB27BD411B6705110068F0BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E557A1CBE0584A53F7F376C7 /* Pods-RUF City Campus.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -976,6 +1181,82 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "RUF City CampusTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ccm.app/ccm";
+			};
+			name = Release;
+		};
+		DBB7C6481BA665AF00A1744F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 443E5345C7DC46254A2B733D /* Pods-RUF City Campus.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RUF CCM Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RUF City Campus.app/RUF City Campus";
+			};
+			name = Debug;
+		};
+		DBB7C6491BA665AF00A1744F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E557A1CBE0584A53F7F376C7 /* Pods-RUF City Campus.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RUF CCM Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RUF City Campus.app/RUF City Campus";
+			};
+			name = Release;
+		};
+		DBEC130C1BA7C92000D42DB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BC0DEBC55D80AAC96A819DF /* Pods-UI Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "UI Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RUF City Campus.app/RUF City Campus";
+			};
+			name = Debug;
+		};
+		DBEC130D1BA7C92000D42DB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4268FBAB008F954ABAB3F47A /* Pods-UI Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "UI Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RUF City Campus.app/RUF City Campus";
 			};
 			name = Release;
 		};
@@ -1005,6 +1286,24 @@
 			buildConfigurations = (
 				DB27BD401B6705110068F0BE /* Debug */,
 				DB27BD411B6705110068F0BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBB7C6471BA665AF00A1744F /* Build configuration list for PBXNativeTarget "RUF CCM Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBB7C6481BA665AF00A1744F /* Debug */,
+				DBB7C6491BA665AF00A1744F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBEC130E1BA7C92000D42DB6 /* Build configuration list for PBXNativeTarget "UI Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBEC130C1BA7C92000D42DB6 /* Debug */,
+				DBEC130D1BA7C92000D42DB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
