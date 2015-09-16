@@ -74,6 +74,7 @@
     XCTAssert(!test);
 }
 
+
 -(void) testRegisterNoEmail {
     NSError *error;
 
