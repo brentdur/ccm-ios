@@ -77,6 +77,11 @@
     return [[self locData] count] + 1;
 }
 
+- (NSString *)pickerView:(UIPickerView *)pickerView accessibilityLabelForComponent:(NSInteger)component
+{
+    return @"Locations";
+}
+
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (row == [[self locData] count]){
         NSLog(@"other");

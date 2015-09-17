@@ -263,6 +263,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gro-qX-mLX">
                                                     <rect key="frame" x="8" y="11" width="584" height="21"/>
+                                                    <accessibility key="accessibilityConfiguration" label="Time"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="34" id="clL-tW-4gQ"/>
                                                     </constraints>
@@ -436,6 +437,9 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="Events List"/>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="dataSource" destination="fwi-oM-XRV" id="8cy-Td-ZNJ"/>
                             <outlet property="delegate" destination="fwi-oM-XRV" id="czv-u8-IFk"/>
@@ -487,6 +491,7 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="title" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="gSl-OJ-Qij">
                                                     <rect key="frame" x="8" y="13" width="584" height="30"/>
+                                                    <accessibility key="accessibilityConfiguration" label="Title"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -509,6 +514,7 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="date" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="3we-2M-jcq">
                                                     <rect key="frame" x="8" y="13" width="584" height="30"/>
+                                                    <accessibility key="accessibilityConfiguration" label="Date"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -532,6 +538,7 @@
                                             <subviews>
                                                 <pickerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Kh-Kx-QIo">
                                                     <rect key="frame" x="0.0" y="15" width="600" height="162"/>
+                                                    <accessibility key="accessibilityConfiguration" label=""/>
                                                     <connections>
                                                         <outlet property="dataSource" destination="wbt-9J-bln" id="0iI-d4-3IE"/>
                                                         <outlet property="delegate" destination="wbt-9J-bln" id="v3n-Ga-Niv"/>
@@ -588,6 +595,7 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="location name" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="gne-ee-EpZ">
                                                     <rect key="frame" x="8" y="13" width="584" height="30"/>
+                                                    <accessibility key="accessibilityConfiguration" label="Location Name"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="278" id="bdN-0o-VVz"/>
                                                     </constraints>
@@ -627,6 +635,7 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="location address" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="9aY-6J-Gua">
                                                     <rect key="frame" x="8" y="13" width="584" height="30"/>
+                                                    <accessibility key="accessibilityConfiguration" label="Location Address"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="278" id="b4A-V8-ykX"/>
                                                     </constraints>
@@ -673,6 +682,7 @@
                                                 <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="SKy-MD-FIw">
                                                     <rect key="frame" x="4" y="8" width="592" height="259"/>
                                                     <color key="backgroundColor" red="0.16165561868686873" green="0.16165561868686873" blue="0.16165561868686873" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                    <accessibility key="accessibilityConfiguration" label="Description"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                     <connections>
@@ -880,6 +890,9 @@
                                                 </label>
                                                 <pickerView opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gW-hk-66O">
                                                     <rect key="frame" x="0.0" y="4" width="600" height="162"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" label="">
+                                                        <bool key="isElement" value="NO"/>
+                                                    </accessibility>
                                                     <connections>
                                                         <outlet property="dataSource" destination="bSX-tF-irh" id="Img-TI-XkX"/>
                                                         <outlet property="delegate" destination="bSX-tF-irh" id="Gsr-Bp-7oN"/>
@@ -930,6 +943,7 @@
                                                 </label>
                                                 <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIa-zv-DUR">
                                                     <rect key="frame" x="8" y="8" width="584" height="295"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Enter message text" label="Message"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <connections>
@@ -965,7 +979,7 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Send Message" id="iwZ-bU-bgg">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="6oY-Im-jDP">
+                        <barButtonItem key="rightBarButtonItem" title="Send" style="done" id="6oY-Im-jDP">
                             <connections>
                                 <action selector="done:" destination="bSX-tF-irh" id="AGs-jV-yHd"/>
                             </connections>
@@ -1009,6 +1023,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q9e-qu-JET">
                                                     <rect key="frame" x="81" y="12" width="50" height="21"/>
+                                                    <accessibility key="accessibilityConfiguration" label="Author"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="575-3N-41g"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="XdS-jR-qu0"/>
@@ -1398,6 +1413,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PHP-mN-vfE">
                                                     <rect key="frame" x="8" y="11" width="584" height="21"/>
+                                                    <accessibility key="accessibilityConfiguration" label="Date"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1761,6 +1777,9 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="Talks List"/>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="dataSource" destination="NN2-hJ-mAI" id="CW3-AX-hdT"/>
                             <outlet property="delegate" destination="NN2-hJ-mAI" id="c21-qQ-szr"/>
@@ -1961,6 +1980,9 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="Signups List"/>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="dataSource" destination="4jV-vN-vxg" id="kRE-IW-UBA"/>
                             <outlet property="delegate" destination="4jV-vN-vxg" id="d3B-mc-dUa"/>
@@ -2016,7 +2038,7 @@
         <image name="open book 2.png" width="27" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FL4-5H-1h1"/>
-        <segue reference="24U-0H-UDa"/>
+        <segue reference="bWu-j7-a5z"/>
+        <segue reference="zFd-a1-ZUO"/>
     </inferredMetricsTieBreakers>
 </document>

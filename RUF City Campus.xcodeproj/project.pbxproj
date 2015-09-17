@@ -59,6 +59,9 @@
 		DB338DF81B979FC00010B7AC /* GCM.m in Sources */ = {isa = PBXBuildFile; fileRef = DB338DF71B979FC00010B7AC /* GCM.m */; };
 		DB4907AC1B7951EA005B5242 /* Signups.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4907AB1B7951EA005B5242 /* Signups.m */; };
 		DB4907AF1B7951EB005B5242 /* Topics.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4907AE1B7951EB005B5242 /* Topics.m */; };
+		DB546D011BAA16A30018258B /* MessageViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB546D001BAA16A30018258B /* MessageViewTests.m */; };
+		DB546D031BAA1C480018258B /* DetailViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB546D021BAA1C480018258B /* DetailViewTests.m */; };
+		DB546D051BAA83450018258B /* AddEventTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB546D041BAA83450018258B /* AddEventTests.m */; };
 		DB55D3521B855F41001685C3 /* moreicon-02.png in Resources */ = {isa = PBXBuildFile; fileRef = DB55D3501B855F41001685C3 /* moreicon-02.png */; };
 		DB5AA7DD1B6DD10F00308E57 /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5AA7DC1B6DD10F00308E57 /* MainTabViewController.m */; };
 		DB78CE811B711EF200132EDB /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DB78CE801B711EF200132EDB /* DateUtil.m */; };
@@ -79,7 +82,6 @@
 		DBE9E8711B6E8A1700D646E0 /* MsgTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE9E8701B6E8A1700D646E0 /* MsgTableViewController.m */; };
 		DBE9E8741B6E9DDD00D646E0 /* EventTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE9E8731B6E9DDD00D646E0 /* EventTableViewController.m */; };
 		DBE9E8771B6E9DEB00D646E0 /* TalkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE9E8761B6E9DEB00D646E0 /* TalkTableViewController.m */; };
-		DBEC13091BA7C92000D42DB6 /* UI_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEC13081BA7C92000D42DB6 /* UI_Tests.m */; };
 		DBEC13101BA7CB7400D42DB6 /* LoginTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEC130F1BA7CB7400D42DB6 /* LoginTests.m */; };
 		DBEC13121BA7DF7700D42DB6 /* SendMessageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEC13111BA7DF7700D42DB6 /* SendMessageTests.m */; };
 		DBEC13151BA7E10D00D42DB6 /* KIFUITestActor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEC13131BA7E10D00D42DB6 /* KIFUITestActor+Additions.m */; };
@@ -210,6 +212,9 @@
 		DB4907AB1B7951EA005B5242 /* Signups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Signups.m; sourceTree = "<group>"; };
 		DB4907AD1B7951EB005B5242 /* Topics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topics.h; sourceTree = "<group>"; };
 		DB4907AE1B7951EB005B5242 /* Topics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topics.m; sourceTree = "<group>"; };
+		DB546D001BAA16A30018258B /* MessageViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewTests.m; sourceTree = "<group>"; };
+		DB546D021BAA1C480018258B /* DetailViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewTests.m; sourceTree = "<group>"; };
+		DB546D041BAA83450018258B /* AddEventTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddEventTests.m; path = ../AddEventTests.m; sourceTree = "<group>"; };
 		DB55D3501B855F41001685C3 /* moreicon-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moreicon-02.png"; sourceTree = "<group>"; };
 		DB5AA7DB1B6DD10F00308E57 /* MainTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabViewController.h; sourceTree = "<group>"; };
 		DB5AA7DC1B6DD10F00308E57 /* MainTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabViewController.m; sourceTree = "<group>"; };
@@ -251,7 +256,6 @@
 		DBE9E8761B6E9DEB00D646E0 /* TalkTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkTableViewController.m; sourceTree = "<group>"; };
 		DBEC13041BA7C92000D42DB6 /* UI Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UI Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBEC13071BA7C92000D42DB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DBEC13081BA7C92000D42DB6 /* UI_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UI_Tests.m; sourceTree = "<group>"; };
 		DBEC130F1BA7CB7400D42DB6 /* LoginTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTests.m; sourceTree = "<group>"; };
 		DBEC13111BA7DF7700D42DB6 /* SendMessageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendMessageTests.m; sourceTree = "<group>"; };
 		DBEC13131BA7E10D00D42DB6 /* KIFUITestActor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFUITestActor+Additions.m"; sourceTree = "<group>"; };
@@ -628,10 +632,12 @@
 		DBEC13051BA7C92000D42DB6 /* UI Tests */ = {
 			isa = PBXGroup;
 			children = (
-				DBEC13081BA7C92000D42DB6 /* UI_Tests.m */,
 				DBEC130F1BA7CB7400D42DB6 /* LoginTests.m */,
+				DB546D041BAA83450018258B /* AddEventTests.m */,
 				DBEC13161BA7E7A400D42DB6 /* SignupTests.m */,
+				DB546D021BAA1C480018258B /* DetailViewTests.m */,
 				DBEC13111BA7DF7700D42DB6 /* SendMessageTests.m */,
+				DB546D001BAA16A30018258B /* MessageViewTests.m */,
 				DBEC13061BA7C92000D42DB6 /* Supporting Files */,
 			);
 			path = "UI Tests";
@@ -988,9 +994,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBEC13121BA7DF7700D42DB6 /* SendMessageTests.m in Sources */,
-				DBEC13091BA7C92000D42DB6 /* UI_Tests.m in Sources */,
+				DB546D031BAA1C480018258B /* DetailViewTests.m in Sources */,
+				DB546D051BAA83450018258B /* AddEventTests.m in Sources */,
 				DBEC13151BA7E10D00D42DB6 /* KIFUITestActor+Additions.m in Sources */,
 				DBEC13101BA7CB7400D42DB6 /* LoginTests.m in Sources */,
+				DB546D011BAA16A30018258B /* MessageViewTests.m in Sources */,
 				DBEC13171BA7E7A400D42DB6 /* SignupTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

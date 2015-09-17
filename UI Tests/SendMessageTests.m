@@ -17,45 +17,58 @@
 
 @implementation SendMessageTests
 
--(void)beforeAll {
+-(void)beforeAll{
     [tester login];
+    [tester waitForViewWithAccessibilityLabel:@"Compose"];
+    [tester tapViewWithAccessibilityLabel:@"Compose"];
+    [tester waitForViewWithAccessibilityLabel:@"Subject"];
 }
 
--(void)afterEach {
+-(void)beforeEach{
     NSError *error;
-    if ([tester tryFindingViewWithAccessibilityLabel:@"Back" error:&error]){
-        [tester tapViewWithAccessibilityLabel:@"Back"];
+    if ([tester tryFindingViewWithAccessibilityLabel:@"Compose" error:&error]){
+        [tester tapViewWithAccessibilityLabel:@"Compose"];
     }
 }
 
+-(void)afterAll{
+    [tester logout];
+}
+
 -(void) testSendMessage{
-    [tester tapViewWithAccessibilityLabel:@"Compose"];
+    [tester clearTextFromAndThenEnterText:@"Random Question" intoViewWithAccessibilityLabel:@"Subject"];
+    [tester selectPickerViewRowWithTitle:@"More information"];
     
+    [tester waitForViewWithAccessibilityLabel:@"Topics" value:@"More information" traits:UIAccessibilityTraitNone];
+    
+    [tester clearTextFromAndThenEnterText:@"This is the question message text" intoViewWithAccessibilityLabel:@"Message"];
+    
+    [tester tapViewWithAccessibilityLabel:@"Send"];
+    [tester waitForViewWithAccessibilityLabel:@"Signups"];
     
 }
 
--(void) testSendFromEvents {
-    [tester tapViewWithAccessibilityLabel:@"Events"];
+-(void) testSendEmptyMessage{
+    [tester tapViewWithAccessibilityLabel:@"Send"];
     
-    [tester tapViewWithAccessibilityLabel:@"Compose"];
-    
-    [tester waitForViewWithAccessibilityLabel:@"Subject"];
+    [tester waitForAnimationsToFinish];
+    NSLog(@"animations done");
+    NSError *error;
+    BOOL test = [tester tryFindingViewWithAccessibilityLabel:@"Signups" error:&error];
+    XCTAssert(!test);
 }
 
--(void) testSendFromSignups {
-    [tester tapViewWithAccessibilityLabel:@"Signups"];
+-(void) testSendEmptySubject{
+    [tester clearTextFromAndThenEnterText:@"" intoViewWithAccessibilityLabel:@"Subject"];
+    [tester selectPickerViewRowWithTitle:@"Question"];
+    [tester clearTextFromAndThenEnterText:@"This is the question message text" intoViewWithAccessibilityLabel:@"Message"];
+    [tester tapViewWithAccessibilityLabel:@"Send"];
     
-    [tester tapViewWithAccessibilityLabel:@"Compose"];
-    
-    [tester waitForViewWithAccessibilityLabel:@"Subject"];
-}
-
--(void) testSendFromTalks {
-    [tester tapViewWithAccessibilityLabel:@"Talks"];
-    
-    [tester tapViewWithAccessibilityLabel:@"Compose"];
-    
-    [tester waitForViewWithAccessibilityLabel:@"Subject"];
+    [tester waitForAnimationsToFinish];
+    NSLog(@"animations done");
+    NSError *error;
+    BOOL test = [tester tryFindingViewWithAccessibilityLabel:@"Signups" error:&error];
+    XCTAssert(!test);
 }
 
 

@@ -57,6 +57,11 @@
     return [[self topicData] count];
 }
 
+- (NSString *)pickerView:(UIPickerView *)pickerView accessibilityLabelForComponent:(NSInteger)component
+{
+    return @"Topics";
+}
+
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     [self setTopicId:[[[self topicData] objectAtIndex:row]getIdd]];
 }
