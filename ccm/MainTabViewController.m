@@ -43,6 +43,7 @@ bool done;
     [self setCanWriteEvents:false];
     [self setCanWriteSignups: false];
     [self setCanWriteTalks: false];
+    //TODO include broadcast and convo
     [self setIsMinister:false];
     [self setLoaded:false];
     NSArray *dics = [[NSUserDefaults standardUserDefaults] arrayForKey:KEY_GROUPS];
@@ -60,6 +61,7 @@ bool done;
         if([(NSString *)[group valueForKey:@"name"] isEqualToString:@"ministers"]){
             [self setIsMinister:true];
         }
+        //TODO include bc and convo
     }
     [self setLoaded:YES];
     done = true;

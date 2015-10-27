@@ -33,6 +33,7 @@
 -(void) updateLocationsUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler;
 -(void) updateTopicsUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler;
 -(void) updateSignupsUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler;
+//TODO include convo and bc
 
 -(void) getMyInfo:(void (^)(NSMutableArray *data, NSError * )) handler;
 

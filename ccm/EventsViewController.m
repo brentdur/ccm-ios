@@ -8,6 +8,8 @@
 
 #import "EventsViewController.h"
 
+//TODO update when data updates
+
 @interface EventsViewController ()
 
 @end
@@ -75,6 +77,8 @@
     }
     UIBarButtonItem *left = [UIBarButtonItem alloc];
     
+    //TODO change this to support inbox
+    //TODO move this permission logic to the conversations view
     if([parent isMinister]){
         left = [left initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(inbox:)];
     }

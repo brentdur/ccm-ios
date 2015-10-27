@@ -8,6 +8,8 @@
 
 #import "TalksViewController.h"
 
+//TODO update when data updates
+
 @interface TalksViewController ()
 
 @end

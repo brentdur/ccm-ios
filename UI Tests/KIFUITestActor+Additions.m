@@ -29,7 +29,6 @@
     NSError *error;
     if ([self tryFindingViewWithAccessibilityLabel:@"Welcome Message" error:&error]){
         [self waitForViewWithAccessibilityLabel:@"Welcome Message"];
-        [self acknowledgeSystemAlert];
         
         [self enterText:@"admin@brentondurkee.com" intoViewWithAccessibilityLabel:@"Email"];
         [self enterText:@"123" intoViewWithAccessibilityLabel:@"Password"];

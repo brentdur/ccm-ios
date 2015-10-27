@@ -16,6 +16,9 @@
 #import "Groups.h"
 #import "Locations.h"
 
+//TODO add models to xcdatamodel
+//TODO generate class files
+
 
 
 @interface DataController : NSObject
@@ -28,10 +31,12 @@
 +(void) addMsgWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
 +(void) addTalkWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
 +(void) addSignupWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
+//TODO include convo and bc
 
 +(void) postGcmToUser:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
 
 +(void) putUserToSignup:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
+//TODO include convo puts
 
 +(void) deleteMsg:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
 
@@ -48,6 +53,7 @@
 +(NSArray *) getLocations;
 +(NSArray *) getTopics;
 +(NSArray *) getSignups;
+//TODO add convo and bc
 
 +(void) setDelegate:(id) del withType:(NSString *) type;
 +(void) setGroupDelegate:(id) del;
@@ -58,6 +64,7 @@
 +(NSUInteger) getNumMsgs;
 +(NSUInteger) getNumTalks;
 +(NSUInteger) getNumSignups;
+//TODO add convo and bc
 
 
 @end

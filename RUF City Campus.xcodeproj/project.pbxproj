@@ -47,6 +47,7 @@
 		DB27BD4D1B6706B80068F0BE /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD4C1B6706B80068F0BE /* SignInViewController.m */; };
 		DB27BD501B67078A0068F0BE /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD4F1B67078A0068F0BE /* SignUpViewController.m */; };
 		DB27BD531B670B4F0068F0BE /* AdminRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB27BD521B670B4F0068F0BE /* AdminRequest.m */; };
+		DB29E0A21BD005B600421EC5 /* KIF+SwiftExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB29E0A11BD005B600421EC5 /* KIF+SwiftExtension.swift */; };
 		DB2B7DD71B72E67A00CC2EB5 /* AddMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2B7DD61B72E67A00CC2EB5 /* AddMessageViewController.m */; };
 		DB2B7DDA1B72F2A000CC2EB5 /* AddTalkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2B7DD91B72F2A000CC2EB5 /* AddTalkViewController.m */; };
 		DB2B7DE21B72FA6C00CC2EB5 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2B7DE11B72FA6C00CC2EB5 /* SWRevealViewController.m */; };
@@ -67,6 +68,7 @@
 		DB78CE811B711EF200132EDB /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DB78CE801B711EF200132EDB /* DateUtil.m */; };
 		DB8F1C301B6D8B27007B3DAB /* TalksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8F1C2F1B6D8B27007B3DAB /* TalksViewController.m */; };
 		DB8F1C331B6D8B3C007B3DAB /* TalksTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8F1C321B6D8B3C007B3DAB /* TalksTableViewCell.m */; };
+		DB96FE941BD0039300E980CB /* SwiftLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB96FE931BD0039300E980CB /* SwiftLoginTests.swift */; };
 		DBA4AE5E1B699E99000613F8 /* Groups.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE5D1B699E99000613F8 /* Groups.m */; };
 		DBA4AE611B699E9A000613F8 /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE601B699E9A000613F8 /* Events.m */; };
 		DBA4AE641B699E9A000613F8 /* Talks.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE631B699E9A000613F8 /* Talks.m */; };
@@ -75,6 +77,7 @@
 		DBA4AE6D1B699EE4000613F8 /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE6C1B699EE4000613F8 /* DataController.m */; };
 		DBA4AE701B69A227000613F8 /* DataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE6F1B69A227000613F8 /* DataRequest.m */; };
 		DBAD31D21B805F64003C1671 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAD31D11B805F64003C1671 /* UIView+Toast.m */; };
+		DBB38E921BAE0CA5005BA102 /* KIFUITestActor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB38E901BAE0CA5005BA102 /* KIFUITestActor+Additions.m */; };
 		DBB7C6441BA665AF00A1744F /* RUF_CCM_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB7C6431BA665AF00A1744F /* RUF_CCM_Tests.m */; };
 		DBBB54CA1B72808800E6E1B0 /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBB54C91B72808800E6E1B0 /* AddEventViewController.m */; };
 		DBBB71F71BA77642003C980A /* DateUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DBBB71F61BA77642003C980A /* DateUtilsTest.m */; };
@@ -84,7 +87,6 @@
 		DBE9E8771B6E9DEB00D646E0 /* TalkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE9E8761B6E9DEB00D646E0 /* TalkTableViewController.m */; };
 		DBEC13101BA7CB7400D42DB6 /* LoginTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEC130F1BA7CB7400D42DB6 /* LoginTests.m */; };
 		DBEC13121BA7DF7700D42DB6 /* SendMessageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEC13111BA7DF7700D42DB6 /* SendMessageTests.m */; };
-		DBEC13151BA7E10D00D42DB6 /* KIFUITestActor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEC13131BA7E10D00D42DB6 /* KIFUITestActor+Additions.m */; };
 		DBEC13171BA7E7A400D42DB6 /* SignupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBEC13161BA7E7A400D42DB6 /* SignupTests.m */; };
 		DBEEDD2C1B6FEDBA00CAE8D9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBEEDD2B1B6FEDBA00CAE8D9 /* MapKit.framework */; };
 		DBFB72601B797E090018DA40 /* SignupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBFB725F1B797E090018DA40 /* SignupsViewController.m */; };
@@ -174,7 +176,7 @@
 		DB26DD0E1B86B424005C55F4 /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
 		DB26DD0F1B86B424005C55F4 /* clipboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clipboard@2x.png"; sourceTree = "<group>"; };
 		DB26DD101B86B424005C55F4 /* open book 2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "open book 2@2x.png"; sourceTree = "<group>"; };
-		DB27BD161B6705100068F0BE /* RUF City Campus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RUF City Campus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB27BD161B6705100068F0BE /* RUF CCM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RUF CCM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB27BD1A1B6705100068F0BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB27BD1B1B6705100068F0BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DB27BD1D1B6705100068F0BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		DB27BD4F1B67078A0068F0BE /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		DB27BD511B670B4F0068F0BE /* AdminRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminRequest.h; sourceTree = "<group>"; };
 		DB27BD521B670B4F0068F0BE /* AdminRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminRequest.m; sourceTree = "<group>"; };
+		DB29E0A11BD005B600421EC5 /* KIF+SwiftExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KIF+SwiftExtension.swift"; sourceTree = "<group>"; };
 		DB2B7DD51B72E67A00CC2EB5 /* AddMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMessageViewController.h; sourceTree = "<group>"; };
 		DB2B7DD61B72E67A00CC2EB5 /* AddMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMessageViewController.m; sourceTree = "<group>"; };
 		DB2B7DD81B72F2A000CC2EB5 /* AddTalkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTalkViewController.h; sourceTree = "<group>"; };
@@ -224,6 +227,8 @@
 		DB8F1C2F1B6D8B27007B3DAB /* TalksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalksViewController.m; sourceTree = "<group>"; };
 		DB8F1C311B6D8B3C007B3DAB /* TalksTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalksTableViewCell.h; sourceTree = "<group>"; };
 		DB8F1C321B6D8B3C007B3DAB /* TalksTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalksTableViewCell.m; sourceTree = "<group>"; };
+		DB96FE921BD0039200E980CB /* UI Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UI Tests-Bridging-Header.h"; sourceTree = "<group>"; };
+		DB96FE931BD0039300E980CB /* SwiftLoginTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLoginTests.swift; sourceTree = "<group>"; };
 		DBA4AE5C1B699E99000613F8 /* Groups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Groups.h; sourceTree = "<group>"; };
 		DBA4AE5D1B699E99000613F8 /* Groups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Groups.m; sourceTree = "<group>"; };
 		DBA4AE5F1B699E9A000613F8 /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Events.h; sourceTree = "<group>"; };
@@ -240,6 +245,8 @@
 		DBA4AE6F1B69A227000613F8 /* DataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataRequest.m; sourceTree = "<group>"; };
 		DBAD31D01B805F64003C1671 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		DBAD31D11B805F64003C1671 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		DBB38E901BAE0CA5005BA102 /* KIFUITestActor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFUITestActor+Additions.m"; sourceTree = "<group>"; };
+		DBB38E911BAE0CA5005BA102 /* KIFUITestActor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFUITestActor+Additions.h"; sourceTree = "<group>"; };
 		DBB7C63F1BA665AF00A1744F /* RUF CCM Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RUF CCM Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBB7C6421BA665AF00A1744F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBB7C6431BA665AF00A1744F /* RUF_CCM_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RUF_CCM_Tests.m; sourceTree = "<group>"; };
@@ -258,8 +265,6 @@
 		DBEC13071BA7C92000D42DB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBEC130F1BA7CB7400D42DB6 /* LoginTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTests.m; sourceTree = "<group>"; };
 		DBEC13111BA7DF7700D42DB6 /* SendMessageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendMessageTests.m; sourceTree = "<group>"; };
-		DBEC13131BA7E10D00D42DB6 /* KIFUITestActor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFUITestActor+Additions.m"; sourceTree = "<group>"; };
-		DBEC13141BA7E10D00D42DB6 /* KIFUITestActor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFUITestActor+Additions.h"; sourceTree = "<group>"; };
 		DBEC13161BA7E7A400D42DB6 /* SignupTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupTests.m; sourceTree = "<group>"; };
 		DBEEDD2B1B6FEDBA00CAE8D9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DBFB725C1B7978560018DA40 /* ccmModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ccmModel 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -456,7 +461,7 @@
 		DB27BD171B6705100068F0BE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DB27BD161B6705100068F0BE /* RUF City Campus.app */,
+				DB27BD161B6705100068F0BE /* RUF CCM.app */,
 				DB27BD321B6705110068F0BE /* RUF City CampusTests.xctest */,
 				DBB7C63F1BA665AF00A1744F /* RUF CCM Tests.xctest */,
 				DBEC13041BA7C92000D42DB6 /* UI Tests.xctest */,
@@ -639,6 +644,9 @@
 				DBEC13111BA7DF7700D42DB6 /* SendMessageTests.m */,
 				DB546D001BAA16A30018258B /* MessageViewTests.m */,
 				DBEC13061BA7C92000D42DB6 /* Supporting Files */,
+				DB96FE931BD0039300E980CB /* SwiftLoginTests.swift */,
+				DB29E0A11BD005B600421EC5 /* KIF+SwiftExtension.swift */,
+				DB96FE921BD0039200E980CB /* UI Tests-Bridging-Header.h */,
 			);
 			path = "UI Tests";
 			sourceTree = "<group>";
@@ -647,8 +655,8 @@
 			isa = PBXGroup;
 			children = (
 				DBEC13071BA7C92000D42DB6 /* Info.plist */,
-				DBEC13131BA7E10D00D42DB6 /* KIFUITestActor+Additions.m */,
-				DBEC13141BA7E10D00D42DB6 /* KIFUITestActor+Additions.h */,
+				DBB38E901BAE0CA5005BA102 /* KIFUITestActor+Additions.m */,
+				DBB38E911BAE0CA5005BA102 /* KIFUITestActor+Additions.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -687,7 +695,7 @@
 			);
 			name = "RUF City Campus";
 			productName = ccm;
-			productReference = DB27BD161B6705100068F0BE /* RUF City Campus.app */;
+			productReference = DB27BD161B6705100068F0BE /* RUF CCM.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DB27BD311B6705110068F0BE /* RUF City CampusTests */ = {
@@ -752,6 +760,7 @@
 		DB27BD0E1B6705100068F0BE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Brenton Durkee";
 				TargetAttributes = {
@@ -993,10 +1002,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB29E0A21BD005B600421EC5 /* KIF+SwiftExtension.swift in Sources */,
 				DBEC13121BA7DF7700D42DB6 /* SendMessageTests.m in Sources */,
+				DB96FE941BD0039300E980CB /* SwiftLoginTests.swift in Sources */,
+				DBB38E921BAE0CA5005BA102 /* KIFUITestActor+Additions.m in Sources */,
 				DB546D031BAA1C480018258B /* DetailViewTests.m in Sources */,
 				DB546D051BAA83450018258B /* AddEventTests.m in Sources */,
-				DBEC13151BA7E10D00D42DB6 /* KIFUITestActor+Additions.m in Sources */,
 				DBEC13101BA7CB7400D42DB6 /* LoginTests.m in Sources */,
 				DB546D011BAA16A30018258B /* MessageViewTests.m in Sources */,
 				DBEC13171BA7E7A400D42DB6 /* SignupTests.m in Sources */,
@@ -1136,7 +1147,7 @@
 				INFOPLIST_FILE = ccm/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "RUF City Campus";
+				PRODUCT_NAME = "RUF CCM";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1150,7 +1161,7 @@
 				INFOPLIST_FILE = ccm/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "RUF City Campus";
+				PRODUCT_NAME = "RUF CCM";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1235,6 +1246,7 @@
 			baseConfigurationReference = 5BC0DEBC55D80AAC96A819DF /* Pods-UI Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1247,6 +1259,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UI Tests/UI Tests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RUF City Campus.app/RUF City Campus";
 			};
 			name = Debug;
@@ -1256,6 +1270,7 @@
 			baseConfigurationReference = 4268FBAB008F954ABAB3F47A /* Pods-UI Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1264,6 +1279,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UI Tests/UI Tests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RUF City Campus.app/RUF City Campus";
 			};
 			name = Release;

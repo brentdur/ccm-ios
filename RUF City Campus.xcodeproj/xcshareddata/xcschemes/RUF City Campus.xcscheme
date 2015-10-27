@@ -15,17 +15,17 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DB27BD151B6705100068F0BE"
-               BuildableName = "RUF City Campus.app"
+               BuildableName = "RUF CCM.app"
                BlueprintName = "RUF City Campus"
                ReferencedContainer = "container:RUF City Campus.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "YES"
+            buildForRunning = "NO"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DBB7C63E1BA665AF00A1744F"
@@ -36,10 +36,10 @@
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "YES"
+            buildForRunning = "NO"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DBEC13031BA7C92000D42DB6"
@@ -75,13 +75,33 @@
                BlueprintName = "UI Tests"
                ReferencedContainer = "container:RUF City Campus.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "AddEventTests">
+               </Test>
+               <Test
+                  Identifier = "DetailViewTests">
+               </Test>
+               <Test
+                  Identifier = "LoginTests">
+               </Test>
+               <Test
+                  Identifier = "MessageViewTests">
+               </Test>
+               <Test
+                  Identifier = "SendMessageTests">
+               </Test>
+               <Test
+                  Identifier = "SignupTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DB27BD151B6705100068F0BE"
-            BuildableName = "RUF City Campus.app"
+            BuildableName = "RUF CCM.app"
             BlueprintName = "RUF City Campus"
             ReferencedContainer = "container:RUF City Campus.xcodeproj">
          </BuildableReference>
@@ -101,7 +121,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DB27BD151B6705100068F0BE"
-            BuildableName = "RUF City Campus.app"
+            BuildableName = "RUF CCM.app"
             BlueprintName = "RUF City Campus"
             ReferencedContainer = "container:RUF City Campus.xcodeproj">
          </BuildableReference>
@@ -120,7 +140,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DB27BD151B6705100068F0BE"
-            BuildableName = "RUF City Campus.app"
+            BuildableName = "RUF CCM.app"
             BlueprintName = "RUF City Campus"
             ReferencedContainer = "container:RUF City Campus.xcodeproj">
          </BuildableReference>

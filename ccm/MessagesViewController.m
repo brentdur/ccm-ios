@@ -8,6 +8,8 @@
 
 #import "MessagesViewController.h"
 
+//TODO rewrite all of this to support convo, bc, and the addition of bc
+
 @interface MessagesViewController ()
 
 @end

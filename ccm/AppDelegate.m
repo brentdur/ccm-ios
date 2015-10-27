@@ -29,10 +29,11 @@
     UIUserNotificationType allNotificationTypes = (UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge);
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:allNotificationTypes categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:KEY_HAS_TOKEN]){
         [DataController saveMyGroup];
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
+        
     }
     
     GCMConfig *gcmConfig = [GCMConfig defaultConfig];

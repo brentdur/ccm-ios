@@ -18,6 +18,7 @@
 //    if(false){
         cont = [self.storyboard instantiateViewControllerWithIdentifier:@"TabView"];
 //        [DataController sync];
+        //TODO: check token asnyc, delegate to App Delegate, goes to signin screen if needed
     }
     else {
         cont = [self.storyboard instantiateViewControllerWithIdentifier:@"AuthNav"];
