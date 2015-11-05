@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Brenton Durkee. All rights reserved.
 //
 
-#import "MessagesTableViewCell.h"
+#import "InboxTableViewCell.h"
 
-@implementation MessagesTableViewCell
+@implementation InboxTableViewCell
 
 @synthesize label1;
 @synthesize label2;

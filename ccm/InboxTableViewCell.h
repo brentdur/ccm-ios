@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MessagesTableViewCell : UITableViewCell
+@interface InboxTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 
 @property (weak, nonatomic) IBOutlet UILabel *label2;

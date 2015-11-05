@@ -16,35 +16,30 @@
 
 @implementation MessagesViewController
 
-@synthesize content;
+@synthesize broadcastContent;
+@synthesize convoContent;
 @synthesize selectedRow;
 @synthesize refresh;
-@synthesize sections;
-@synthesize splits;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    content = [DataController getMessages];
-    sections = [DataController getTopics];
-    if([content count] == 0){
-        [DataController setDelegate:self withType:ENTITY_MESSAGES];
-    }
-    [self sectionize];
+    broadcastContent = [DataController getBroadcasts];
+    convoContent = [DataController getConvos];
+    
+    //TODO add observer logic
     
     [refresh addTarget:self action:@selector(refreshStuff) forControlEvents:UIControlEventValueChanged];
 }
 
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    if ([content count] != [DataController getNumMsgs]){
-        [self didUpdateData];
-    }
 }
 
 -(void) refreshStuff{
     NSLog(@"refresh");
-    [DataController setDelegate:self withType:ENTITY_MESSAGES];
+    [DataController setDelegate:self withType:ENTITY_BROADCAST];
+    [DataController setDelegate:self withType:ENTITY_CONVO];
     [DataController sync];
 }
 
@@ -54,32 +49,32 @@
 }
 
 -(void) didUpdateData{
-    NSLog(@"did update messages");
-    content = [DataController getMessages];
-    sections = [DataController getTopics];
-    [self sectionize];
+    NSLog(@"did update convos/bcs");
+    broadcastContent = [DataController getBroadcasts];
+    convoContent = [DataController getConvos];
     [[self tableView] reloadData];
     [refresh endRefreshing];
 }
 
--(void) sectionize{
-    NSMutableDictionary *stuff = [[NSMutableDictionary alloc] init];
-    NSMutableArray *messages = [[NSMutableArray alloc] initWithArray:content];
-    for (Topics* topic in sections){
-        NSMutableArray *array = [[NSMutableArray alloc] init];
-        NSMutableArray *deletes = [[NSMutableArray alloc] init];
-        for (Messages* message in messages){
-            if ([[topic getIdd]isEqualToString: [message topic]]){
-                [array addObject:message];
-                [deletes addObject:message];
-            }
-        }
-        [messages removeObjectsInArray:deletes];
-        [stuff setValue:array forKey:[topic name]];
-//        NSLog(@"%@", stuff);
-    }
-    splits = stuff;
-}
+//-(void) sectionize{
+//    //TODO, won't need this anymore
+//    NSMutableDictionary *stuff = [[NSMutableDictionary alloc] init];
+//    NSMutableArray *messages = [[NSMutableArray alloc] initWithArray:content];
+//    for (Topics* topic in sections){
+//        NSMutableArray *array = [[NSMutableArray alloc] init];
+//        NSMutableArray *deletes = [[NSMutableArray alloc] init];
+//        for (Messages* message in messages){
+//            if ([[topic getIdd]isEqualToString: [message topic]]){
+//                [array addObject:message];
+//                [deletes addObject:message];
+//            }
+//        }
+//        [messages removeObjectsInArray:deletes];
+//        [stuff setValue:array forKey:[topic name]];
+////        NSLog(@"%@", stuff);
+//    }
+//    splits = stuff;
+//}
 
 
 /*
@@ -93,66 +88,101 @@
 */
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSArray *array = (NSArray *)[splits valueForKey:[[sections objectAtIndex:section] name]];
-    return [array count];
+    return broadcastContent.count + convoContent.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellId = @"CellMsg";
-    
-    MessagesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    
-    if(cell == nil){
-        cell = [[MessagesTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+    static NSString *cellId = @"CellInbox";
+    InboxTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (cell == nil) {
+        cell = [[InboxTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
-    Messages *msg = [[splits valueForKey:[[sections objectAtIndex:indexPath.section] name]] objectAtIndex:indexPath.row];
-    cell.label1.text = [msg subject];
-    cell.label2.text = @"";
+    
+    if (indexPath.row < broadcastContent.count) {
+        //do a broadcast
+        Broadcasts *bc = [broadcastContent objectAtIndex:indexPath.row];
+        cell.label1.text = [bc title];
+        cell.label2.text = @"";
+    }
+    else {
+        //do a convo
+        Conversations *convo = [convoContent objectAtIndex:indexPath.row];
+        cell.label1.text = [convo subject];
+        cell.label2.text = [convo from_who];
+    }
+    
     return cell;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return [sections count];
-}
-
-- (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [[sections objectAtIndex:section] name];
+    return 1;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self setSelectedRow:indexPath];
-//    MessageDetailViewController *dv = [[self storyboard] instantiateViewControllerWithIdentifier:@"MsgDetail"];
-//    [[self navigationController] pushViewController:dv animated:YES];
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self performSegueWithIdentifier:@"MsgDetail" sender:self];
+    //TODO change segue id
+    if (indexPath.row < broadcastContent.count) {
+        [self performSegueWithIdentifier:@"MsgDetail" sender:self];
+        //its a bc
+    }
+    else {
+        [self performSegueWithIdentifier:@"MsgDetail" sender:self];
+        //its a convo
+    }
+    
+    
 
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *key = [[sections objectAtIndex:[indexPath section]] name];
-    NSLog(@"%@", key);
-    NSArray *array = (NSArray *)[splits objectForKey:key];
-    NSLog(@"%@", array);
-    NSDictionary *data = @{@"message": [[array objectAtIndex:[indexPath row]] getIdd]};;
-    NSLog(@"%@", data);
     [[self view] makeToastActivity];
-    [DataController deleteMsg:data andHandler:^(NSMutableArray *data, NSError *error) {
-        [[self view] hideToastActivity];
-        if (error){
-            NSLog(@"error");
-        }
-        else {
-            NSMutableDictionary *spli = [[NSMutableDictionary alloc] initWithDictionary:splits];
-            NSMutableArray *cont = [[NSMutableArray alloc] initWithArray:array];
-            [cont removeObjectAtIndex:indexPath.row];
-            [spli setObject:cont forKey:key];
-            splits = spli;
-            [tableView reloadData];
-        }
-    }];
+    if (indexPath.row < broadcastContent.count) {
+        //do a broadcast
+        NSDictionary *data = @{@"cast": [[broadcastContent objectAtIndex:[indexPath row]] getIdd]};
+        [DataController putKillBC:data andHandler:^(NSMutableArray *data, NSError *error) {
+            [[self view] hideToastActivity];
+            if (error){
+                NSLog(@"error");
+            }
+            else {
+                NSMutableArray *array = [[NSMutableArray alloc] initWithArray:broadcastContent];
+                [array removeObjectAtIndex:indexPath.row];
+                broadcastContent = array;
+                [tableView reloadData];
+            }
+        }];
+    }
+    else {
+        //do a convo
+        NSDictionary *data = @{@"conversation": [[convoContent objectAtIndex:[indexPath row]] getIdd]};
+        [DataController putKillConvo:data andHandler:^(NSMutableArray *data, NSError *error) {
+            [[self view] hideToastActivity];
+            if (error){
+                NSLog(@"error");
+            }
+            else {
+                NSMutableArray *array = [[NSMutableArray alloc] initWithArray:convoContent];
+                [array removeObjectAtIndex:indexPath.row];
+                convoContent = array;
+                [tableView reloadData];
+            }
+        }];
+    }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    //TODO update with correct segues
+    if (indexPath.row < broadcastContent.count) {
+        [self performSegueWithIdentifier:@"MsgDetail" sender:self];
+        //its a bc
+    }
+    else {
+        [self performSegueWithIdentifier:@"MsgDetail" sender:self];
+        //its a convo
+    }
+    
     if ([[segue identifier] isEqualToString:@"MsgDetail"]) {
         MsgTableViewController *detailViewController = [segue destinationViewController];
         NSIndexPath *indexPath = [self selectedRow];

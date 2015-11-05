@@ -30,7 +30,7 @@
 		DB1380291B6A86C2004965C7 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1380181B6A86C2004965C7 /* UIWebView+AFNetworking.m */; };
 		DB13802C1B6B10F0004965C7 /* EventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB13802B1B6B10F0004965C7 /* EventsViewController.m */; };
 		DB13802F1B6B1B93004965C7 /* EventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB13802E1B6B1B92004965C7 /* EventsTableViewCell.m */; };
-		DB1380331B6B24FD004965C7 /* MessagesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1380321B6B24FD004965C7 /* MessagesTableViewCell.m */; };
+		DB1380331B6B24FD004965C7 /* InboxTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1380321B6B24FD004965C7 /* InboxTableViewCell.m */; };
 		DB1380361B6B250C004965C7 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1380351B6B250C004965C7 /* MessagesViewController.m */; };
 		DB26DD0B1B86B41D005C55F4 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = DB26DD081B86B41D005C55F4 /* calendar.png */; };
 		DB26DD0C1B86B41D005C55F4 /* clipboard.png in Resources */ = {isa = PBXBuildFile; fileRef = DB26DD091B86B41D005C55F4 /* clipboard.png */; };
@@ -169,8 +169,8 @@
 		DB13802B1B6B10F0004965C7 /* EventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsViewController.m; sourceTree = "<group>"; };
 		DB13802D1B6B1B92004965C7 /* EventsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewCell.h; sourceTree = "<group>"; };
 		DB13802E1B6B1B92004965C7 /* EventsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewCell.m; sourceTree = "<group>"; };
-		DB1380311B6B24FD004965C7 /* MessagesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesTableViewCell.h; sourceTree = "<group>"; };
-		DB1380321B6B24FD004965C7 /* MessagesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesTableViewCell.m; sourceTree = "<group>"; };
+		DB1380311B6B24FD004965C7 /* InboxTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxTableViewCell.h; sourceTree = "<group>"; };
+		DB1380321B6B24FD004965C7 /* InboxTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxTableViewCell.m; sourceTree = "<group>"; };
 		DB1380341B6B250C004965C7 /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
 		DB1380351B6B250C004965C7 /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
 		DB26DD081B86B41D005C55F4 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
@@ -443,8 +443,8 @@
 			children = (
 				DB1380341B6B250C004965C7 /* MessagesViewController.h */,
 				DB1380351B6B250C004965C7 /* MessagesViewController.m */,
-				DB1380311B6B24FD004965C7 /* MessagesTableViewCell.h */,
-				DB1380321B6B24FD004965C7 /* MessagesTableViewCell.m */,
+				DB1380311B6B24FD004965C7 /* InboxTableViewCell.h */,
+				DB1380321B6B24FD004965C7 /* InboxTableViewCell.m */,
 				DBE9E86F1B6E8A1700D646E0 /* MsgTableViewController.h */,
 				DBE9E8701B6E8A1700D646E0 /* MsgTableViewController.m */,
 				DB2B7DD51B72E67A00CC2EB5 /* AddMessageViewController.h */,
@@ -981,7 +981,7 @@
 				DB13802C1B6B10F0004965C7 /* EventsViewController.m in Sources */,
 				DB1380281B6A86C2004965C7 /* UIRefreshControl+AFNetworking.m in Sources */,
 				DB27BD471B67059E0068F0BE /* ccmModel.xcdatamodeld in Sources */,
-				DB1380331B6B24FD004965C7 /* MessagesTableViewCell.m in Sources */,
+				DB1380331B6B24FD004965C7 /* InboxTableViewCell.m in Sources */,
 				DB1380231B6A86C2004965C7 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				DB2BFEA61B6869C700B12A0B /* KeychainItemWrapper.m in Sources */,
 				DB5AA7DD1B6DD10F00308E57 /* MainTabViewController.m in Sources */,

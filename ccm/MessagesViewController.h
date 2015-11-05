@@ -9,17 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "Constaints.h"
 #import "DataController.h"
-#import "Messages.h"
+#import "Conversations.h"
+#import "Broadcasts.h"
 #import "Topics.h"
-#import "MessagesTableViewCell.h"
+#import "InboxTableViewCell.h"
 #import "MsgTableViewController.h"
 #import "UIView+Toast.h"
 
 @interface MessagesViewController : UITableViewController
-@property NSArray *content;
-@property NSArray *sections;
-
-@property NSDictionary *splits;
+@property NSArray *broadcastContent;
+@property NSArray *convoContent;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
 
