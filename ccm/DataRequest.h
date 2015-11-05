@@ -21,19 +21,20 @@
 +(DataRequest *) sharedInstance;
 
 -(void) updateEventsWithDelegate:(id)delegate;
--(void) updateMessagesWithDelegate:(id)delegate;
 -(void) updateTalksWithDelegate:(id)delegate;
 -(void) updateGroupsWithDelegate:(id)delegate;
 -(void) updateLocationsWithDelegate:(id)delegate;
+-(void) updateBroadcastsWithDelegate:(id)delegate;
+-(void) updateConvosWithDelegate:(id)delegate;
 
 -(void) updateEventsUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler;
--(void) updateMessagesUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler;
 -(void) updateTalksUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler;
 -(void) updateGroupsUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler;
 -(void) updateLocationsUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler;
 -(void) updateTopicsUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler;
 -(void) updateSignupsUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler;
-//TODO include convo and bc
+-(void) updateConvosUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler;
+-(void) updateBroadcastsUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler;
 
 -(void) getMyInfo:(void (^)(NSMutableArray *data, NSError * )) handler;
 

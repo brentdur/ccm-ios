@@ -8,7 +8,6 @@
 
 #import "TalksViewController.h"
 
-//TODO update when data updates
 
 @interface TalksViewController ()
 
@@ -32,14 +31,15 @@
     if(![parent canWriteTalks]){
         [[self bar] setRightBarButtonItem:nil];
     }
-    UIBarButtonItem *left = [UIBarButtonItem alloc];
-    if([parent isMinister]){
-        left = [left initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(inbox:)];
-    }
-    else {
-        left = [left initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(sendMsg:)];
-    }
+    
+    UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(inbox:)];
+    
     [[self bar] setLeftBarButtonItem:left];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:NOTIFY_TALKS_UPDATE object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+        [self didUpdateData];
+    }];
+    
     [refresh addTarget:self action:@selector(refreshStuff) forControlEvents:UIControlEventValueChanged];
 }
 
@@ -49,6 +49,10 @@
     if ([content count] != [DataController getNumTalks]){
         [self didUpdateData];
     }
+}
+
+-(void) viewWillUnload {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIFY_TALKS_UPDATE object:nil];
 }
 
 -(void) refreshStuff{

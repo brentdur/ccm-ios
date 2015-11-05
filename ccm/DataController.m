@@ -15,21 +15,23 @@ static id <DataControllerDelegate> delegate;
 static id <DataControllerGroupsDelegate> groupDelegate;
 static NSString *delegateType;
 static NSUInteger numEvents;
-static NSUInteger numMsgs;
 static NSUInteger numTalks;
 static NSUInteger numSignups;
+static NSUInteger numBCs;
+static NSUInteger numConvos;
 
 +(void) sync {
     [self rollback];
     NSManagedObjectContext *moc =  [(AppDelegate *) [[UIApplication sharedApplication] delegate] managedObjectContext];
     DataRequest *si = [DataRequest sharedInstance];
     [self syncEventsFor:moc Using:si];
-    [self syncMessagesFor:moc Using:si];
     [self syncTalksFor:moc Using:si];
     [self syncGroupsFor:moc Using:si];
     [self syncLocationsFor:moc Using:si];
     [self syncTopicsFor:moc Using:si];
     [self syncSignupsFor:moc Using:si];
+    [self syncBroadcastsFor:moc Using:si];
+    [self syncConvosFor:moc Using:si];
     
 }
 
@@ -39,9 +41,6 @@ static NSUInteger numSignups;
     DataRequest *si = [DataRequest sharedInstance];
     if ([ent isEqualToString:@"events"]){
         [self syncEventsFor:moc Using:si];
-    }
-    else if ([ent isEqualToString:@"messages"]){
-        [self syncMessagesFor:moc Using:si];
     }
     else if ([ent isEqualToString:@"talks"]){
         [self syncTalksFor:moc Using:si];
@@ -58,6 +57,12 @@ static NSUInteger numSignups;
     else if ([ent isEqualToString:@"signups"]){
         [self syncSignupsFor:moc Using:si];
     }
+    else if ([ent isEqualToString:@"convos"]) {
+        [self syncConvosFor:moc Using:si];
+    }
+    else if([ent isEqualToString:@"broadcasts"]) {
+        [self syncBroadcastsFor:moc Using:si];
+    }
     else if ([ent isEqualToString:@"all"]) {
         [self sync];
     }
@@ -69,11 +74,6 @@ static NSUInteger numSignups;
     }];
 }
 
-+(void) syncMessagesFor: (NSManagedObjectContext *)moc Using:(DataRequest *)si {
-    [si updateMessagesUsingBlock:^(NSMutableArray *data, NSError *error) {
-        [self checkItemsFrom:data for:moc entity:ENTITY_MESSAGES];
-    }];
-}
 
 +(void) syncTalksFor: (NSManagedObjectContext *)moc Using:(DataRequest *)si {
     [si updateTalksUsingBlock:^(NSMutableArray *data, NSError *error) {
@@ -105,6 +105,19 @@ static NSUInteger numSignups;
     }];
 }
 
++(void) syncBroadcastsFor: (NSManagedObjectContext *)moc Using:(DataRequest *)si {
+    [si updateBroadcastsUsingBlock:^(NSMutableArray *data, NSError *error) {
+        [self checkItemsFrom:data for:moc entity:ENTITY_BROADCAST];
+    }];
+}
+
++(void) syncConvosFor: (NSManagedObjectContext *)moc Using:(DataRequest *)si {
+    [si updateConvosUsingBlock:^(NSMutableArray *data, NSError *error) {
+        [self checkItemsFrom:data for:moc entity:ENTITY_CONVO];
+    }];
+}
+
+
 +(void) saveMyGroup{
     DataRequest *si = [DataRequest sharedInstance];
     NSMutableArray *ret = [[NSMutableArray alloc] init];
@@ -115,6 +128,8 @@ static NSUInteger numSignups;
             [info setValue:[group valueForKey:@"writeSignups"] forKey:@"writeSignups"];
             [info setValue:[group valueForKey:@"writeEvents"] forKey:@"writeEvents"];
             [info setValue:[group valueForKey:@"writeTalks"] forKey:@"writeTalks"];
+            [info setValue:[group valueForKey:@"writeConversations"] forKey:@"writeConversations"];
+            [info setValue:[group valueForKey:@"writeBroadcasts"] forKey:@"writeBroadcasts"];
             [ret addObject:info];
         }
         [[NSUserDefaults standardUserDefaults] setValue:ret forKey:KEY_GROUPS];
@@ -122,6 +137,26 @@ static NSUInteger numSignups;
         groupDelegate = nil;
     }];
     
+}
+
++(void) testGCMToken: (NSString *) token {
+    DataRequest *si = [DataRequest sharedInstance];
+    [si getMyInfo:^(NSMutableArray *data, NSError * err) {
+        NSString* testToken = [data valueForKey:@"gcm"];
+        if (![token isEqualToString:testToken]) {
+            NSDictionary *dic = @{@"gcm": token};
+            [DataController postGcmToUser:dic andHandler:^(NSMutableArray *retData, NSError *error) {
+                if(error != nil){
+                    NSLog(@"problem adding to server");
+                    [[NSUserDefaults standardUserDefaults] setBool:false forKey:KEY_GCM_SUBMITTED];
+                }
+                else {
+                    NSLog(@"added to server");
+                    [[NSUserDefaults standardUserDefaults] setBool:true forKey:KEY_GCM_SUBMITTED];
+                }
+            }];
+        }
+    }];
 }
 
 +(void) rollback{
@@ -134,11 +169,6 @@ static NSUInteger numSignups;
     [si AFpostWithUrl:URL_POST_EVENTS andData:data returnTo:handler];
 }
 
-+(void) addMsgWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler{
-    DataRequest *si = [DataRequest sharedInstance];
-    [si AFpostWithUrl:URL_POST_MESSAGES andData:data returnTo:handler];
-}
-
 +(void) addTalkWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler {
     DataRequest *si = [DataRequest sharedInstance];
     [si AFpostWithUrl:URL_POST_TALKS andData:data returnTo:handler];
@@ -147,6 +177,21 @@ static NSUInteger numSignups;
 +(void) addSignupWithData:(NSDictionary *)data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler{
     DataRequest *si = [DataRequest sharedInstance];
     [si AFpostWithUrl:URL_POST_SIGNUPS andData:data returnTo:handler];
+}
+
++(void) addBroadcastWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler {
+    DataRequest *si = [DataRequest sharedInstance];
+    [si AFpostWithUrl:URL_POST_BC andData:data returnTo:handler];
+}
+
++(void) addSyncCastWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler {
+    DataRequest *si = [DataRequest sharedInstance];
+    [si AFpostWithUrl:URL_POST_SYNCAST andData:data returnTo:handler];
+}
+
++(void) addConvoWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler {
+    DataRequest *si = [DataRequest sharedInstance];
+    [si AFpostWithUrl:URL_POST_CONVO andData:data returnTo:handler];
 }
 
 +(void) postGcmToUser:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler{
@@ -161,9 +206,19 @@ static NSUInteger numSignups;
     
 }
 
-+(void) deleteMsg:(NSDictionary *)data andHandler:(void (^)(NSMutableArray *, NSError *))handler {
++(void) putMsgToConvo:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler {
     DataRequest *si = [DataRequest sharedInstance];
-    [si AFdeleteWithUrl:URL_DELETE_MSG andData:data returnTo:handler];
+    [si AFputWithUrl:URL_PUT_MSG_CONVO andData:data returnTo:handler];
+}
+
++(void) putKillConvo:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler {
+    DataRequest *si = [DataRequest sharedInstance];
+    [si AFputWithUrl:URL_PUT_KILL_CONVO andData:data returnTo:handler];
+}
+
++(void) putKillBC:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler {
+    DataRequest *si = [DataRequest sharedInstance];
+    [si AFputWithUrl:URL_PUT_KILL_BC andData:data returnTo:handler];
 }
 
 +(NSArray *) getsForEntity: (NSString *) name{
@@ -200,18 +255,6 @@ static NSUInteger numSignups;
     return ret;
 }
 
-+(NSArray *) getMessages{
-    NSArray *ret = [self getsForEntity:ENTITY_MESSAGES];
-    NSLog(@"got messages");
-    ret = [ret sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        Messages *a = (Messages *) obj1;
-        Messages *b = (Messages *) obj2;
-        return [[b date] compare:[a date]];
-        
-    }];
-    return ret;
-}
-
 +(NSArray *) getGroups{
     NSLog(@"got groups");
     return [self getsForEntity:ENTITY_GROUPS];
@@ -232,6 +275,16 @@ static NSUInteger numSignups;
     return [self getsForEntity:ENTITY_SIGNUPS];
 }
 
++(NSArray *) getBroadcasts {
+    NSLog(@"got broadcast");
+    return [self getsForEntity:ENTITY_BROADCAST];
+}
+
++(NSArray *) getConvos {
+    NSLog(@"got convos");
+    return [self getsForEntity:ENTITY_CONVO];
+}
+
 +(void) setDelegate:(id) del withType:(NSString *)type{
     delegate = del;
     delegateType = type;
@@ -246,17 +299,16 @@ static NSUInteger numSignups;
     int deletes = 0;
     int creates = 0;
     NSArray *database;
+    NSString *notifyOption;
     if ([type isEqualToString:ENTITY_EVENT]) {
         numEvents = [array count];
         database = [self getEvents];
+        notifyOption = NOTIFY_EVENTS_UPDATE;
     }
     else if ([type isEqualToString:ENTITY_TALKS]) {
         numTalks = [array count];
         database = [self getTalks];
-    }
-    else if ([type isEqualToString:ENTITY_MESSAGES]) {
-        numMsgs = [array count];
-        database = [self getMessages];
+        notifyOption = NOTIFY_TALKS_UPDATE;
     }
     else if ([type isEqualToString:ENTITY_GROUPS]) {
         database = [self getGroups];
@@ -270,6 +322,15 @@ static NSUInteger numSignups;
     else if ([type isEqualToString:ENTITY_SIGNUPS]){
         numSignups = [array count];
         database = [self getSignups];
+        notifyOption = NOTIFY_SIGNUPS_UPDATE;
+    }
+    else if ([type isEqualToString:ENTITY_BROADCAST]){
+        numBCs = [array count];
+        database = [self getBroadcasts];
+    }
+    else if ([type isEqualToString:ENTITY_CONVO]){
+        numConvos = [array count];
+        database = [self getConvos];
     }
     NSLog(@"Array Count: %lu", [array count]);
     
@@ -303,14 +364,13 @@ static NSUInteger numSignups;
         delegateType = nil;
     }
     [context save:nil];
+    if (![notifyOption isEqualToString:@""]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:notifyOption object:nil];
+    }
 }
 
 +(NSUInteger) getNumEvents{
     return numEvents;
-}
-
-+(NSUInteger) getNumMsgs{
-    return numMsgs;
 }
 
 +(NSUInteger) getNumTalks{
@@ -319,6 +379,14 @@ static NSUInteger numSignups;
 
 +(NSUInteger) getNumSignups{
     return numSignups;
+}
+
++(NSUInteger) getNumBroadcasts{
+    return numBCs;
+}
+
++(NSUInteger) getNumConvos {
+    return numConvos;
 }
 
 +(void) signIn:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler{

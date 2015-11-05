@@ -18,6 +18,8 @@
 @property BOOL canWriteSignups;
 @property BOOL canWriteTalks;
 @property BOOL canWriteEvents;
+@property BOOL canWriteConvo;
+@property BOOL canWriteBroadcast;
 @property BOOL isMinister;
 @property BOOL loaded;
 

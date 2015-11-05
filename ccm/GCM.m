@@ -19,7 +19,7 @@
 +(void)tokenHandle:(NSString *)registrationToken andError:(NSError *) error{
     if (registrationToken != nil){
         NSLog(@"Reg Token: %@", registrationToken);
-        //TODO test key vs getMyInfo
+
         if (![[[NSUserDefaults standardUserDefaults] stringForKey:KEY_GCM_TOKEN] isEqualToString:registrationToken]){
             [[NSUserDefaults standardUserDefaults] setBool:false forKey:KEY_GCM_SUBMITTED];
             [[NSUserDefaults standardUserDefaults] setObject:registrationToken forKey:KEY_GCM_TOKEN];
@@ -36,6 +36,7 @@
                 }
             }];
         }
+        [DataController testGCMToken:registrationToken];
     }
     else {
         NSLog(@"Reg to GCM Failed with error: %@", error.localizedDescription);

@@ -8,7 +8,7 @@
 
 #import "EventsViewController.h"
 
-//TODO update when data updates
+//TODO check that screen updates when data updates
 
 @interface EventsViewController ()
 
@@ -39,6 +39,10 @@
         [self permissionsSet];
     }
     
+    [[NSNotificationCenter defaultCenter] addObserverForName:NOTIFY_EVENTS_UPDATE object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+        [self didUpdateData];
+    }];
+    
     [refresh addTarget:self action:@selector(refreshStuff) forControlEvents:UIControlEventValueChanged];
 }
 
@@ -49,6 +53,10 @@
         [self didUpdateData];
     }
     
+}
+
+-(void) viewWillUnload {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIFY_EVENTS_UPDATE object:nil];
 }
 
 -(void) refreshStuff{
@@ -75,16 +83,17 @@
     if(![parent canWriteEvents]){
         [[self bar] setRightBarButtonItem:nil];
     }
-    UIBarButtonItem *left = [UIBarButtonItem alloc];
+    UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(inbox:)];
     
-    //TODO change this to support inbox
+    
     //TODO move this permission logic to the conversations view
-    if([parent isMinister]){
-        left = [left initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(inbox:)];
-    }
-    else {
-        left = [left initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(sendMsg:)];
-    }
+//    if([parent isMinister]){
+//        left = [left initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(inbox:)];
+//    }
+//    else {
+//        left = [left initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(sendMsg:)];
+//    }
+    
     [[self bar] setLeftBarButtonItem:left];
 }
 

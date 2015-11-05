@@ -72,10 +72,13 @@
 		DBA4AE5E1B699E99000613F8 /* Groups.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE5D1B699E99000613F8 /* Groups.m */; };
 		DBA4AE611B699E9A000613F8 /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE601B699E9A000613F8 /* Events.m */; };
 		DBA4AE641B699E9A000613F8 /* Talks.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE631B699E9A000613F8 /* Talks.m */; };
-		DBA4AE671B699E9A000613F8 /* Messages.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE661B699E9A000613F8 /* Messages.m */; };
 		DBA4AE6A1B699E9A000613F8 /* Locations.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE691B699E9A000613F8 /* Locations.m */; };
 		DBA4AE6D1B699EE4000613F8 /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE6C1B699EE4000613F8 /* DataController.m */; };
 		DBA4AE701B69A227000613F8 /* DataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE6F1B69A227000613F8 /* DataRequest.m */; };
+		DBAC53C01BEA5D3A00EF6D88 /* Conversations+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAC53B91BEA5D3900EF6D88 /* Conversations+CoreDataProperties.m */; };
+		DBAC53C11BEA5D3A00EF6D88 /* Conversations.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAC53BB1BEA5D3900EF6D88 /* Conversations.m */; };
+		DBAC53C21BEA5D3A00EF6D88 /* Broadcasts+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAC53BD1BEA5D3A00EF6D88 /* Broadcasts+CoreDataProperties.m */; };
+		DBAC53C31BEA5D3A00EF6D88 /* Broadcasts.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAC53BF1BEA5D3A00EF6D88 /* Broadcasts.m */; };
 		DBAD31D21B805F64003C1671 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAD31D11B805F64003C1671 /* UIView+Toast.m */; };
 		DBB38E921BAE0CA5005BA102 /* KIFUITestActor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB38E901BAE0CA5005BA102 /* KIFUITestActor+Additions.m */; };
 		DBB7C6441BA665AF00A1744F /* RUF_CCM_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB7C6431BA665AF00A1744F /* RUF_CCM_Tests.m */; };
@@ -235,14 +238,21 @@
 		DBA4AE601B699E9A000613F8 /* Events.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Events.m; sourceTree = "<group>"; };
 		DBA4AE621B699E9A000613F8 /* Talks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Talks.h; sourceTree = "<group>"; };
 		DBA4AE631B699E9A000613F8 /* Talks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Talks.m; sourceTree = "<group>"; };
-		DBA4AE651B699E9A000613F8 /* Messages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Messages.h; sourceTree = "<group>"; };
-		DBA4AE661B699E9A000613F8 /* Messages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Messages.m; sourceTree = "<group>"; };
 		DBA4AE681B699E9A000613F8 /* Locations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Locations.h; sourceTree = "<group>"; };
 		DBA4AE691B699E9A000613F8 /* Locations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Locations.m; sourceTree = "<group>"; };
 		DBA4AE6B1B699EE4000613F8 /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataController.h; sourceTree = "<group>"; };
 		DBA4AE6C1B699EE4000613F8 /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
 		DBA4AE6E1B69A227000613F8 /* DataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataRequest.h; sourceTree = "<group>"; };
 		DBA4AE6F1B69A227000613F8 /* DataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataRequest.m; sourceTree = "<group>"; };
+		DBAC53B71BEA5BF900EF6D88 /* ccmModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ccmModel 3.xcdatamodel"; sourceTree = "<group>"; };
+		DBAC53B81BEA5D3900EF6D88 /* Conversations+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Conversations+CoreDataProperties.h"; path = "../Conversations+CoreDataProperties.h"; sourceTree = "<group>"; };
+		DBAC53B91BEA5D3900EF6D88 /* Conversations+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Conversations+CoreDataProperties.m"; path = "../Conversations+CoreDataProperties.m"; sourceTree = "<group>"; };
+		DBAC53BA1BEA5D3900EF6D88 /* Conversations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Conversations.h; path = ../Conversations.h; sourceTree = "<group>"; };
+		DBAC53BB1BEA5D3900EF6D88 /* Conversations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Conversations.m; path = ../Conversations.m; sourceTree = "<group>"; };
+		DBAC53BC1BEA5D3A00EF6D88 /* Broadcasts+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Broadcasts+CoreDataProperties.h"; path = "../Broadcasts+CoreDataProperties.h"; sourceTree = "<group>"; };
+		DBAC53BD1BEA5D3A00EF6D88 /* Broadcasts+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Broadcasts+CoreDataProperties.m"; path = "../Broadcasts+CoreDataProperties.m"; sourceTree = "<group>"; };
+		DBAC53BE1BEA5D3A00EF6D88 /* Broadcasts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Broadcasts.h; path = ../Broadcasts.h; sourceTree = "<group>"; };
+		DBAC53BF1BEA5D3A00EF6D88 /* Broadcasts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Broadcasts.m; path = ../Broadcasts.m; sourceTree = "<group>"; };
 		DBAD31D01B805F64003C1671 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		DBAD31D11B805F64003C1671 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		DBB38E901BAE0CA5005BA102 /* KIFUITestActor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFUITestActor+Additions.m"; sourceTree = "<group>"; };
@@ -584,6 +594,14 @@
 			isa = PBXGroup;
 			children = (
 				DB27BD451B67059E0068F0BE /* ccmModel.xcdatamodeld */,
+				DBAC53B81BEA5D3900EF6D88 /* Conversations+CoreDataProperties.h */,
+				DBAC53B91BEA5D3900EF6D88 /* Conversations+CoreDataProperties.m */,
+				DBAC53BA1BEA5D3900EF6D88 /* Conversations.h */,
+				DBAC53BB1BEA5D3900EF6D88 /* Conversations.m */,
+				DBAC53BC1BEA5D3A00EF6D88 /* Broadcasts+CoreDataProperties.h */,
+				DBAC53BD1BEA5D3A00EF6D88 /* Broadcasts+CoreDataProperties.m */,
+				DBAC53BE1BEA5D3A00EF6D88 /* Broadcasts.h */,
+				DBAC53BF1BEA5D3A00EF6D88 /* Broadcasts.m */,
 				DB4907AD1B7951EB005B5242 /* Topics.h */,
 				DB4907AE1B7951EB005B5242 /* Topics.m */,
 				DB4907AA1B7951EA005B5242 /* Signups.h */,
@@ -594,8 +612,6 @@
 				DBA4AE6C1B699EE4000613F8 /* DataController.m */,
 				DBA4AE681B699E9A000613F8 /* Locations.h */,
 				DBA4AE691B699E9A000613F8 /* Locations.m */,
-				DBA4AE651B699E9A000613F8 /* Messages.h */,
-				DBA4AE661B699E9A000613F8 /* Messages.m */,
 				DBA4AE621B699E9A000613F8 /* Talks.h */,
 				DBA4AE631B699E9A000613F8 /* Talks.m */,
 				DBA4AE5F1B699E9A000613F8 /* Events.h */,
@@ -933,7 +949,6 @@
 				DBFB72601B797E090018DA40 /* SignupsViewController.m in Sources */,
 				DBE9E8771B6E9DEB00D646E0 /* TalkTableViewController.m in Sources */,
 				DB27BD1F1B6705100068F0BE /* AppDelegate.m in Sources */,
-				DBA4AE671B699E9A000613F8 /* Messages.m in Sources */,
 				DB2B7DD71B72E67A00CC2EB5 /* AddMessageViewController.m in Sources */,
 				DB1380251B6A86C2004965C7 /* UIButton+AFNetworking.m in Sources */,
 				DB2BFEA91B687EA800B12A0B /* StarterViewController.m in Sources */,
@@ -946,6 +961,7 @@
 				DBFB72691B7980070018DA40 /* AddSignupViewController.m in Sources */,
 				DB27BD1C1B6705100068F0BE /* main.m in Sources */,
 				DB1380221B6A86C2004965C7 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				DBAC53C31BEA5D3A00EF6D88 /* Broadcasts.m in Sources */,
 				DB338DF81B979FC00010B7AC /* GCM.m in Sources */,
 				DB2B7DE21B72FA6C00CC2EB5 /* SWRevealViewController.m in Sources */,
 				DB4907AC1B7951EA005B5242 /* Signups.m in Sources */,
@@ -953,6 +969,7 @@
 				DB1380291B6A86C2004965C7 /* UIWebView+AFNetworking.m in Sources */,
 				DB13801B1B6A86C2004965C7 /* AFHTTPSessionManager.m in Sources */,
 				DBBB54CA1B72808800E6E1B0 /* AddEventViewController.m in Sources */,
+				DBAC53C21BEA5D3A00EF6D88 /* Broadcasts+CoreDataProperties.m in Sources */,
 				DB27BD501B67078A0068F0BE /* SignUpViewController.m in Sources */,
 				DBA4AE611B699E9A000613F8 /* Events.m in Sources */,
 				DBAD31D21B805F64003C1671 /* UIView+Toast.m in Sources */,
@@ -972,6 +989,7 @@
 				DB1380241B6A86C2004965C7 /* UIAlertView+AFNetworking.m in Sources */,
 				DB8F1C301B6D8B27007B3DAB /* TalksViewController.m in Sources */,
 				DB27BD531B670B4F0068F0BE /* AdminRequest.m in Sources */,
+				DBAC53C01BEA5D3A00EF6D88 /* Conversations+CoreDataProperties.m in Sources */,
 				DBA4AE5E1B699E99000613F8 /* Groups.m in Sources */,
 				DBA4AE641B699E9A000613F8 /* Talks.m in Sources */,
 				DBE9E8711B6E8A1700D646E0 /* MsgTableViewController.m in Sources */,
@@ -979,6 +997,7 @@
 				DB13801C1B6A86C2004965C7 /* AFNetworkReachabilityManager.m in Sources */,
 				DBE9E8741B6E9DDD00D646E0 /* EventTableViewController.m in Sources */,
 				DBA4AE701B69A227000613F8 /* DataRequest.m in Sources */,
+				DBAC53C11BEA5D3A00EF6D88 /* Conversations.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1338,6 +1357,7 @@
 		DB27BD451B67059E0068F0BE /* ccmModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				DBAC53B71BEA5BF900EF6D88 /* ccmModel 3.xcdatamodel */,
 				DBFB725C1B7978560018DA40 /* ccmModel 2.xcdatamodel */,
 				DB27BD461B67059E0068F0BE /* ccmModel.xcdatamodel */,
 			);

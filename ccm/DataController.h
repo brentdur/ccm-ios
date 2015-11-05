@@ -11,13 +11,11 @@
 #import <CoreData/CoreData.h>
 #import "AppDelegate.h"
 #import "Events.h"
-#import "Messages.h"
+#import "Conversations.h"
+#import "Broadcasts.h"
 #import "Talks.h"
 #import "Groups.h"
 #import "Locations.h"
-
-//TODO add models to xcdatamodel
-//TODO generate class files
 
 
 
@@ -28,19 +26,21 @@
 +(void) syncSelective:(NSString *) ent;
 
 +(void) addEventWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
-+(void) addMsgWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
 +(void) addTalkWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
 +(void) addSignupWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
-//TODO include convo and bc
++(void) addBroadcastWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
++(void) addSyncCastWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
++(void) addConvoWithData:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
 
 +(void) postGcmToUser:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
 
 +(void) putUserToSignup:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
-//TODO include convo puts
-
-+(void) deleteMsg:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
++(void) putMsgToConvo:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
++(void) putKillConvo:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
++(void) putKillBC:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
 
 +(void) saveMyGroup;
++(void) testGCMToken: (NSString *) token;
 
 +(void) signIn:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
 +(void) signUp:(NSDictionary *) data andHandler:(void (^)(NSMutableArray *data, NSError *error)) handler;
@@ -48,12 +48,12 @@
 # pragma mark - Get methods
 +(NSArray *) getEvents;
 +(NSArray *) getTalks;
-+(NSArray *) getMessages;
 +(NSArray *) getGroups;
 +(NSArray *) getLocations;
 +(NSArray *) getTopics;
 +(NSArray *) getSignups;
-//TODO add convo and bc
++(NSArray *) getBroadcasts;
++(NSArray *) getConvos;
 
 +(void) setDelegate:(id) del withType:(NSString *) type;
 +(void) setGroupDelegate:(id) del;
@@ -61,10 +61,10 @@
 
 
 +(NSUInteger) getNumEvents;
-+(NSUInteger) getNumMsgs;
 +(NSUInteger) getNumTalks;
 +(NSUInteger) getNumSignups;
-//TODO add convo and bc
++(NSUInteger) getNumBroadcasts;
++(NSUInteger) getNumConvos;
 
 
 @end

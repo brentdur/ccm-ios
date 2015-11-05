@@ -43,7 +43,8 @@ bool done;
     [self setCanWriteEvents:false];
     [self setCanWriteSignups: false];
     [self setCanWriteTalks: false];
-    //TODO include broadcast and convo
+    [self setCanWriteBroadcast:false];
+    [self setCanWriteConvo:false];
     [self setIsMinister:false];
     [self setLoaded:false];
     NSArray *dics = [[NSUserDefaults standardUserDefaults] arrayForKey:KEY_GROUPS];
@@ -61,7 +62,12 @@ bool done;
         if([(NSString *)[group valueForKey:@"name"] isEqualToString:@"ministers"]){
             [self setIsMinister:true];
         }
-        //TODO include bc and convo
+        if([(NSNumber *)[group valueForKey:@"writeBroadcasts"] isEqualToNumber:@1]){
+            [self setCanWriteBroadcast:true];
+        }
+        if([(NSNumber *)[group valueForKey:@"writeConvos"] isEqualToNumber:@1]){
+            [self setCanWriteConvo:true];
+        }
     }
     [self setLoaded:YES];
     done = true;
@@ -69,7 +75,7 @@ bool done;
         [del permissionsSet];
     }
     //TODO: get tab controller to hide nav buttons
-    NSLog(@"%d %d %d", _canWriteEvents, _canWriteSignups, _canWriteTalks);
+    NSLog(@"%d %d %d", _canWriteEvents, _canWriteSignups, _canWriteTalks, _canWriteBroadcast, _canWriteConvo);
     
 }
 

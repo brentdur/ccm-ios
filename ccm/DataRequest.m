@@ -29,11 +29,6 @@ static DataRequest *sharedInstance = nil;
     [self requestWithURL:URL_GET_EVENTS];
 }
 
--(void) updateMessagesWithDelegate:(id)delegate {
-    self.delegate = delegate;
-    [self requestWithURL:URL_GET_MESSAGES];
-}
-
 -(void) updateTalksWithDelegate:(id)delegate {
     self.delegate = delegate;
     [self requestWithURL:URL_GET_TALKS];
@@ -49,11 +44,18 @@ static DataRequest *sharedInstance = nil;
     [self requestWithURL:URL_GET_LOCATIONS];
 }
 
+-(void) updateBroadcastsWithDelegate:(id)delegate {
+    self.delegate =delegate;
+    [self requestWithURL:URL_GET_BROADCASTS];
+}
+
+-(void) updateConvosWithDelegate:(id)delegate {
+    self.delegate =delegate;
+    [self requestWithURL:URL_GET_CONVOS];
+}
+
 -(void) updateEventsUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler {
     [self AFrequestWithURl:URL_GET_EVENTS returnTo:handler];
-}
--(void) updateMessagesUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler {
-    [self AFrequestWithURl:URL_GET_MESSAGES returnTo:handler];
 }
 -(void) updateTalksUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler {
     [self AFrequestWithURl:URL_GET_TALKS returnTo:handler];
@@ -72,6 +74,14 @@ static DataRequest *sharedInstance = nil;
 -(void)updateSignupsUsingBlock:(void (^)(NSMutableArray *data, NSError *error))handler {
     [self AFrequestWithURl:URL_GET_SIGNUPS returnTo:handler];
     
+}
+
+-(void) updateConvosUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler {
+    [self AFrequestWithURl:URL_GET_CONVOS returnTo:handler];
+}
+
+-(void) updateBroadcastsUsingBlock:(void (^)(NSMutableArray * data, NSError * error)) handler {
+   [self AFrequestWithURl:URL_GET_BROADCASTS returnTo:handler];
 }
 
 -(void) getMyInfo:(void (^)(NSMutableArray *data, NSError *error))handler {
