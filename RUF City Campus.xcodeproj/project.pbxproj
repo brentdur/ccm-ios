@@ -65,6 +65,14 @@
 		DB546D051BAA83450018258B /* AddEventTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB546D041BAA83450018258B /* AddEventTests.m */; };
 		DB55D3521B855F41001685C3 /* moreicon-02.png in Resources */ = {isa = PBXBuildFile; fileRef = DB55D3501B855F41001685C3 /* moreicon-02.png */; };
 		DB5AA7DD1B6DD10F00308E57 /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5AA7DC1B6DD10F00308E57 /* MainTabViewController.m */; };
+		DB5E56971BEBB0AB002DD184 /* BCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5E56961BEBB0AB002DD184 /* BCTableViewController.m */; };
+		DB5E569A1BEBB0B7002DD184 /* ConvoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5E56991BEBB0B7002DD184 /* ConvoTableViewController.m */; };
+		DB5E569D1BEBB1F5002DD184 /* AddBroadcastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5E569C1BEBB1F5002DD184 /* AddBroadcastViewController.m */; };
+		DB5E56A01BEBB208002DD184 /* AddConvoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5E569F1BEBB208002DD184 /* AddConvoViewController.m */; };
+		DB5E56A21BEBB625002DD184 /* MultiSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB5E56A11BEBB625002DD184 /* MultiSelectView.xib */; };
+		DB5E56A41BEBB705002DD184 /* MultiSelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB5E56A31BEBB705002DD184 /* MultiSelectCell.xib */; };
+		DB5E56A81BEBB76F002DD184 /* MultiSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5E56A71BEBB76F002DD184 /* MultiSelectViewController.m */; };
+		DB5E56AB1BEBB788002DD184 /* MultiSelectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5E56AA1BEBB788002DD184 /* MultiSelectCell.m */; };
 		DB78CE811B711EF200132EDB /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DB78CE801B711EF200132EDB /* DateUtil.m */; };
 		DB8F1C301B6D8B27007B3DAB /* TalksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8F1C2F1B6D8B27007B3DAB /* TalksViewController.m */; };
 		DB8F1C331B6D8B3C007B3DAB /* TalksTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8F1C321B6D8B3C007B3DAB /* TalksTableViewCell.m */; };
@@ -224,6 +232,20 @@
 		DB55D3501B855F41001685C3 /* moreicon-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moreicon-02.png"; sourceTree = "<group>"; };
 		DB5AA7DB1B6DD10F00308E57 /* MainTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabViewController.h; sourceTree = "<group>"; };
 		DB5AA7DC1B6DD10F00308E57 /* MainTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabViewController.m; sourceTree = "<group>"; };
+		DB5E56951BEBB0AB002DD184 /* BCTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTableViewController.h; sourceTree = "<group>"; };
+		DB5E56961BEBB0AB002DD184 /* BCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTableViewController.m; sourceTree = "<group>"; };
+		DB5E56981BEBB0B7002DD184 /* ConvoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvoTableViewController.h; sourceTree = "<group>"; };
+		DB5E56991BEBB0B7002DD184 /* ConvoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConvoTableViewController.m; sourceTree = "<group>"; };
+		DB5E569B1BEBB1F5002DD184 /* AddBroadcastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBroadcastViewController.h; sourceTree = "<group>"; };
+		DB5E569C1BEBB1F5002DD184 /* AddBroadcastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBroadcastViewController.m; sourceTree = "<group>"; };
+		DB5E569E1BEBB208002DD184 /* AddConvoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddConvoViewController.h; sourceTree = "<group>"; };
+		DB5E569F1BEBB208002DD184 /* AddConvoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddConvoViewController.m; sourceTree = "<group>"; };
+		DB5E56A11BEBB625002DD184 /* MultiSelectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiSelectView.xib; sourceTree = "<group>"; };
+		DB5E56A31BEBB705002DD184 /* MultiSelectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiSelectCell.xib; sourceTree = "<group>"; };
+		DB5E56A61BEBB76F002DD184 /* MultiSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiSelectViewController.h; sourceTree = "<group>"; };
+		DB5E56A71BEBB76F002DD184 /* MultiSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiSelectViewController.m; sourceTree = "<group>"; };
+		DB5E56A91BEBB788002DD184 /* MultiSelectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiSelectCell.h; sourceTree = "<group>"; };
+		DB5E56AA1BEBB788002DD184 /* MultiSelectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiSelectCell.m; sourceTree = "<group>"; };
 		DB78CE7F1B711EF200132EDB /* DateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtil.h; sourceTree = "<group>"; };
 		DB78CE801B711EF200132EDB /* DateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtil.m; sourceTree = "<group>"; };
 		DB8F1C2E1B6D8B27007B3DAB /* TalksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalksViewController.h; sourceTree = "<group>"; };
@@ -445,10 +467,19 @@
 				DB1380351B6B250C004965C7 /* MessagesViewController.m */,
 				DB1380311B6B24FD004965C7 /* InboxTableViewCell.h */,
 				DB1380321B6B24FD004965C7 /* InboxTableViewCell.m */,
+				DB5E56951BEBB0AB002DD184 /* BCTableViewController.h */,
+				DB5E56961BEBB0AB002DD184 /* BCTableViewController.m */,
+				DB5E56981BEBB0B7002DD184 /* ConvoTableViewController.h */,
+				DB5E56991BEBB0B7002DD184 /* ConvoTableViewController.m */,
 				DBE9E86F1B6E8A1700D646E0 /* MsgTableViewController.h */,
 				DBE9E8701B6E8A1700D646E0 /* MsgTableViewController.m */,
 				DB2B7DD51B72E67A00CC2EB5 /* AddMessageViewController.h */,
 				DB2B7DD61B72E67A00CC2EB5 /* AddMessageViewController.m */,
+				DB5E569B1BEBB1F5002DD184 /* AddBroadcastViewController.h */,
+				DB5E569C1BEBB1F5002DD184 /* AddBroadcastViewController.m */,
+				DB5E569E1BEBB208002DD184 /* AddConvoViewController.h */,
+				DB5E569F1BEBB208002DD184 /* AddConvoViewController.m */,
+				DB5E56A51BEBB748002DD184 /* MultiSelect */,
 			);
 			name = "msgs view";
 			sourceTree = "<group>";
@@ -573,6 +604,19 @@
 				DB2B7DE41B72FD3600CC2EB5 /* NavTrayViewController.m */,
 			);
 			name = "principal views";
+			sourceTree = "<group>";
+		};
+		DB5E56A51BEBB748002DD184 /* MultiSelect */ = {
+			isa = PBXGroup;
+			children = (
+				DB5E56A11BEBB625002DD184 /* MultiSelectView.xib */,
+				DB5E56A61BEBB76F002DD184 /* MultiSelectViewController.h */,
+				DB5E56A71BEBB76F002DD184 /* MultiSelectViewController.m */,
+				DB5E56A31BEBB705002DD184 /* MultiSelectCell.xib */,
+				DB5E56A91BEBB788002DD184 /* MultiSelectCell.h */,
+				DB5E56AA1BEBB788002DD184 /* MultiSelectCell.m */,
+			);
+			name = MultiSelect;
 			sourceTree = "<group>";
 		};
 		DB8F1C2D1B6D8B18007B3DAB /* talks view */ = {
@@ -835,7 +879,9 @@
 				DB26DD0C1B86B41D005C55F4 /* clipboard.png in Resources */,
 				DB55D3521B855F41001685C3 /* moreicon-02.png in Resources */,
 				DB26DD121B86B424005C55F4 /* clipboard@2x.png in Resources */,
+				DB5E56A41BEBB705002DD184 /* MultiSelectCell.xib in Resources */,
 				DB27BD281B6705110068F0BE /* Main.storyboard in Resources */,
+				DB5E56A21BEBB625002DD184 /* MultiSelectView.xib in Resources */,
 				DB26DD0B1B86B41D005C55F4 /* calendar.png in Resources */,
 				DB27BD2D1B6705110068F0BE /* LaunchScreen.xib in Resources */,
 				DB27BD2A1B6705110068F0BE /* Images.xcassets in Resources */,
@@ -938,6 +984,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB5E56A01BEBB208002DD184 /* AddConvoViewController.m in Sources */,
 				DBCC1EA91B719C24009B8B7B /* StaticDataTableViewController.m in Sources */,
 				DBFB72631B797F010018DA40 /* SignupsTableViewCell.m in Sources */,
 				DB8F1C331B6D8B3C007B3DAB /* TalksTableViewCell.m in Sources */,
@@ -948,6 +995,7 @@
 				DBA4AE6A1B699E9A000613F8 /* Locations.m in Sources */,
 				DBFB72601B797E090018DA40 /* SignupsViewController.m in Sources */,
 				DBE9E8771B6E9DEB00D646E0 /* TalkTableViewController.m in Sources */,
+				DB5E56AB1BEBB788002DD184 /* MultiSelectCell.m in Sources */,
 				DB27BD1F1B6705100068F0BE /* AppDelegate.m in Sources */,
 				DB2B7DD71B72E67A00CC2EB5 /* AddMessageViewController.m in Sources */,
 				DB1380251B6A86C2004965C7 /* UIButton+AFNetworking.m in Sources */,
@@ -970,6 +1018,7 @@
 				DB13801B1B6A86C2004965C7 /* AFHTTPSessionManager.m in Sources */,
 				DBBB54CA1B72808800E6E1B0 /* AddEventViewController.m in Sources */,
 				DBAC53C21BEA5D3A00EF6D88 /* Broadcasts+CoreDataProperties.m in Sources */,
+				DB5E56971BEBB0AB002DD184 /* BCTableViewController.m in Sources */,
 				DB27BD501B67078A0068F0BE /* SignUpViewController.m in Sources */,
 				DBA4AE611B699E9A000613F8 /* Events.m in Sources */,
 				DBAD31D21B805F64003C1671 /* UIView+Toast.m in Sources */,
@@ -978,6 +1027,7 @@
 				DB13801F1B6A86C2004965C7 /* AFURLRequestSerialization.m in Sources */,
 				DB1380211B6A86C2004965C7 /* AFURLSessionManager.m in Sources */,
 				DB1380201B6A86C2004965C7 /* AFURLResponseSerialization.m in Sources */,
+				DB5E569D1BEBB1F5002DD184 /* AddBroadcastViewController.m in Sources */,
 				DB13802C1B6B10F0004965C7 /* EventsViewController.m in Sources */,
 				DB1380281B6A86C2004965C7 /* UIRefreshControl+AFNetworking.m in Sources */,
 				DB27BD471B67059E0068F0BE /* ccmModel.xcdatamodeld in Sources */,
@@ -986,8 +1036,10 @@
 				DB2BFEA61B6869C700B12A0B /* KeychainItemWrapper.m in Sources */,
 				DB5AA7DD1B6DD10F00308E57 /* MainTabViewController.m in Sources */,
 				DB2B7DDA1B72F2A000CC2EB5 /* AddTalkViewController.m in Sources */,
+				DB5E569A1BEBB0B7002DD184 /* ConvoTableViewController.m in Sources */,
 				DB1380241B6A86C2004965C7 /* UIAlertView+AFNetworking.m in Sources */,
 				DB8F1C301B6D8B27007B3DAB /* TalksViewController.m in Sources */,
+				DB5E56A81BEBB76F002DD184 /* MultiSelectViewController.m in Sources */,
 				DB27BD531B670B4F0068F0BE /* AdminRequest.m in Sources */,
 				DBAC53C01BEA5D3A00EF6D88 /* Conversations+CoreDataProperties.m in Sources */,
 				DBA4AE5E1B699E99000613F8 /* Groups.m in Sources */,
