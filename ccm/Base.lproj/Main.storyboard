@@ -466,7 +466,6 @@
                         <outlet property="moreButton" destination="cui-sk-hPH" id="Q9C-HY-NvU"/>
                         <outlet property="refresh" destination="U5k-AT-jsD" id="6G8-L8-4ra"/>
                         <segue destination="2uT-mD-Mwz" kind="show" identifier="EventDetail" id="ymu-Pv-Yvs"/>
-                        <segue destination="bSX-tF-irh" kind="show" identifier="SendMsg" id="FL4-5H-1h1"/>
                         <segue destination="gSy-A9-3NG" kind="show" identifier="ShowInbox" id="24U-0H-UDa"/>
                     </connections>
                 </tableViewController>
@@ -858,7 +857,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sync Cast?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6g-6o-KMf">
                                                     <rect key="frame" x="8" y="11" width="86" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -874,7 +873,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qu7-Dl-WzF">
                                                     <rect key="frame" x="16" y="11" width="34" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qkg-hA-bmz">
@@ -895,7 +894,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MX-1S-tXF">
                                                     <rect key="frame" x="17" y="11" width="47" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Mv-Oo-QTI">
@@ -915,7 +914,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="For" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFo-5u-Fg7">
                                                     <rect key="frame" x="24" y="11" width="26" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kGu-KM-jyF">
@@ -975,7 +974,7 @@
                             <tableViewSection id="ocl-uR-77q">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="beM-2U-7RC">
-                                        <rect key="frame" x="0.0" y="64" width="600" height="55"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="beM-2U-7RC" id="s3f-Yp-4ac">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="54.5"/>
@@ -997,7 +996,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="178" id="Ha2-pn-TLV">
-                                        <rect key="frame" x="0.0" y="119" width="600" height="178"/>
+                                        <rect key="frame" x="0.0" y="55" width="600" height="178"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ha2-pn-TLV" id="7Oe-jg-8rj">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="177.5"/>
@@ -1053,7 +1052,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="350" id="BvM-7y-0x7">
-                                        <rect key="frame" x="0.0" y="297" width="600" height="350"/>
+                                        <rect key="frame" x="0.0" y="233" width="600" height="350"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BvM-7y-0x7" id="u9r-fL-bzY">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="349.5"/>
@@ -1951,7 +1950,6 @@
                         <outlet property="moreButton" destination="PrL-zw-MWl" id="mB8-HP-PYv"/>
                         <outlet property="refresh" destination="Zqp-aa-tdA" id="UeU-zr-XU4"/>
                         <segue destination="vE8-OX-lWf" kind="show" identifier="TalkDetail" id="jZK-dW-RvF"/>
-                        <segue destination="bSX-tF-irh" kind="show" identifier="SendMsg" id="lo5-KF-f85"/>
                         <segue destination="gSy-A9-3NG" kind="show" identifier="ShowInbox" id="wOZ-d0-5or"/>
                     </connections>
                 </tableViewController>
@@ -2019,17 +2017,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Inbox" id="l41-8i-JzJ">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="cRh-y9-9vl">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="8Fx-w7-8pV">
                             <connections>
-                                <action selector="edit:" destination="gSy-A9-3NG" id="aWD-NA-nZv"/>
+                                <action selector="edit:" destination="gSy-A9-3NG" id="CCt-4H-bRE"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cRh-y9-9vl"/>
                     </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="gj4-xT-aJU">
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
-                        <outlet property="editButton" destination="cRh-y9-9vl" id="7G7-Sa-4Sk"/>
+                        <outlet property="editButton" destination="8Fx-w7-8pV" id="Qfs-gi-fTh"/>
                         <outlet property="refresh" destination="gj4-xT-aJU" id="94Z-fH-16u"/>
                         <segue destination="tBH-ua-MAP" kind="show" identifier="MsgDetail" id="HES-xN-g3G"/>
                     </connections>
@@ -2158,7 +2157,6 @@
                         <outlet property="morebutton" destination="wfC-cN-cwQ" id="qOv-wu-hWs"/>
                         <outlet property="refresh" destination="rYE-j6-Gim" id="plT-3v-FhU"/>
                         <segue destination="PNN-aE-xRI" kind="show" identifier="SignupDetail" id="R2s-Hh-all"/>
-                        <segue destination="bSX-tF-irh" kind="show" identifier="SendMsg" id="bWu-j7-a5z"/>
                         <segue destination="gSy-A9-3NG" kind="show" identifier="ShowInbox" id="zFd-a1-ZUO"/>
                     </connections>
                 </tableViewController>
@@ -2190,7 +2188,6 @@
         <image name="open book 2.png" width="27" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bWu-j7-a5z"/>
         <segue reference="24U-0H-UDa"/>
     </inferredMetricsTieBreakers>
 </document>

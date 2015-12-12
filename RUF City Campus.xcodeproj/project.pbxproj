@@ -77,6 +77,10 @@
 		DB8F1C301B6D8B27007B3DAB /* TalksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8F1C2F1B6D8B27007B3DAB /* TalksViewController.m */; };
 		DB8F1C331B6D8B3C007B3DAB /* TalksTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8F1C321B6D8B3C007B3DAB /* TalksTableViewCell.m */; };
 		DB96FE941BD0039300E980CB /* SwiftLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB96FE931BD0039300E980CB /* SwiftLoginTests.swift */; };
+		DB98844D1BF99A4700317CBA /* ConvoDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB98844C1BF99A4700317CBA /* ConvoDetail.xib */; };
+		DB9884561BF99D2E00317CBA /* ConvoDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9884541BF99D2E00317CBA /* ConvoDetailTableViewController.m */; };
+		DB98845D1BF9A09A00317CBA /* MessagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB98845B1BF9A09A00317CBA /* MessagesTableViewController.m */; };
+		DB98845E1BF9A09A00317CBA /* MessagesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB98845C1BF9A09A00317CBA /* MessagesTableViewController.xib */; };
 		DBA4AE5E1B699E99000613F8 /* Groups.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE5D1B699E99000613F8 /* Groups.m */; };
 		DBA4AE611B699E9A000613F8 /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE601B699E9A000613F8 /* Events.m */; };
 		DBA4AE641B699E9A000613F8 /* Talks.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA4AE631B699E9A000613F8 /* Talks.m */; };
@@ -254,6 +258,12 @@
 		DB8F1C321B6D8B3C007B3DAB /* TalksTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalksTableViewCell.m; sourceTree = "<group>"; };
 		DB96FE921BD0039200E980CB /* UI Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UI Tests-Bridging-Header.h"; sourceTree = "<group>"; };
 		DB96FE931BD0039300E980CB /* SwiftLoginTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLoginTests.swift; sourceTree = "<group>"; };
+		DB98844C1BF99A4700317CBA /* ConvoDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConvoDetail.xib; sourceTree = "<group>"; };
+		DB9884531BF99D2E00317CBA /* ConvoDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvoDetailTableViewController.h; sourceTree = "<group>"; };
+		DB9884541BF99D2E00317CBA /* ConvoDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConvoDetailTableViewController.m; sourceTree = "<group>"; };
+		DB98845A1BF9A09A00317CBA /* MessagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesTableViewController.h; sourceTree = "<group>"; };
+		DB98845B1BF9A09A00317CBA /* MessagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesTableViewController.m; sourceTree = "<group>"; };
+		DB98845C1BF9A09A00317CBA /* MessagesTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagesTableViewController.xib; sourceTree = "<group>"; };
 		DBA4AE5C1B699E99000613F8 /* Groups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Groups.h; sourceTree = "<group>"; };
 		DBA4AE5D1B699E99000613F8 /* Groups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Groups.m; sourceTree = "<group>"; };
 		DBA4AE5F1B699E9A000613F8 /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Events.h; sourceTree = "<group>"; };
@@ -464,6 +474,7 @@
 			isa = PBXGroup;
 			children = (
 				DB1380341B6B250C004965C7 /* MessagesViewController.h */,
+				DB9884591BF9A07E00317CBA /* convoDetail */,
 				DB1380351B6B250C004965C7 /* MessagesViewController.m */,
 				DB1380311B6B24FD004965C7 /* InboxTableViewCell.h */,
 				DB1380321B6B24FD004965C7 /* InboxTableViewCell.m */,
@@ -632,6 +643,19 @@
 				DB2B7DD91B72F2A000CC2EB5 /* AddTalkViewController.m */,
 			);
 			name = "talks view";
+			sourceTree = "<group>";
+		};
+		DB9884591BF9A07E00317CBA /* convoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				DB98844C1BF99A4700317CBA /* ConvoDetail.xib */,
+				DB9884531BF99D2E00317CBA /* ConvoDetailTableViewController.h */,
+				DB9884541BF99D2E00317CBA /* ConvoDetailTableViewController.m */,
+				DB98845A1BF9A09A00317CBA /* MessagesTableViewController.h */,
+				DB98845B1BF9A09A00317CBA /* MessagesTableViewController.m */,
+				DB98845C1BF9A09A00317CBA /* MessagesTableViewController.xib */,
+			);
+			name = convoDetail;
 			sourceTree = "<group>";
 		};
 		DBA4AE5B1B699E74000613F8 /* data */ = {
@@ -876,12 +900,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB98845E1BF9A09A00317CBA /* MessagesTableViewController.xib in Resources */,
 				DB26DD0C1B86B41D005C55F4 /* clipboard.png in Resources */,
 				DB55D3521B855F41001685C3 /* moreicon-02.png in Resources */,
 				DB26DD121B86B424005C55F4 /* clipboard@2x.png in Resources */,
 				DB5E56A41BEBB705002DD184 /* MultiSelectCell.xib in Resources */,
 				DB27BD281B6705110068F0BE /* Main.storyboard in Resources */,
 				DB5E56A21BEBB625002DD184 /* MultiSelectView.xib in Resources */,
+				DB98844D1BF99A4700317CBA /* ConvoDetail.xib in Resources */,
 				DB26DD0B1B86B41D005C55F4 /* calendar.png in Resources */,
 				DB27BD2D1B6705110068F0BE /* LaunchScreen.xib in Resources */,
 				DB27BD2A1B6705110068F0BE /* Images.xcassets in Resources */,
@@ -991,6 +1017,7 @@
 				DBFB72661B797F9F0018DA40 /* SignupTableViewController.m in Sources */,
 				DB13801D1B6A86C2004965C7 /* AFSecurityPolicy.m in Sources */,
 				DB13801A1B6A86C2004965C7 /* AFHTTPRequestOperationManager.m in Sources */,
+				DB98845D1BF9A09A00317CBA /* MessagesTableViewController.m in Sources */,
 				DB1380191B6A86C2004965C7 /* AFHTTPRequestOperation.m in Sources */,
 				DBA4AE6A1B699E9A000613F8 /* Locations.m in Sources */,
 				DBFB72601B797E090018DA40 /* SignupsViewController.m in Sources */,
@@ -1031,6 +1058,7 @@
 				DB13802C1B6B10F0004965C7 /* EventsViewController.m in Sources */,
 				DB1380281B6A86C2004965C7 /* UIRefreshControl+AFNetworking.m in Sources */,
 				DB27BD471B67059E0068F0BE /* ccmModel.xcdatamodeld in Sources */,
+				DB9884561BF99D2E00317CBA /* ConvoDetailTableViewController.m in Sources */,
 				DB1380331B6B24FD004965C7 /* InboxTableViewCell.m in Sources */,
 				DB1380231B6A86C2004965C7 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				DB2BFEA61B6869C700B12A0B /* KeychainItemWrapper.m in Sources */,

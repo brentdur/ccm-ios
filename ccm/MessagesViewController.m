@@ -28,6 +28,7 @@
     convoContent = [DataController getConvos];
     
     //TODO add observer logic
+    //TODO add BC add logic
     
     [refresh addTarget:self action:@selector(refreshStuff) forControlEvents:UIControlEventValueChanged];
 }
